@@ -9,7 +9,7 @@ ulysses = 'ulysses/ulysses'
 emma = 'emma/emma'
 
 with open(ulysses + "token", 'w') as writeFile:
-    for i in range(1, 19):
+    for i in range(1, 26):
         filename = ulysses + "%02d" % i
         with open(filename, 'r') as myfile:
             chapter = unicode(myfile.read(), encoding='utf-8')
@@ -19,5 +19,5 @@ with open(ulysses + "token", 'w') as writeFile:
         annotated = client.annotate(chapter)
         for sentence in annotated:
             for token in sentence:
-                writeFile.write(token.word)
+                writeFile.write(token.word.encode('ascii', 'ignore'))
                 writeFile.write("\n")
