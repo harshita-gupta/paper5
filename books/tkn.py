@@ -4,15 +4,15 @@ client = CoreNLPClient(server='http://localhost:9000',
                        default_annotators=['ssplit',
                                            'tokenize'])
 
-marquez = 'marquez/marquez'
-ulysses = 'ulysses/ulysses'
-emma = 'emma/emma'
+marquez = 'marquez/marquez'  # encoded in latin-1
+ulysses = 'ulysses/ulysses'  # encoded in utf-8
+emma = 'emma/emma'           # encoded in utf-8
 
-with open(ulysses + "token", 'w') as writeFile:
-    for i in range(1, 26):
-        filename = ulysses + "%02d" % i
+with open(marquez + "token", 'w') as writeFile:
+    for i in range(1, 21):
+        filename = marquez + "%02d" % i
         with open(filename, 'r') as myfile:
-            chapter = unicode(myfile.read(), encoding='utf-8')
+            chapter = unicode(myfile.read(), encoding='latin-1')
             chapter = unicodedata.normalize('NFD', chapter)
             chapter = chapter.encode('ascii', 'ignore')
 
