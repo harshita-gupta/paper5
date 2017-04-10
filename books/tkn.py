@@ -1,4 +1,7 @@
 import unicodedata
+
+#consider using notebooks
+
 from stanza.nlp.corenlp import CoreNLPClient
 client = CoreNLPClient(server='http://localhost:9000',
                        default_annotators=['ssplit',
