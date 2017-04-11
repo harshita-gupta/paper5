@@ -43,14 +43,19 @@ tokenizer = RegexpTokenizer(r'\w+')
 
 stemmer = PorterStemmer()
 enstop = get_stop_words('en')
-genjinames = ["genji", "kiritsubo", "suzako", "kokiden", "fujitsubo", "omyobu",
-              "chujo", "aoi", "kii", "iyo", "utsusemi", "kogimi", "nokiba",
-              "koremitsu", "yugao", "ukon", "rokujo", "murasaki", "shonagon",
-              "kitayama", "amagimi", "hyobu", "hitachi", "akashi",
-              "tamakazura", "kashiwagi", "kaoru", "oigimi", "naka", "ukifune"]
+genjinames = set(["genji", "kiritsubo", "suzako", "kokiden", "fujitsubo",
+                  "omyobu",
+                  "chujo", "aoi", "kii", "iyo", "utsusemi", "kogimi", "nokiba",
+                  "koremitsu", "yugao", "ukon", "rokujo", "murasaki",
+                  "shonagon", "jiju",
+                  "kitayama", "amagimi", "hyobu", "hitachi", "akashi",
+                  "tamakazura", "kashiwagi", "kaoru", "oigimi", "naka",
+                  "ukifune", "ono", "hachinomiya", "im", "ive",
+                  "sochinomiya", "niou", "suzaku", "kumoinokari", "reizei",
+                  "asagao", "gosechi", "roku", "kimi", "taifu"])
 
-fromPickle = False
-stemsFromPickle = False
+fromPickle = True
+stemsFromPickle = True
 
 translations = []
 
@@ -71,20 +76,21 @@ def getText(dr, root, encoding):
     return mytext
 
 
-#  also removes stop words
-def getTxtOfStems(txt, dr, root):
-    stempickle = root + "textstems.pickle"
+#  Removed stop words, proper nouns, and stems all results.
+def getReducedText(tokens, dr, root):
+    reducedpickle = root + "reducedtext.pickle"
     if stemsFromPickle:
-        return pickle.load(open(dr + stempickle, "rb"))
-    txttokens = [stemmer.stem(x) for x in txt.tokens if x not in enstop and
+        return pickle.load(open(dr + reducedpickle, "rb"))
+    tags = nltk.pos_tag(tokens)
+    tkns = [x[0] for x in tags if
+            x[0] not in enstop and x[0] not in genjinames and
+            x[1] != 'PRP' and x[1] != 'PRP$' and
+            x[1] != 'NNP' and x[1] != 'NNPS']
+    txttokens = [stemmer.stem(x) for x in tkns if x not in enstop and
                  x not in genjinames]
     stems = nltk.Text(txttokens)
-    pickle.dump(stems, open(dr + stempickle, "wb"))
+    pickle.dump(stems, open(dr + reducedpickle, "wb"))
     return stems
-
-
-def cleanText(dr, root, encoding):
-    return getTxtOfStems(getText(dr, root, encoding), dr, root)
 
 
 def dispersionPlot(txt, words):
@@ -99,9 +105,7 @@ def outputTokenFile():
 
 def splitTxtIntoWindows(txt, wlen):
     # want to return multiple documents with each window length
-    tags = nltk.pos_tag(txt.tokens)
-    tkns = [x[0] for x in tags if x[1] != 'PRP' and x[1] != 'PRP$' and
-            x[1] != 'NNP']
+    tkns = txt.tokens
     if overlap == 0:
         windows = [tkns[i:i + wlen] for i in range(0, len(tkns), wlen)]
     else:
@@ -110,26 +114,34 @@ def splitTxtIntoWindows(txt, wlen):
     return windows
 
 
-print "generating text, splitting into windows..."
-txt = cleanText(dr, root, encoding)
-translations = splitTxtIntoWindows(txt, WINDOWS)
-print "text cleaned, windows generated."
+print "generating text..."
+regularText = getText(dr, root, encoding)
+print "text generated"
+
+print "splitting text into windows..."
+slices = splitTxtIntoWindows(regularText, WINDOWS)
+print "windows generated."
+
+print "reducing and cleaning slices..."
+reducedSlices = [getReducedText(sl, dr, root) for sl in slices]
+print "slices reduced and cleaned."
 
 print "creating dictionary..."
-dictionary = corpora.Dictionary([txt])
+dictionary = corpora.Dictionary([getReducedText(txt, dr, root)])
 print "dictionary created."
+
 print "creating corpus..."
-corpus = [dictionary.doc2bow(translation) for translation in translations]
+corpus = [dictionary.doc2bow(reducedSlice) for reducedSlice in reducedSlices]
 print "corpus created."
+
 print "generating lda model..."
 ldamodel = models.ldamulticore.LdaMulticore(corpus, num_topics=TOPICS,
                                             id2word=dictionary, passes=PASSES,
                                             workers=3)
-print "LDA model generated created."
+print "LDA model generated."
 pickle.dump(ldamodel,
-            open(dr +
-                 "ldamodel_overlap%d_w%d_t%d_p%d.pickle"
-                 % overlap, WINDOWS, TOPICS, PASSES, "wb"))
+            open(dr + "ldamodel_overlap%d_w%d_t%d_p%d.pickle" %
+                 (overlap, WINDOWS, TOPICS, PASSES), "wb"))
 print(ldamodel.print_topics(num_topics=TOPICS, num_words=20))
 
 print("saving ...\n")
