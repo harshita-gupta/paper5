@@ -42,20 +42,20 @@ overlap = int(sys.argv[7])
 tokenizer = RegexpTokenizer(r'\w+')
 
 stemmer = PorterStemmer()
-enstop = get_stop_words('en')
-genjinames = set(["genji", "kiritsubo", "suzako", "kokiden", "fujitsubo",
-                  "omyobu",
-                  "chujo", "aoi", "kii", "iyo", "utsusemi", "kogimi", "nokiba",
-                  "koremitsu", "yugao", "ukon", "rokujo", "murasaki",
-                  "shonagon", "jiju",
-                  "kitayama", "amagimi", "hyobu", "hitachi", "akashi",
-                  "tamakazura", "kashiwagi", "kaoru", "oigimi", "naka",
-                  "ukifune", "ono", "hachinomiya", "im", "ive",
-                  "sochinomiya", "niou", "suzaku", "kumoinokari", "reizei",
-                  "asagao", "gosechi", "roku", "kimi", "taifu"])
+enstop = set(get_stop_words('en'))
+exclude = set(["genji", "kiritsubo", "suzako", "kokiden", "fujitsubo",
+               "omyobu",
+               "chujo", "aoi", "kii", "iyo", "utsusemi", "kogimi", "nokiba",
+               "koremitsu", "yugao", "ukon", "rokujo", "murasaki",
+               "shonagon", "jiju",
+               "kitayama", "amagimi", "hyobu", "hitachi", "akashi",
+               "tamakazura", "kashiwagi", "kaoru", "oigimi", "naka",
+               "ukifune", "ono", "hachinomiya", "im", "ive",
+               "sochinomiya", "niou", "suzaku", "kumoinokari", "reizei",
+               "asagao", "gosechi", "roku", "kimi", "taifu"]).union(enstop)
 
 fromPickle = True
-stemsFromPickle = True
+stemsFromPickle = False
 
 translations = []
 
@@ -77,19 +77,13 @@ def getText(dr, root, encoding):
 
 
 #  Removed stop words, proper nouns, and stems all results.
-def getReducedText(tokens, dr, root):
-    reducedpickle = root + "reducedtext.pickle"
-    if stemsFromPickle:
-        return pickle.load(open(dr + reducedpickle, "rb"))
-    tags = nltk.pos_tag(tokens)
-    tkns = [x[0] for x in tags if
-            x[0] not in enstop and x[0] not in genjinames and
+#  takes tagged and stemmed words and returns tokens that match requirements.
+def getReducedTokens(tags, dr, root):
+    tkns = [x[2] for x in tags if
             x[1] != 'PRP' and x[1] != 'PRP$' and
-            x[1] != 'NNP' and x[1] != 'NNPS']
-    txttokens = [stemmer.stem(x) for x in tkns if x not in enstop and
-                 x not in genjinames]
-    stems = nltk.Text(txttokens)
-    pickle.dump(stems, open(dr + reducedpickle, "wb"))
+            x[1] != 'NNP' and x[1] != 'NNPS' and
+            x[0] not in exclude]
+    stems = nltk.Text(tkns)
     return stems
 
 
@@ -103,42 +97,60 @@ def outputTokenFile():
             tokenfile.write("%s " % item)
 
 
-def splitTxtIntoWindows(txt, wlen):
+def splitListIntoWindows(lst, wlen):
     # want to return multiple documents with each window length
-    tkns = txt.tokens
     if overlap == 0:
-        windows = [tkns[i:i + wlen] for i in range(0, len(tkns), wlen)]
+        windows = [lst[i:i + wlen] for i in range(0, len(lst), wlen)]
     else:
         windows = [sb for sb in
-                   (tkns[x:x + wlen] for x in range(len(tkns) - wlen + 1))]
+                   (lst[x:x + wlen] for x in range(len(lst) - wlen + 1))]
     return windows
 
 
-print "generating text..."
+logging.info("generating text...")
 regularText = getText(dr, root, encoding)
-print "text generated"
+logging.info("text generated.")
 
-print "splitting text into windows..."
-slices = splitTxtIntoWindows(regularText, WINDOWS)
-print "windows generated."
+logging.info("tagging text...")
+taggedText = nltk.pos_tag(regularText.tokens)
+logging.info("text tagged.")
 
-print "reducing and cleaning slices..."
-reducedSlices = [getReducedText(sl, dr, root) for sl in slices]
-print "slices reduced and cleaned."
+logging.info("stemming text...")
+stemmedText = []
+stemmedDict = []
+for token in taggedText:
+    tk, pos = token
+    stm = stemmer.stem(tk)
+    stemmedText.append((tk, pos, stm))
+    stemmedDict.append(stm)
+logging.info("text stemmed.")
 
-print "creating dictionary..."
-dictionary = corpora.Dictionary([getReducedText(txt, dr, root)])
-print "dictionary created."
+logging.info("splitting text into windows...")
+slices = splitListIntoWindows(stemmedText, WINDOWS)
+logging.info("windows generated.")
 
-print "creating corpus..."
-corpus = [dictionary.doc2bow(reducedSlice) for reducedSlice in reducedSlices]
-print "corpus created."
+logging.info("reducing and cleaning slices...")
+reducedpickle = root + "reducedtext.pickle"
+if stemsFromPickle:
+    reducedslices = pickle.load(open(dr + reducedpickle, "rb"))
+else:
+    reducedSlices = [getReducedTokens(sl, dr, root) for sl in slices]
+    pickle.dump(reducedSlices, open(dr + reducedpickle, "wb"))
+logging.info("slices reduced and cleaned.")
 
-print "generating lda model..."
+logging.info("creating dictionary...")
+dictionary = corpora.Dictionary([stemmedDict])
+logging.info("dictionary created.")
+
+logging.info("creating corpus...")
+corpus = [dictionary.doc2bow(sl.tokens) for sl in reducedSlices]
+logging.info("corpus created.")
+
+logging.info("generating lda model...")
 ldamodel = models.ldamulticore.LdaMulticore(corpus, num_topics=TOPICS,
                                             id2word=dictionary, passes=PASSES,
                                             workers=3)
-print "LDA model generated."
+logging.info("LDA model generated.")
 pickle.dump(ldamodel,
             open(dr + "ldamodel_overlap%d_w%d_t%d_p%d.pickle" %
                  (overlap, WINDOWS, TOPICS, PASSES), "wb"))
