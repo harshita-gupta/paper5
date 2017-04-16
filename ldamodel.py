@@ -59,7 +59,10 @@ exclude = set(["genji", "kiritsubo", "suzako", "kokiden", "fujitsubo",
                "asagao", "gosechi", "roku", "kimi", "taifu", "bennokimi",
                "ujinot", "uji", "niou", "s", "tamakazura", "kemari",
                "nakanobu", "asaka", "oborozukiyo", "kawachi", "kana", "shosho",
-               "wakana", "yugei", "izumo", "tatsuta", "moku",
+               "wakana", "yugei", "izumo", "tatsuta", "moku", "tsukushi",
+               "kosaisho", "michisada", "sachuben", "kiyomidz", "mogi",
+               "wistaria", "udaijin", "hiyojin", "tsubo", "jio",
+               "azechi", "kojiju", "korabu", "kurabu",
                "naishi", "hatsuse"]).union(enstop)
 
 fromPickle = int(sys.argv[8]) == 1
@@ -120,6 +123,7 @@ if stemsFromPickle:
     logging.info("loading reduced and cleaned slices from pickle...")
     reducedSlices = pickle.load(open(dr + reducedpickle, "rb"))
     stemmedDict = pickle.load(open(dr + root + "stemmeddict.pickle", "rb"))
+    doc_labels = pickle.load(open(dr + root + "doc_labels.pickle", "rb"))
     logging.info("slices loaded.")
 else:
     logging.info("generating text...")
@@ -145,6 +149,14 @@ else:
     slices = splitListIntoWindows(stemmedText, WINDOWS)
     logging.info("windows generated.")
     logging.info("reducing and cleaning slices...")
+
+    doc_labels = []
+    for window in slices:
+        label = ""
+        for word in window[:5]:
+            label += word[0] + " "
+        doc_labels.append(label)
+    pickle.dump(doc_labels, open(dr + "doc_labels.pickle", "wb"))
 
     reducedSlices = [getReducedTokens(sl, dr, root) for sl in slices]
     pickle.dump(reducedSlices, open(dr + reducedpickle, "wb"))
@@ -177,6 +189,10 @@ if not os.path.exists(dr + "out"):
 
 foldername = dr + "out/ldamodel_overlap%d_w%d_t%d_p%d" % (overlap, WINDOWS,
                                                           TOPICS, PASSES)
+
+with open(foldername + "_doclabels.txt", "w") as f:
+    for item in doc_labels:
+        f.write(item + "\n")
 
 with open(foldername + "_topics.txt", "w") as f:
     for item, i in zip(topics, enumerate(topics)):

@@ -1,6 +1,7 @@
 from gensim.models import LdaModel
 from gensim.corpora import MmCorpus, Dictionary
-import sys, os
+import sys
+import os
 import pyLDAvis.gensim
 
 
@@ -12,8 +13,8 @@ if len(sys.argv) < 2:
 path, file = os.path.split(sys.argv[1])
 corpusname = file.split(".")[0]
 
-dictionary = Dictionary.load(path+"/"+corpusname+".dict")
-corpus = MmCorpus(path+"/"+corpusname+".mm")
+dictionary = Dictionary.load(path + "/" + corpusname + ".dict")
+corpus = MmCorpus(path + "/" + corpusname + ".mm")
 model = LdaModel.load(sys.argv[1])
 
 
@@ -22,5 +23,5 @@ model = LdaModel.load(sys.argv[1])
 
 vis = pyLDAvis.gensim.prepare(model, corpus, dictionary)
 
-pyLDAvis.save_html(vis, path+"/"+corpusname+"_interactive.html")
+pyLDAvis.save_html(vis, path + "/" + corpusname + "_interactive.html")
 pyLDAvis.show(vis)
