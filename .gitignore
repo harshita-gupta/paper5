@@ -10,3 +10,11 @@ GloVe-master/cooccurrence.bin
 GloVe-master/cooccurrence.shuf.bin
 
 GloVe-master/text8
+
+books/genji/kencho/genjireducedtext.pickle
+
+*.pickle0
+
+*.pickle
+
+books/genji/mccullough/Genji &amp; Heike: Selections from The Tale of Genji and The Tale of the Heike.pdf
