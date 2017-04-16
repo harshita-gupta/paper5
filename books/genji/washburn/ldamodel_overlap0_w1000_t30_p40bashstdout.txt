@@ -1,0 +1,405 @@
+Last login: Tue Apr 11 16:13:27 on ttys002
+Harshitas-MacBook-Pro:~ Harshita$ cd developer
+Harshitas-MacBook-Pro:developer Harshita$ cd hum10-paper5/
+Harshitas-MacBook-Pro:hum10-paper5 Harshita$ ls
+GloVe-hundredyears	dispersion-plots	nltktagset.txt
+GloVe-master		ldamodel.py		out
+books			ngram.py		saveloadedmodel.py
+Harshitas-MacBook-Pro:hum10-paper5 Harshita$ python ldamodel.py books/genji/washburn/ genji utf-8 1000 30 40 0 1 0
+2017-04-11 18:27:42,848 : INFO : generating text...
+2017-04-11 18:27:47,879 : INFO : text generated.
+2017-04-11 18:27:47,880 : INFO : tagging text...
+^CTraceback (most recent call last):
+  File "ldamodel.py", line 116, in <module>
+    taggedText = nltk.pos_tag(regularText.tokens)
+  File "/Users/Harshita/miniconda2/lib/python2.7/site-packages/nltk/tag/__init__.py", line 129, in pos_tag
+    return _pos_tag(tokens, tagset, tagger)    
+  File "/Users/Harshita/miniconda2/lib/python2.7/site-packages/nltk/tag/__init__.py", line 97, in _pos_tag
+    tagged_tokens = tagger.tag(tokens)
+  File "/Users/Harshita/miniconda2/lib/python2.7/site-packages/nltk/tag/perceptron.py", line 157, in tag
+    tag = self.model.predict(features)
+  File "/Users/Harshita/miniconda2/lib/python2.7/site-packages/nltk/tag/perceptron.py", line 56, in predict
+    scores[label] += value * weight
+KeyboardInterrupt
+Harshitas-MacBook-Pro:hum10-paper5 Harshita$ python ldamodel.py books/genji/washburn/ genji utf-8 1000 30 40 0 1 0
+2017-04-11 18:27:57,995 : INFO : generating text...
+2017-04-11 18:28:03,102 : INFO : text generated.
+2017-04-11 18:28:03,103 : INFO : tagging text...
+2017-04-11 18:29:03,676 : INFO : text tagged.
+2017-04-11 18:29:03,677 : INFO : stemming text...
+2017-04-11 18:29:37,652 : INFO : text stemmed.
+2017-04-11 18:29:42,832 : INFO : splitting text into windows...
+2017-04-11 18:29:42,844 : INFO : windows generated.
+2017-04-11 18:29:42,844 : INFO : reducing and cleaning slices...
+2017-04-11 18:29:46,141 : INFO : slices reduced and cleaned.
+2017-04-11 18:29:46,141 : INFO : creating dictionary...
+2017-04-11 18:29:46,141 : INFO : adding document #0 to Dictionary(0 unique tokens: [])
+2017-04-11 18:29:46,756 : INFO : built Dictionary(9939 unique tokens: [u'fawn', u'wearerthey', u'yellow', u'four', u'writinga']...) from 1 documents (total 639155 corpus positions)
+2017-04-11 18:29:46,756 : INFO : dictionary created.
+2017-04-11 18:29:46,756 : INFO : creating corpus...
+2017-04-11 18:29:47,335 : INFO : corpus created.
+2017-04-11 18:29:47,335 : INFO : generating lda model...
+2017-04-11 18:29:47,336 : INFO : using symmetric alpha at 0.0333333333333
+2017-04-11 18:29:47,336 : INFO : using symmetric eta at 0.000100613743837
+2017-04-11 18:29:47,339 : INFO : using serial LDA version on this node
+2017-04-11 18:29:49,737 : INFO : running online LDA training, 30 topics, 40 passes over the supplied corpus of 640 documents, updating every 6000 documents, evaluating every ~640 documents, iterating 50x with a convergence threshold of 0.001000
+2017-04-11 18:29:49,739 : INFO : training LDA model using 3 processes
+2017-04-11 18:29:49,754 : INFO : PROGRESS: pass 0, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:29:53,439 : INFO : topic #25 (0.033): 0.006*"even" + 0.006*"look" + 0.006*"one" + 0.006*"now" + 0.005*"thought" + 0.004*"feel" + 0.004*"come" + 0.004*"day" + 0.004*"though" + 0.004*"might"
+2017-04-11 18:29:53,440 : INFO : topic #8 (0.033): 0.006*"one" + 0.006*"princess" + 0.005*"time" + 0.005*"feel" + 0.005*"even" + 0.005*"daughter" + 0.005*"look" + 0.004*"seem" + 0.004*"now" + 0.004*"must"
+2017-04-11 18:29:53,440 : INFO : topic #21 (0.033): 0.007*"one" + 0.007*"even" + 0.006*"feel" + 0.006*"princess" + 0.006*"look" + 0.005*"time" + 0.005*"go" + 0.005*"like" + 0.005*"now" + 0.005*"ladi"
+2017-04-11 18:29:53,441 : INFO : topic #26 (0.033): 0.008*"even" + 0.007*"princess" + 0.007*"one" + 0.006*"now" + 0.006*"just" + 0.005*"young" + 0.005*"look" + 0.005*"like" + 0.004*"ladi" + 0.004*"feel"
+2017-04-11 18:29:53,441 : INFO : topic #29 (0.033): 0.007*"one" + 0.006*"now" + 0.006*"even" + 0.006*"time" + 0.005*"look" + 0.005*"see" + 0.005*"like" + 0.005*"feel" + 0.004*"will" + 0.004*"father"
+2017-04-11 18:29:53,443 : INFO : topic diff=11.098097, rho=1.000000
+2017-04-11 18:30:09,939 : INFO : -8.625 per-word bound, 394.8 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:30:09,940 : INFO : PROGRESS: pass 1, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:30:13,558 : INFO : topic #1 (0.033): 0.007*"even" + 0.006*"one" + 0.006*"like" + 0.006*"will" + 0.005*"look" + 0.005*"feel" + 0.004*"go" + 0.004*"make" + 0.004*"just" + 0.004*"think"
+2017-04-11 18:30:13,558 : INFO : topic #13 (0.033): 0.005*"now" + 0.005*"look" + 0.005*"one" + 0.005*"feel" + 0.005*"just" + 0.004*"time" + 0.004*"son" + 0.004*"even" + 0.004*"make" + 0.003*"like"
+2017-04-11 18:30:13,558 : INFO : topic #15 (0.033): 0.008*"feel" + 0.007*"even" + 0.006*"will" + 0.006*"time" + 0.006*"now" + 0.006*"look" + 0.006*"one" + 0.005*"letter" + 0.005*"ladi" + 0.004*"repli"
+2017-04-11 18:30:13,559 : INFO : topic #3 (0.033): 0.007*"will" + 0.007*"even" + 0.007*"feel" + 0.006*"now" + 0.006*"ladi" + 0.006*"time" + 0.006*"princess" + 0.005*"daughter" + 0.005*"though" + 0.005*"look"
+2017-04-11 18:30:13,559 : INFO : topic #29 (0.033): 0.006*"one" + 0.006*"now" + 0.006*"even" + 0.005*"time" + 0.005*"look" + 0.005*"father" + 0.005*"feel" + 0.004*"like" + 0.004*"see" + 0.004*"will"
+2017-04-11 18:30:13,560 : INFO : topic diff=4.148037, rho=0.707107
+2017-04-11 18:30:30,075 : INFO : -8.192 per-word bound, 292.4 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:30:30,076 : INFO : PROGRESS: pass 2, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:30:33,347 : INFO : topic #20 (0.033): 0.009*"one" + 0.006*"even" + 0.006*"princ" + 0.006*"sister" + 0.005*"princess" + 0.005*"like" + 0.005*"see" + 0.004*"ladi" + 0.004*"now" + 0.004*"mountain"
+2017-04-11 18:30:33,347 : INFO : topic #27 (0.033): 0.008*"princess" + 0.007*"even" + 0.006*"feel" + 0.006*"now" + 0.006*"like" + 0.005*"one" + 0.005*"way" + 0.005*"will" + 0.005*"time" + 0.004*"think"
+2017-04-11 18:30:33,347 : INFO : topic #25 (0.033): 0.006*"even" + 0.006*"look" + 0.006*"now" + 0.005*"one" + 0.005*"thought" + 0.005*"feel" + 0.005*"day" + 0.005*"see" + 0.004*"though" + 0.004*"poem"
+2017-04-11 18:30:33,348 : INFO : topic #6 (0.033): 0.006*"cake" + 0.005*"rice" + 0.004*"even" + 0.004*"day" + 0.004*"boar" + 0.004*"thought" + 0.003*"now" + 0.003*"time" + 0.003*"feel" + 0.003*"like"
+2017-04-11 18:30:33,348 : INFO : topic #15 (0.033): 0.008*"feel" + 0.007*"even" + 0.007*"will" + 0.007*"now" + 0.007*"letter" + 0.006*"time" + 0.006*"look" + 0.005*"one" + 0.005*"repli" + 0.005*"thing"
+2017-04-11 18:30:33,349 : INFO : topic diff=2.741706, rho=0.577350
+2017-04-11 18:30:49,740 : INFO : -8.019 per-word bound, 259.4 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:30:49,740 : INFO : PROGRESS: pass 3, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:30:53,128 : INFO : topic #25 (0.033): 0.007*"even" + 0.006*"look" + 0.006*"now" + 0.005*"one" + 0.005*"feel" + 0.005*"day" + 0.005*"thought" + 0.005*"see" + 0.004*"though" + 0.004*"poem"
+2017-04-11 18:30:53,129 : INFO : topic #19 (0.033): 0.011*"robe" + 0.008*"look" + 0.007*"one" + 0.007*"ladi" + 0.005*"women" + 0.005*"princess" + 0.005*"littl" + 0.005*"even" + 0.005*"like" + 0.004*"see"
+2017-04-11 18:30:53,129 : INFO : topic #9 (0.033): 0.010*"daughter" + 0.006*"time" + 0.006*"even" + 0.006*"one" + 0.005*"now" + 0.005*"look" + 0.005*"young" + 0.005*"princess" + 0.005*"seem" + 0.004*"see"
+2017-04-11 18:30:53,130 : INFO : topic #2 (0.033): 0.006*"even" + 0.006*"time" + 0.005*"look" + 0.005*"one" + 0.005*"autumn" + 0.004*"now" + 0.004*"like" + 0.004*"play" + 0.004*"seem" + 0.004*"feel"
+2017-04-11 18:30:53,130 : INFO : topic #7 (0.033): 0.006*"women" + 0.006*"flower" + 0.006*"son" + 0.006*"poem" + 0.005*"ladi" + 0.005*"spring" + 0.005*"day" + 0.004*"garden" + 0.004*"wait" + 0.004*"genji"
+2017-04-11 18:30:53,131 : INFO : topic diff=1.902302, rho=0.500000
+2017-04-11 18:31:09,571 : INFO : -7.925 per-word bound, 243.0 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:31:09,571 : INFO : PROGRESS: pass 4, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:31:12,952 : INFO : topic #27 (0.033): 0.008*"princess" + 0.007*"even" + 0.006*"like" + 0.006*"feel" + 0.005*"now" + 0.005*"way" + 0.005*"one" + 0.005*"sister" + 0.004*"time" + 0.004*"think"
+2017-04-11 18:31:12,953 : INFO : topic #7 (0.033): 0.007*"women" + 0.007*"flower" + 0.006*"poem" + 0.006*"son" + 0.006*"spring" + 0.006*"ladi" + 0.005*"garden" + 0.005*"day" + 0.005*"color" + 0.005*"wait"
+2017-04-11 18:31:12,953 : INFO : topic #17 (0.033): 0.008*"ladi" + 0.006*"carriag" + 0.006*"look" + 0.006*"woman" + 0.005*"way" + 0.005*"even" + 0.005*"now" + 0.005*"feel" + 0.005*"like" + 0.005*"young"
+2017-04-11 18:31:12,954 : INFO : topic #4 (0.033): 0.011*"ladi" + 0.009*"young" + 0.008*"back" + 0.007*"place" + 0.007*"even" + 0.007*"now" + 0.006*"live" + 0.006*"one" + 0.005*"nun" + 0.005*"like"
+2017-04-11 18:31:12,954 : INFO : topic #12 (0.033): 0.017*"tale" + 0.011*"stori" + 0.008*"even" + 0.008*"read" + 0.006*"world" + 0.006*"make" + 0.005*"matter" + 0.005*"illustr" + 0.005*"find" + 0.004*"will"
+2017-04-11 18:31:12,954 : INFO : topic diff=1.369838, rho=0.447214
+2017-04-11 18:31:29,329 : INFO : -7.866 per-word bound, 233.3 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:31:29,330 : INFO : PROGRESS: pass 5, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:31:32,724 : INFO : topic #1 (0.033): 0.002*"aggrievedthough" + 0.002*"housenot" + 0.002*"even" + 0.002*"one" + 0.002*"will" + 0.002*"like" + 0.001*"look" + 0.001*"feel" + 0.001*"go" + 0.001*"make"
+2017-04-11 18:31:32,725 : INFO : topic #6 (0.033): 0.021*"cake" + 0.017*"rice" + 0.008*"boar" + 0.005*"tomorrow" + 0.004*"box" + 0.003*"consumm" + 0.002*"auspici" + 0.002*"day" + 0.002*"flavor" + 0.002*"peacefuljust"
+2017-04-11 18:31:32,725 : INFO : topic #9 (0.033): 0.011*"daughter" + 0.006*"time" + 0.006*"one" + 0.006*"even" + 0.006*"play" + 0.005*"young" + 0.005*"now" + 0.005*"princess" + 0.005*"seem" + 0.005*"father"
+2017-04-11 18:31:32,725 : INFO : topic #28 (0.033): 0.007*"cloak" + 0.006*"robe" + 0.006*"obi" + 0.005*"genji" + 0.005*"put" + 0.005*"two" + 0.005*"cloth" + 0.004*"hard" + 0.004*"flash" + 0.004*"firefli"
+2017-04-11 18:31:32,726 : INFO : topic #10 (0.033): 0.008*"emperor" + 0.007*"princ" + 0.006*"time" + 0.005*"court" + 0.005*"minist" + 0.005*"ceremoni" + 0.005*"one" + 0.005*"left" + 0.005*"young" + 0.004*"son"
+2017-04-11 18:31:32,726 : INFO : topic diff=1.016024, rho=0.408248
+2017-04-11 18:31:49,113 : INFO : -7.827 per-word bound, 227.1 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:31:49,113 : INFO : PROGRESS: pass 6, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:31:52,333 : INFO : topic #14 (0.033): 0.004*"petit" + 0.003*"book" + 0.003*"stabl" + 0.002*"performancewa" + 0.002*"superbespeci" + 0.002*"fluteth" + 0.002*"venu" + 0.002*"kotoand" + 0.002*"fujibakama" + 0.002*"perfunctori"
+2017-04-11 18:31:52,333 : INFO : topic #4 (0.033): 0.012*"ladi" + 0.010*"young" + 0.008*"back" + 0.008*"place" + 0.008*"even" + 0.006*"now" + 0.006*"live" + 0.006*"one" + 0.005*"face" + 0.005*"like"
+2017-04-11 18:31:52,333 : INFO : topic #6 (0.033): 0.025*"cake" + 0.021*"rice" + 0.009*"boar" + 0.006*"tomorrow" + 0.005*"box" + 0.004*"consumm" + 0.003*"auspici" + 0.002*"flavor" + 0.002*"peacefuljust" + 0.002*"robesthen"
+2017-04-11 18:31:52,334 : INFO : topic #16 (0.033): 0.008*"princess" + 0.007*"even" + 0.007*"banquet" + 0.007*"made" + 0.006*"celebr" + 0.005*"present" + 0.005*"uji" + 0.005*"now" + 0.005*"son" + 0.005*"way"
+2017-04-11 18:31:52,334 : INFO : topic #3 (0.033): 0.009*"will" + 0.008*"now" + 0.007*"minist" + 0.007*"ladi" + 0.007*"time" + 0.007*"daughter" + 0.006*"though" + 0.006*"leav" + 0.006*"left" + 0.006*"feel"
+2017-04-11 18:31:52,335 : INFO : topic diff=0.770363, rho=0.377964
+2017-04-11 18:32:08,720 : INFO : -7.800 per-word bound, 222.9 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:32:08,720 : INFO : PROGRESS: pass 7, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:32:11,869 : INFO : topic #28 (0.033): 0.007*"cloak" + 0.007*"obi" + 0.006*"put" + 0.006*"two" + 0.006*"genji" + 0.005*"robe" + 0.005*"cloth" + 0.005*"hard" + 0.005*"flash" + 0.005*"firefli"
+2017-04-11 18:32:11,870 : INFO : topic #14 (0.033): 0.004*"petit" + 0.004*"book" + 0.003*"stabl" + 0.002*"performancewa" + 0.002*"superbespeci" + 0.002*"fluteth" + 0.002*"venu" + 0.002*"kotoand" + 0.002*"fujibakama" + 0.002*"perfunctori"
+2017-04-11 18:32:11,870 : INFO : topic #12 (0.033): 0.021*"tale" + 0.013*"stori" + 0.009*"read" + 0.009*"even" + 0.006*"illustr" + 0.006*"make" + 0.006*"matter" + 0.006*"world" + 0.005*"find" + 0.005*"peopl"
+2017-04-11 18:32:11,870 : INFO : topic #21 (0.033): 0.007*"even" + 0.007*"feel" + 0.007*"princess" + 0.007*"one" + 0.006*"look" + 0.006*"now" + 0.006*"like" + 0.005*"go" + 0.005*"time" + 0.005*"just"
+2017-04-11 18:32:11,871 : INFO : topic #6 (0.033): 0.028*"cake" + 0.024*"rice" + 0.009*"boar" + 0.006*"box" + 0.006*"tomorrow" + 0.004*"consumm" + 0.004*"auspici" + 0.002*"flavor" + 0.002*"peacefuljust" + 0.002*"robesthen"
+2017-04-11 18:32:11,871 : INFO : topic diff=0.594066, rho=0.353553
+2017-04-11 18:32:28,282 : INFO : -7.780 per-word bound, 219.9 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:32:28,282 : INFO : PROGRESS: pass 8, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:32:31,420 : INFO : topic #26 (0.033): 0.011*"vice" + 0.009*"lesser" + 0.008*"governor" + 0.005*"favorit" + 0.004*"immort" + 0.004*"captain" + 0.003*"young" + 0.003*"dancer" + 0.003*"daughter" + 0.003*"musician"
+2017-04-11 18:32:31,420 : INFO : topic #9 (0.033): 0.013*"daughter" + 0.008*"play" + 0.006*"time" + 0.006*"young" + 0.006*"one" + 0.006*"koto" + 0.005*"palac" + 0.005*"son" + 0.005*"even" + 0.005*"princess"
+2017-04-11 18:32:31,421 : INFO : topic #17 (0.033): 0.009*"carriag" + 0.009*"ladi" + 0.006*"woman" + 0.006*"governor" + 0.006*"look" + 0.005*"way" + 0.005*"like" + 0.005*"one" + 0.005*"though" + 0.004*"vice"
+2017-04-11 18:32:31,421 : INFO : topic #28 (0.033): 0.008*"cloak" + 0.007*"obi" + 0.006*"put" + 0.006*"two" + 0.006*"genji" + 0.006*"cloth" + 0.005*"hard" + 0.005*"robe" + 0.005*"firefli" + 0.005*"flash"
+2017-04-11 18:32:31,421 : INFO : topic #13 (0.033): 0.003*"unhurri" + 0.003*"incredul" + 0.003*"escortdistinguish" + 0.003*"staffhad" + 0.003*"stridecr" + 0.003*"reconcili" + 0.003*"acced" + 0.003*"himhi" + 0.001*"brothersth" + 0.001*"son"
+2017-04-11 18:32:31,422 : INFO : topic diff=0.464261, rho=0.333333
+2017-04-11 18:32:47,774 : INFO : -7.766 per-word bound, 217.6 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:32:47,774 : INFO : PROGRESS: pass 9, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:32:50,911 : INFO : topic #24 (0.033): 0.007*"man" + 0.007*"daughter" + 0.006*"one" + 0.006*"young" + 0.006*"even" + 0.006*"father" + 0.006*"capit" + 0.006*"like" + 0.005*"will" + 0.005*"son"
+2017-04-11 18:32:50,911 : INFO : topic #12 (0.033): 0.022*"tale" + 0.014*"stori" + 0.009*"read" + 0.009*"even" + 0.007*"illustr" + 0.006*"make" + 0.006*"matter" + 0.006*"world" + 0.005*"find" + 0.005*"peopl"
+2017-04-11 18:32:50,912 : INFO : topic #3 (0.033): 0.009*"will" + 0.009*"minist" + 0.008*"now" + 0.008*"ladi" + 0.007*"time" + 0.007*"daughter" + 0.007*"leav" + 0.007*"left" + 0.006*"though" + 0.006*"feel"
+2017-04-11 18:32:50,912 : INFO : topic #16 (0.033): 0.009*"princess" + 0.008*"banquet" + 0.007*"even" + 0.007*"made" + 0.007*"celebr" + 0.006*"present" + 0.006*"uji" + 0.005*"birth" + 0.005*"son" + 0.005*"now"
+2017-04-11 18:32:50,912 : INFO : topic #8 (0.033): 0.018*"monk" + 0.018*"fox" + 0.008*"human" + 0.007*"creatur" + 0.006*"main" + 0.006*"sell" + 0.006*"caretak" + 0.005*"torch" + 0.005*"sprite" + 0.004*"kitchen"
+2017-04-11 18:32:50,913 : INFO : topic diff=0.367091, rho=0.316228
+2017-04-11 18:33:07,281 : INFO : -7.754 per-word bound, 215.9 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:33:07,281 : INFO : PROGRESS: pass 10, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:33:10,428 : INFO : topic #11 (0.033): 0.015*"will" + 0.010*"feel" + 0.010*"look" + 0.008*"think" + 0.008*"come" + 0.007*"now" + 0.006*"second" + 0.006*"women" + 0.006*"like" + 0.006*"genji"
+2017-04-11 18:33:10,428 : INFO : topic #4 (0.033): 0.013*"ladi" + 0.011*"young" + 0.009*"back" + 0.008*"place" + 0.008*"even" + 0.007*"shosho" + 0.006*"face" + 0.006*"one" + 0.006*"now" + 0.006*"live"
+2017-04-11 18:33:10,429 : INFO : topic #18 (0.033): 0.000*"like" + 0.000*"look" + 0.000*"one" + 0.000*"now" + 0.000*"feel" + 0.000*"even" + 0.000*"daughter" + 0.000*"princess" + 0.000*"woman" + 0.000*"ladi"
+2017-04-11 18:33:10,429 : INFO : topic #15 (0.033): 0.009*"letter" + 0.008*"feel" + 0.008*"will" + 0.007*"now" + 0.007*"even" + 0.006*"thing" + 0.006*"repli" + 0.005*"husband" + 0.005*"think" + 0.005*"one"
+2017-04-11 18:33:10,429 : INFO : topic #9 (0.033): 0.014*"daughter" + 0.009*"play" + 0.007*"time" + 0.006*"koto" + 0.006*"young" + 0.006*"son" + 0.006*"palac" + 0.006*"one" + 0.005*"princess" + 0.005*"even"
+2017-04-11 18:33:10,430 : INFO : topic diff=0.293400, rho=0.301511
+2017-04-11 18:33:26,789 : INFO : -7.745 per-word bound, 214.6 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:33:26,790 : INFO : PROGRESS: pass 11, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:33:29,906 : INFO : topic #15 (0.033): 0.009*"letter" + 0.008*"feel" + 0.008*"will" + 0.007*"now" + 0.007*"even" + 0.006*"thing" + 0.006*"repli" + 0.005*"husband" + 0.005*"think" + 0.005*"one"
+2017-04-11 18:33:29,906 : INFO : topic #29 (0.033): 0.005*"wing" + 0.005*"fli" + 0.005*"possibl" + 0.005*"ukifun" + 0.004*"pomp" + 0.004*"nostalg" + 0.003*"anxiou" + 0.003*"great" + 0.003*"left" + 0.003*"conclud"
+2017-04-11 18:33:29,907 : INFO : topic #26 (0.033): 0.014*"vice" + 0.011*"lesser" + 0.010*"governor" + 0.006*"favorit" + 0.005*"immort" + 0.004*"intermediari" + 0.004*"water" + 0.004*"clapper" + 0.004*"fame" + 0.004*"dancer"
+2017-04-11 18:33:29,907 : INFO : topic #20 (0.033): 0.011*"one" + 0.010*"princ" + 0.007*"sister" + 0.006*"tree" + 0.006*"mountain" + 0.006*"villa" + 0.005*"even" + 0.005*"see" + 0.005*"illustr" + 0.005*"cat"
+2017-04-11 18:33:29,907 : INFO : topic #28 (0.033): 0.008*"cloak" + 0.007*"obi" + 0.006*"put" + 0.006*"two" + 0.006*"cloth" + 0.006*"genji" + 0.006*"hard" + 0.005*"firefli" + 0.005*"flash" + 0.004*"sash"
+2017-04-11 18:33:29,908 : INFO : topic diff=0.236999, rho=0.288675
+2017-04-11 18:33:46,226 : INFO : -7.738 per-word bound, 213.5 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:33:46,227 : INFO : PROGRESS: pass 12, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:33:49,350 : INFO : topic #29 (0.033): 0.006*"wing" + 0.005*"fli" + 0.005*"possibl" + 0.005*"ukifun" + 0.004*"pomp" + 0.004*"nostalg" + 0.003*"anxiou" + 0.003*"great" + 0.003*"conclud" + 0.003*"left"
+2017-04-11 18:33:49,351 : INFO : topic #28 (0.033): 0.008*"cloak" + 0.007*"obi" + 0.007*"put" + 0.006*"two" + 0.006*"cloth" + 0.006*"genji" + 0.006*"hard" + 0.006*"firefli" + 0.006*"flash" + 0.004*"sash"
+2017-04-11 18:33:49,351 : INFO : topic #6 (0.033): 0.040*"cake" + 0.034*"rice" + 0.011*"box" + 0.010*"boar" + 0.007*"tomorrow" + 0.006*"auspici" + 0.004*"consumm" + 0.002*"flavor" + 0.002*"peacefuljust" + 0.002*"robesthen"
+2017-04-11 18:33:49,351 : INFO : topic #2 (0.033): 0.008*"autumn" + 0.007*"play" + 0.006*"even" + 0.006*"garden" + 0.005*"like" + 0.005*"seem" + 0.005*"poem" + 0.005*"emperor" + 0.005*"time" + 0.004*"wind"
+2017-04-11 18:33:49,352 : INFO : topic #23 (0.033): 0.000*"even" + 0.000*"will" + 0.000*"feel" + 0.000*"father" + 0.000*"time" + 0.000*"like" + 0.000*"must" + 0.000*"one" + 0.000*"go" + 0.000*"way"
+2017-04-11 18:33:49,352 : INFO : topic diff=0.193466, rho=0.277350
+2017-04-11 18:34:05,898 : INFO : -7.732 per-word bound, 212.6 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:34:05,898 : INFO : PROGRESS: pass 13, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:34:09,022 : INFO : topic #25 (0.033): 0.007*"even" + 0.006*"poem" + 0.006*"feel" + 0.005*"day" + 0.005*"see" + 0.005*"look" + 0.005*"now" + 0.005*"genji" + 0.005*"thought" + 0.005*"perform"
+2017-04-11 18:34:09,023 : INFO : topic #17 (0.033): 0.012*"carriag" + 0.010*"ladi" + 0.008*"governor" + 0.006*"woman" + 0.005*"vice" + 0.005*"look" + 0.005*"way" + 0.005*"genji" + 0.005*"though" + 0.005*"one"
+2017-04-11 18:34:09,023 : INFO : topic #0 (0.033): 0.008*"even" + 0.007*"ladi" + 0.007*"feel" + 0.007*"look" + 0.006*"now" + 0.006*"like" + 0.006*"time" + 0.006*"though" + 0.005*"one" + 0.005*"day"
+2017-04-11 18:34:09,023 : INFO : topic #9 (0.033): 0.015*"daughter" + 0.010*"play" + 0.007*"koto" + 0.007*"son" + 0.007*"young" + 0.007*"time" + 0.006*"palac" + 0.006*"one" + 0.005*"instrument" + 0.005*"princess"
+2017-04-11 18:34:09,024 : INFO : topic #8 (0.033): 0.020*"monk" + 0.019*"fox" + 0.009*"human" + 0.008*"creatur" + 0.008*"main" + 0.007*"sell" + 0.007*"caretak" + 0.006*"sprite" + 0.006*"torch" + 0.004*"kitchen"
+2017-04-11 18:34:09,024 : INFO : topic diff=0.159672, rho=0.267261
+2017-04-11 18:34:25,451 : INFO : -7.726 per-word bound, 211.8 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:34:25,451 : INFO : PROGRESS: pass 14, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:34:28,548 : INFO : topic #23 (0.033): 0.000*"even" + 0.000*"will" + 0.000*"feel" + 0.000*"father" + 0.000*"time" + 0.000*"like" + 0.000*"must" + 0.000*"one" + 0.000*"go" + 0.000*"way"
+2017-04-11 18:34:28,549 : INFO : topic #19 (0.033): 0.018*"robe" + 0.011*"look" + 0.007*"women" + 0.007*"one" + 0.007*"ladi" + 0.006*"littl" + 0.005*"princess" + 0.005*"open" + 0.005*"like" + 0.005*"blind"
+2017-04-11 18:34:28,549 : INFO : topic #28 (0.033): 0.009*"cloak" + 0.008*"obi" + 0.007*"put" + 0.007*"two" + 0.006*"cloth" + 0.006*"genji" + 0.006*"hard" + 0.006*"flash" + 0.006*"firefli" + 0.005*"sash"
+2017-04-11 18:34:28,549 : INFO : topic #0 (0.033): 0.008*"even" + 0.007*"ladi" + 0.007*"feel" + 0.007*"look" + 0.006*"now" + 0.006*"like" + 0.006*"time" + 0.006*"though" + 0.005*"one" + 0.005*"day"
+2017-04-11 18:34:28,550 : INFO : topic #8 (0.033): 0.020*"monk" + 0.019*"fox" + 0.009*"human" + 0.008*"creatur" + 0.008*"main" + 0.007*"sell" + 0.007*"caretak" + 0.006*"sprite" + 0.006*"torch" + 0.004*"kitchen"
+2017-04-11 18:34:28,551 : INFO : topic diff=0.133225, rho=0.258199
+2017-04-11 18:34:44,980 : INFO : -7.722 per-word bound, 211.1 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:34:44,980 : INFO : PROGRESS: pass 15, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:34:48,101 : INFO : topic #21 (0.033): 0.007*"feel" + 0.007*"even" + 0.007*"princess" + 0.007*"one" + 0.006*"now" + 0.006*"look" + 0.006*"like" + 0.006*"go" + 0.005*"time" + 0.005*"just"
+2017-04-11 18:34:48,102 : INFO : topic #4 (0.033): 0.013*"ladi" + 0.012*"young" + 0.009*"back" + 0.009*"shosho" + 0.008*"place" + 0.008*"even" + 0.006*"face" + 0.006*"one" + 0.006*"like" + 0.006*"live"
+2017-04-11 18:34:48,102 : INFO : topic #3 (0.033): 0.010*"minist" + 0.009*"will" + 0.008*"ladi" + 0.008*"now" + 0.008*"daughter" + 0.007*"leav" + 0.007*"time" + 0.007*"left" + 0.007*"thing" + 0.006*"letter"
+2017-04-11 18:34:48,102 : INFO : topic #29 (0.033): 0.007*"wing" + 0.005*"fli" + 0.005*"possibl" + 0.005*"ukifun" + 0.005*"pomp" + 0.004*"nostalg" + 0.003*"anxiou" + 0.003*"great" + 0.003*"occur" + 0.003*"conclud"
+2017-04-11 18:34:48,102 : INFO : topic #24 (0.033): 0.008*"man" + 0.007*"daughter" + 0.006*"one" + 0.006*"young" + 0.006*"capit" + 0.006*"father" + 0.006*"even" + 0.006*"like" + 0.006*"will" + 0.005*"son"
+2017-04-11 18:34:48,103 : INFO : topic diff=0.112419, rho=0.250000
+2017-04-11 18:35:04,504 : INFO : -7.718 per-word bound, 210.5 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:35:04,505 : INFO : PROGRESS: pass 16, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:35:07,587 : INFO : topic #25 (0.033): 0.007*"even" + 0.006*"poem" + 0.006*"feel" + 0.005*"day" + 0.005*"see" + 0.005*"look" + 0.005*"now" + 0.005*"genji" + 0.005*"perform" + 0.005*"thought"
+2017-04-11 18:35:07,587 : INFO : topic #24 (0.033): 0.008*"man" + 0.007*"daughter" + 0.006*"one" + 0.006*"capit" + 0.006*"young" + 0.006*"father" + 0.006*"even" + 0.006*"like" + 0.006*"will" + 0.005*"son"
+2017-04-11 18:35:07,587 : INFO : topic #18 (0.033): 0.000*"like" + 0.000*"look" + 0.000*"one" + 0.000*"now" + 0.000*"feel" + 0.000*"even" + 0.000*"daughter" + 0.000*"princess" + 0.000*"woman" + 0.000*"ladi"
+2017-04-11 18:35:07,587 : INFO : topic #4 (0.033): 0.013*"ladi" + 0.012*"young" + 0.009*"back" + 0.009*"shosho" + 0.008*"place" + 0.008*"even" + 0.006*"face" + 0.006*"one" + 0.006*"like" + 0.006*"live"
+2017-04-11 18:35:07,588 : INFO : topic #29 (0.033): 0.007*"wing" + 0.005*"fli" + 0.005*"possibl" + 0.005*"ukifun" + 0.005*"pomp" + 0.004*"nostalg" + 0.003*"anxiou" + 0.003*"great" + 0.003*"occur" + 0.003*"conclud"
+2017-04-11 18:35:07,588 : INFO : topic diff=0.095893, rho=0.242536
+2017-04-11 18:35:24,071 : INFO : -7.714 per-word bound, 210.0 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:35:24,072 : INFO : PROGRESS: pass 17, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:35:27,182 : INFO : topic #15 (0.033): 0.009*"feel" + 0.009*"letter" + 0.008*"will" + 0.007*"now" + 0.007*"even" + 0.006*"thing" + 0.006*"husband" + 0.006*"repli" + 0.005*"think" + 0.005*"one"
+2017-04-11 18:35:27,182 : INFO : topic #9 (0.033): 0.015*"daughter" + 0.011*"play" + 0.008*"koto" + 0.007*"son" + 0.007*"young" + 0.007*"palac" + 0.007*"time" + 0.006*"one" + 0.006*"instrument" + 0.006*"princess"
+2017-04-11 18:35:27,183 : INFO : topic #11 (0.033): 0.016*"will" + 0.010*"feel" + 0.009*"look" + 0.008*"think" + 0.008*"come" + 0.008*"second" + 0.007*"women" + 0.007*"now" + 0.006*"genji" + 0.006*"princess"
+2017-04-11 18:35:27,183 : INFO : topic #22 (0.033): 0.009*"nun" + 0.008*"ladi" + 0.007*"young" + 0.007*"one" + 0.007*"world" + 0.007*"bishop" + 0.006*"now" + 0.006*"time" + 0.006*"mother" + 0.005*"like"
+2017-04-11 18:35:27,183 : INFO : topic #2 (0.033): 0.009*"autumn" + 0.008*"play" + 0.006*"garden" + 0.006*"even" + 0.006*"like" + 0.005*"poem" + 0.005*"seem" + 0.005*"emperor" + 0.005*"wind" + 0.004*"flute"
+2017-04-11 18:35:27,184 : INFO : topic diff=0.082673, rho=0.235702
+2017-04-11 18:35:43,606 : INFO : -7.711 per-word bound, 209.5 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:35:43,606 : INFO : PROGRESS: pass 18, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:35:46,713 : INFO : topic #13 (0.033): 0.003*"unhurri" + 0.003*"incredul" + 0.003*"escortdistinguish" + 0.003*"staffhad" + 0.003*"stridecr" + 0.003*"himhi" + 0.003*"reconcili" + 0.003*"acced" + 0.000*"brothersth" + 0.000*"son"
+2017-04-11 18:35:46,714 : INFO : topic #16 (0.033): 0.010*"princess" + 0.009*"banquet" + 0.008*"celebr" + 0.008*"made" + 0.007*"even" + 0.006*"present" + 0.006*"birth" + 0.006*"tray" + 0.006*"uji" + 0.005*"night"
+2017-04-11 18:35:46,714 : INFO : topic #1 (0.033): 0.003*"aggrievedthough" + 0.003*"housenot" + 0.000*"even" + 0.000*"will" + 0.000*"one" + 0.000*"like" + 0.000*"look" + 0.000*"feel" + 0.000*"go" + 0.000*"make"
+2017-04-11 18:35:46,714 : INFO : topic #3 (0.033): 0.011*"minist" + 0.008*"will" + 0.008*"ladi" + 0.008*"now" + 0.008*"daughter" + 0.008*"leav" + 0.007*"time" + 0.007*"left" + 0.007*"thing" + 0.007*"letter"
+2017-04-11 18:35:46,715 : INFO : topic #2 (0.033): 0.009*"autumn" + 0.008*"play" + 0.006*"garden" + 0.006*"even" + 0.006*"like" + 0.005*"poem" + 0.005*"seem" + 0.005*"emperor" + 0.005*"wind" + 0.004*"flute"
+2017-04-11 18:35:46,716 : INFO : topic diff=0.071982, rho=0.229416
+2017-04-11 18:36:03,144 : INFO : -7.708 per-word bound, 209.1 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:36:03,145 : INFO : PROGRESS: pass 19, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:36:06,221 : INFO : topic #26 (0.033): 0.017*"vice" + 0.014*"governor" + 0.013*"lesser" + 0.007*"favorit" + 0.005*"immort" + 0.005*"intermediari" + 0.004*"water" + 0.004*"fame" + 0.004*"clapper" + 0.004*"rippl"
+2017-04-11 18:36:06,221 : INFO : topic #15 (0.033): 0.009*"feel" + 0.009*"letter" + 0.008*"will" + 0.007*"now" + 0.007*"even" + 0.006*"thing" + 0.006*"husband" + 0.006*"repli" + 0.005*"think" + 0.005*"one"
+2017-04-11 18:36:06,222 : INFO : topic #11 (0.033): 0.016*"will" + 0.010*"feel" + 0.009*"look" + 0.008*"think" + 0.008*"second" + 0.008*"come" + 0.007*"women" + 0.007*"now" + 0.006*"genji" + 0.006*"princess"
+2017-04-11 18:36:06,222 : INFO : topic #19 (0.033): 0.019*"robe" + 0.011*"look" + 0.008*"women" + 0.007*"ladi" + 0.007*"one" + 0.006*"open" + 0.006*"littl" + 0.005*"door" + 0.005*"princess" + 0.005*"blind"
+2017-04-11 18:36:06,222 : INFO : topic #12 (0.033): 0.023*"tale" + 0.015*"stori" + 0.010*"read" + 0.009*"even" + 0.008*"illustr" + 0.006*"make" + 0.006*"matter" + 0.006*"world" + 0.005*"peopl" + 0.005*"may"
+2017-04-11 18:36:06,223 : INFO : topic diff=0.063283, rho=0.223607
+2017-04-11 18:36:22,607 : INFO : -7.705 per-word bound, 208.7 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:36:22,608 : INFO : PROGRESS: pass 20, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:36:25,697 : INFO : topic #13 (0.033): 0.003*"unhurri" + 0.003*"incredul" + 0.003*"escortdistinguish" + 0.003*"staffhad" + 0.003*"stridecr" + 0.003*"himhi" + 0.003*"reconcili" + 0.003*"acced" + 0.000*"brothersth" + 0.000*"son"
+2017-04-11 18:36:25,698 : INFO : topic #4 (0.033): 0.013*"ladi" + 0.012*"young" + 0.010*"shosho" + 0.009*"back" + 0.008*"place" + 0.008*"even" + 0.006*"face" + 0.006*"one" + 0.006*"like" + 0.006*"live"
+2017-04-11 18:36:25,698 : INFO : topic #23 (0.033): 0.000*"even" + 0.000*"will" + 0.000*"feel" + 0.000*"father" + 0.000*"time" + 0.000*"like" + 0.000*"must" + 0.000*"one" + 0.000*"go" + 0.000*"way"
+2017-04-11 18:36:25,698 : INFO : topic #3 (0.033): 0.011*"minist" + 0.008*"ladi" + 0.008*"will" + 0.008*"now" + 0.008*"daughter" + 0.008*"leav" + 0.007*"time" + 0.007*"letter" + 0.007*"thing" + 0.007*"left"
+2017-04-11 18:36:25,699 : INFO : topic #16 (0.033): 0.010*"princess" + 0.009*"banquet" + 0.009*"celebr" + 0.008*"made" + 0.007*"even" + 0.006*"present" + 0.006*"birth" + 0.006*"tray" + 0.006*"uji" + 0.005*"night"
+2017-04-11 18:36:25,699 : INFO : topic diff=0.056130, rho=0.218218
+2017-04-11 18:36:42,065 : INFO : -7.703 per-word bound, 208.4 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:36:42,065 : INFO : PROGRESS: pass 21, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:36:45,158 : INFO : topic #16 (0.033): 0.010*"princess" + 0.009*"banquet" + 0.009*"celebr" + 0.008*"made" + 0.007*"even" + 0.006*"present" + 0.006*"birth" + 0.006*"tray" + 0.006*"uji" + 0.005*"night"
+2017-04-11 18:36:45,159 : INFO : topic #19 (0.033): 0.019*"robe" + 0.011*"look" + 0.008*"women" + 0.007*"ladi" + 0.007*"one" + 0.006*"open" + 0.006*"littl" + 0.006*"door" + 0.005*"princess" + 0.005*"blind"
+2017-04-11 18:36:45,159 : INFO : topic #4 (0.033): 0.013*"ladi" + 0.012*"young" + 0.010*"shosho" + 0.009*"back" + 0.008*"even" + 0.008*"place" + 0.006*"face" + 0.006*"one" + 0.006*"like" + 0.006*"live"
+2017-04-11 18:36:45,159 : INFO : topic #26 (0.033): 0.017*"vice" + 0.015*"governor" + 0.013*"lesser" + 0.007*"favorit" + 0.005*"immort" + 0.005*"intermediari" + 0.004*"water" + 0.004*"fame" + 0.004*"clapper" + 0.004*"rippl"
+2017-04-11 18:36:45,159 : INFO : topic #14 (0.033): 0.007*"petit" + 0.003*"performancewa" + 0.003*"superbespeci" + 0.003*"fluteth" + 0.003*"venu" + 0.003*"kotoand" + 0.003*"fujibakama" + 0.003*"perfunctori" + 0.003*"curl" + 0.003*"estatei"
+2017-04-11 18:36:45,160 : INFO : topic diff=0.050204, rho=0.213201
+2017-04-11 18:37:01,427 : INFO : -7.701 per-word bound, 208.1 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:37:01,427 : INFO : PROGRESS: pass 22, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:37:04,629 : INFO : topic #20 (0.033): 0.011*"princ" + 0.011*"one" + 0.008*"sister" + 0.008*"tree" + 0.007*"mountain" + 0.007*"villa" + 0.006*"uji" + 0.005*"cat" + 0.005*"see" + 0.005*"illustr"
+2017-04-11 18:37:04,629 : INFO : topic #28 (0.033): 0.009*"cloak" + 0.008*"obi" + 0.007*"put" + 0.007*"two" + 0.006*"genji" + 0.006*"cloth" + 0.006*"flash" + 0.006*"hard" + 0.006*"firefli" + 0.005*"sash"
+2017-04-11 18:37:04,629 : INFO : topic #17 (0.033): 0.016*"carriag" + 0.012*"ladi" + 0.012*"governor" + 0.009*"vice" + 0.006*"woman" + 0.006*"genji" + 0.006*"process" + 0.005*"gate" + 0.005*"parti" + 0.005*"way"
+2017-04-11 18:37:04,630 : INFO : topic #3 (0.033): 0.011*"minist" + 0.008*"ladi" + 0.008*"will" + 0.008*"now" + 0.008*"daughter" + 0.008*"leav" + 0.007*"letter" + 0.007*"time" + 0.007*"thing" + 0.007*"left"
+2017-04-11 18:37:04,630 : INFO : topic #5 (0.033): 0.007*"one" + 0.007*"day" + 0.007*"even" + 0.006*"time" + 0.006*"look" + 0.005*"son" + 0.005*"year" + 0.005*"now" + 0.005*"feel" + 0.005*"princess"
+2017-04-11 18:37:04,631 : INFO : topic diff=0.045255, rho=0.208514
+2017-04-11 18:37:20,959 : INFO : -7.699 per-word bound, 207.8 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:37:20,959 : INFO : PROGRESS: pass 23, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:37:24,029 : INFO : topic #16 (0.033): 0.010*"princess" + 0.009*"banquet" + 0.009*"celebr" + 0.008*"made" + 0.007*"even" + 0.006*"present" + 0.006*"birth" + 0.006*"tray" + 0.006*"uji" + 0.005*"night"
+2017-04-11 18:37:24,030 : INFO : topic #12 (0.033): 0.023*"tale" + 0.016*"stori" + 0.010*"read" + 0.009*"even" + 0.008*"illustr" + 0.006*"make" + 0.006*"matter" + 0.006*"world" + 0.005*"peopl" + 0.005*"may"
+2017-04-11 18:37:24,030 : INFO : topic #27 (0.033): 0.007*"like" + 0.006*"sister" + 0.005*"way" + 0.005*"feel" + 0.005*"year" + 0.005*"repli" + 0.005*"even" + 0.005*"now" + 0.005*"princess" + 0.005*"mani"
+2017-04-11 18:37:24,031 : INFO : topic #17 (0.033): 0.016*"carriag" + 0.013*"governor" + 0.013*"ladi" + 0.009*"vice" + 0.006*"genji" + 0.006*"woman" + 0.006*"process" + 0.006*"gate" + 0.006*"parti" + 0.005*"way"
+2017-04-11 18:37:24,031 : INFO : topic #0 (0.033): 0.008*"even" + 0.007*"feel" + 0.007*"ladi" + 0.007*"look" + 0.006*"now" + 0.006*"like" + 0.006*"though" + 0.006*"time" + 0.005*"day" + 0.005*"one"
+2017-04-11 18:37:24,032 : INFO : topic diff=0.041084, rho=0.204124
+2017-04-11 18:37:40,465 : INFO : -7.697 per-word bound, 207.5 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:37:40,466 : INFO : PROGRESS: pass 24, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:37:43,554 : INFO : topic #21 (0.033): 0.008*"feel" + 0.008*"even" + 0.007*"princess" + 0.007*"one" + 0.006*"now" + 0.006*"look" + 0.006*"like" + 0.006*"go" + 0.005*"time" + 0.005*"just"
+2017-04-11 18:37:43,554 : INFO : topic #0 (0.033): 0.008*"even" + 0.007*"feel" + 0.007*"ladi" + 0.007*"look" + 0.006*"now" + 0.006*"like" + 0.006*"though" + 0.006*"time" + 0.005*"day" + 0.005*"one"
+2017-04-11 18:37:43,554 : INFO : topic #9 (0.033): 0.016*"daughter" + 0.012*"play" + 0.009*"koto" + 0.008*"son" + 0.008*"young" + 0.007*"palac" + 0.007*"time" + 0.006*"one" + 0.006*"captain" + 0.006*"instrument"
+2017-04-11 18:37:43,555 : INFO : topic #24 (0.033): 0.009*"man" + 0.007*"daughter" + 0.007*"capit" + 0.007*"father" + 0.006*"one" + 0.006*"young" + 0.006*"even" + 0.006*"like" + 0.006*"will" + 0.005*"nurs"
+2017-04-11 18:37:43,555 : INFO : topic #23 (0.033): 0.000*"even" + 0.000*"will" + 0.000*"feel" + 0.000*"father" + 0.000*"time" + 0.000*"like" + 0.000*"must" + 0.000*"one" + 0.000*"go" + 0.000*"way"
+2017-04-11 18:37:43,556 : INFO : topic diff=0.037539, rho=0.200000
+2017-04-11 18:37:59,952 : INFO : -7.695 per-word bound, 207.2 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:37:59,953 : INFO : PROGRESS: pass 25, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:38:03,050 : INFO : topic #1 (0.033): 0.003*"aggrievedthough" + 0.003*"housenot" + 0.000*"even" + 0.000*"will" + 0.000*"one" + 0.000*"like" + 0.000*"look" + 0.000*"feel" + 0.000*"go" + 0.000*"make"
+2017-04-11 18:38:03,051 : INFO : topic #13 (0.033): 0.003*"unhurri" + 0.003*"incredul" + 0.003*"escortdistinguish" + 0.003*"staffhad" + 0.003*"stridecr" + 0.003*"himhi" + 0.003*"reconcili" + 0.003*"acced" + 0.000*"brothersth" + 0.000*"son"
+2017-04-11 18:38:03,051 : INFO : topic #19 (0.033): 0.019*"robe" + 0.011*"look" + 0.008*"women" + 0.007*"ladi" + 0.007*"one" + 0.006*"open" + 0.006*"door" + 0.006*"littl" + 0.005*"blind" + 0.005*"like"
+2017-04-11 18:38:03,051 : INFO : topic #10 (0.033): 0.022*"emperor" + 0.014*"princ" + 0.013*"court" + 0.010*"crown" + 0.010*"majesti" + 0.010*"consort" + 0.009*"minist" + 0.009*"ceremoni" + 0.009*"palac" + 0.008*"son"
+2017-04-11 18:38:03,052 : INFO : topic #21 (0.033): 0.008*"feel" + 0.008*"even" + 0.007*"princess" + 0.007*"one" + 0.006*"now" + 0.006*"look" + 0.006*"like" + 0.006*"go" + 0.005*"time" + 0.005*"just"
+2017-04-11 18:38:03,052 : INFO : topic diff=0.034500, rho=0.196116
+2017-04-11 18:38:19,436 : INFO : -7.693 per-word bound, 207.0 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:38:19,436 : INFO : PROGRESS: pass 26, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:38:22,502 : INFO : topic #3 (0.033): 0.011*"minist" + 0.008*"ladi" + 0.008*"daughter" + 0.008*"now" + 0.008*"will" + 0.007*"leav" + 0.007*"letter" + 0.007*"thing" + 0.007*"time" + 0.006*"left"
+2017-04-11 18:38:22,502 : INFO : topic #9 (0.033): 0.016*"daughter" + 0.013*"play" + 0.009*"koto" + 0.009*"son" + 0.008*"young" + 0.007*"palac" + 0.007*"time" + 0.006*"one" + 0.006*"captain" + 0.006*"instrument"
+2017-04-11 18:38:22,502 : INFO : topic #7 (0.033): 0.008*"flower" + 0.008*"women" + 0.008*"spring" + 0.007*"poem" + 0.007*"umetsubo" + 0.007*"son" + 0.007*"garden" + 0.007*"chapter" + 0.006*"pond" + 0.006*"color"
+2017-04-11 18:38:22,503 : INFO : topic #20 (0.033): 0.011*"princ" + 0.011*"one" + 0.008*"sister" + 0.008*"tree" + 0.007*"mountain" + 0.007*"villa" + 0.007*"uji" + 0.005*"cat" + 0.005*"see" + 0.005*"illustr"
+2017-04-11 18:38:22,503 : INFO : topic #22 (0.033): 0.010*"nun" + 0.008*"ladi" + 0.007*"young" + 0.007*"world" + 0.007*"one" + 0.007*"bishop" + 0.007*"now" + 0.006*"mother" + 0.006*"time" + 0.005*"live"
+2017-04-11 18:38:22,504 : INFO : topic diff=0.031877, rho=0.192450
+2017-04-11 18:38:38,847 : INFO : -7.692 per-word bound, 206.7 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:38:38,847 : INFO : PROGRESS: pass 27, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:38:41,916 : INFO : topic #6 (0.033): 0.046*"cake" + 0.040*"rice" + 0.014*"box" + 0.010*"boar" + 0.007*"auspici" + 0.007*"tomorrow" + 0.004*"consumm" + 0.002*"flavor" + 0.002*"peacefuljust" + 0.002*"robesthen"
+2017-04-11 18:38:41,916 : INFO : topic #23 (0.033): 0.000*"even" + 0.000*"will" + 0.000*"feel" + 0.000*"father" + 0.000*"time" + 0.000*"like" + 0.000*"must" + 0.000*"one" + 0.000*"go" + 0.000*"way"
+2017-04-11 18:38:41,917 : INFO : topic #2 (0.033): 0.010*"autumn" + 0.008*"play" + 0.007*"garden" + 0.006*"even" + 0.006*"poem" + 0.006*"like" + 0.006*"seem" + 0.005*"emperor" + 0.005*"chines" + 0.005*"music"
+2017-04-11 18:38:41,917 : INFO : topic #26 (0.033): 0.018*"vice" + 0.016*"governor" + 0.013*"lesser" + 0.007*"favorit" + 0.006*"immort" + 0.005*"intermediari" + 0.004*"fame" + 0.004*"water" + 0.004*"clapper" + 0.004*"rippl"
+2017-04-11 18:38:41,917 : INFO : topic #24 (0.033): 0.009*"man" + 0.007*"daughter" + 0.007*"capit" + 0.007*"father" + 0.007*"young" + 0.006*"one" + 0.006*"even" + 0.006*"like" + 0.006*"will" + 0.005*"nurs"
+2017-04-11 18:38:41,918 : INFO : topic diff=0.029590, rho=0.188982
+2017-04-11 18:38:58,274 : INFO : -7.690 per-word bound, 206.5 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:38:58,275 : INFO : PROGRESS: pass 28, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:39:01,345 : INFO : topic #4 (0.033): 0.013*"ladi" + 0.013*"young" + 0.010*"shosho" + 0.009*"back" + 0.008*"even" + 0.008*"place" + 0.007*"face" + 0.006*"one" + 0.006*"like" + 0.006*"live"
+2017-04-11 18:39:01,346 : INFO : topic #6 (0.033): 0.046*"cake" + 0.040*"rice" + 0.014*"box" + 0.010*"boar" + 0.007*"auspici" + 0.007*"tomorrow" + 0.004*"consumm" + 0.002*"flavor" + 0.002*"peacefuljust" + 0.002*"robesthen"
+2017-04-11 18:39:01,346 : INFO : topic #18 (0.033): 0.000*"like" + 0.000*"look" + 0.000*"one" + 0.000*"now" + 0.000*"feel" + 0.000*"even" + 0.000*"daughter" + 0.000*"princess" + 0.000*"woman" + 0.000*"ladi"
+2017-04-11 18:39:01,346 : INFO : topic #24 (0.033): 0.009*"man" + 0.007*"capit" + 0.007*"daughter" + 0.007*"father" + 0.007*"young" + 0.006*"one" + 0.006*"even" + 0.006*"like" + 0.006*"will" + 0.005*"nurs"
+2017-04-11 18:39:01,347 : INFO : topic #11 (0.033): 0.017*"will" + 0.010*"feel" + 0.009*"second" + 0.009*"think" + 0.008*"look" + 0.008*"come" + 0.008*"koshosho" + 0.007*"women" + 0.007*"genji" + 0.006*"now"
+2017-04-11 18:39:01,347 : INFO : topic diff=0.027612, rho=0.185695
+2017-04-11 18:39:17,647 : INFO : -7.689 per-word bound, 206.3 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:39:17,647 : INFO : PROGRESS: pass 29, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:39:20,702 : INFO : topic #5 (0.033): 0.007*"day" + 0.007*"one" + 0.007*"even" + 0.006*"time" + 0.006*"look" + 0.005*"year" + 0.005*"son" + 0.005*"now" + 0.005*"princess" + 0.005*"feel"
+2017-04-11 18:39:20,702 : INFO : topic #4 (0.033): 0.014*"ladi" + 0.013*"young" + 0.010*"shosho" + 0.009*"back" + 0.008*"even" + 0.008*"place" + 0.007*"face" + 0.006*"one" + 0.006*"like" + 0.006*"live"
+2017-04-11 18:39:20,703 : INFO : topic #13 (0.033): 0.003*"unhurri" + 0.003*"incredul" + 0.003*"escortdistinguish" + 0.003*"staffhad" + 0.003*"stridecr" + 0.003*"himhi" + 0.003*"reconcili" + 0.003*"acced" + 0.000*"brothersth" + 0.000*"son"
+2017-04-11 18:39:20,703 : INFO : topic #3 (0.033): 0.012*"minist" + 0.008*"ladi" + 0.008*"daughter" + 0.008*"now" + 0.007*"leav" + 0.007*"letter" + 0.007*"will" + 0.007*"thing" + 0.007*"time" + 0.006*"left"
+2017-04-11 18:39:20,703 : INFO : topic #18 (0.033): 0.000*"like" + 0.000*"look" + 0.000*"one" + 0.000*"now" + 0.000*"feel" + 0.000*"even" + 0.000*"daughter" + 0.000*"princess" + 0.000*"woman" + 0.000*"ladi"
+2017-04-11 18:39:20,704 : INFO : topic diff=0.025868, rho=0.182574
+2017-04-11 18:39:37,084 : INFO : -7.687 per-word bound, 206.1 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:39:37,084 : INFO : PROGRESS: pass 30, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:39:40,181 : INFO : topic #8 (0.033): 0.021*"monk" + 0.020*"fox" + 0.010*"human" + 0.009*"creatur" + 0.008*"main" + 0.007*"sell" + 0.007*"caretak" + 0.006*"sprite" + 0.006*"torch" + 0.005*"form"
+2017-04-11 18:39:40,181 : INFO : topic #17 (0.033): 0.019*"carriag" + 0.016*"governor" + 0.014*"ladi" + 0.011*"vice" + 0.007*"process" + 0.007*"genji" + 0.006*"parti" + 0.006*"gate" + 0.006*"woman" + 0.006*"men"
+2017-04-11 18:39:40,182 : INFO : topic #3 (0.033): 0.012*"minist" + 0.008*"ladi" + 0.008*"daughter" + 0.008*"now" + 0.007*"leav" + 0.007*"letter" + 0.007*"will" + 0.007*"thing" + 0.007*"time" + 0.006*"left"
+2017-04-11 18:39:40,182 : INFO : topic #10 (0.033): 0.023*"emperor" + 0.015*"princ" + 0.014*"court" + 0.011*"majesti" + 0.011*"crown" + 0.010*"consort" + 0.010*"minist" + 0.010*"palac" + 0.009*"ceremoni" + 0.008*"son"
+2017-04-11 18:39:40,182 : INFO : topic #25 (0.033): 0.007*"even" + 0.006*"poem" + 0.006*"feel" + 0.006*"genji" + 0.006*"god" + 0.006*"day" + 0.005*"see" + 0.005*"thought" + 0.005*"look" + 0.005*"perform"
+2017-04-11 18:39:40,183 : INFO : topic diff=0.024337, rho=0.179605
+2017-04-11 18:39:56,706 : INFO : -7.686 per-word bound, 205.9 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:39:56,707 : INFO : PROGRESS: pass 31, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:39:59,791 : INFO : topic #9 (0.033): 0.017*"daughter" + 0.013*"play" + 0.009*"koto" + 0.009*"son" + 0.008*"young" + 0.007*"palac" + 0.007*"time" + 0.006*"captain" + 0.006*"one" + 0.006*"instrument"
+2017-04-11 18:39:59,792 : INFO : topic #14 (0.033): 0.007*"petit" + 0.003*"performancewa" + 0.003*"superbespeci" + 0.003*"fluteth" + 0.003*"venu" + 0.003*"kotoand" + 0.003*"fujibakama" + 0.003*"perfunctori" + 0.003*"curl" + 0.003*"estatei"
+2017-04-11 18:39:59,792 : INFO : topic #18 (0.033): 0.000*"like" + 0.000*"look" + 0.000*"one" + 0.000*"now" + 0.000*"feel" + 0.000*"even" + 0.000*"daughter" + 0.000*"princess" + 0.000*"woman" + 0.000*"ladi"
+2017-04-11 18:39:59,792 : INFO : topic #28 (0.033): 0.009*"cloak" + 0.008*"obi" + 0.007*"two" + 0.007*"put" + 0.006*"genji" + 0.006*"flash" + 0.006*"cloth" + 0.006*"hard" + 0.006*"firefli" + 0.005*"sash"
+2017-04-11 18:39:59,793 : INFO : topic #20 (0.033): 0.011*"princ" + 0.011*"one" + 0.009*"sister" + 0.008*"tree" + 0.008*"uji" + 0.007*"villa" + 0.007*"mountain" + 0.005*"cat" + 0.005*"see" + 0.005*"blossom"
+2017-04-11 18:39:59,793 : INFO : topic diff=0.022965, rho=0.176777
+2017-04-11 18:40:16,141 : INFO : -7.685 per-word bound, 205.8 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:40:16,141 : INFO : PROGRESS: pass 32, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:40:19,210 : INFO : topic #0 (0.033): 0.009*"even" + 0.007*"feel" + 0.006*"ladi" + 0.006*"look" + 0.006*"now" + 0.006*"though" + 0.006*"like" + 0.006*"time" + 0.005*"day" + 0.005*"one"
+2017-04-11 18:40:19,210 : INFO : topic #3 (0.033): 0.012*"minist" + 0.008*"ladi" + 0.008*"daughter" + 0.008*"now" + 0.007*"leav" + 0.007*"letter" + 0.007*"thing" + 0.007*"will" + 0.006*"time" + 0.006*"noviti"
+2017-04-11 18:40:19,211 : INFO : topic #11 (0.033): 0.017*"will" + 0.010*"second" + 0.010*"koshosho" + 0.010*"feel" + 0.009*"think" + 0.008*"look" + 0.008*"come" + 0.007*"genji" + 0.007*"women" + 0.006*"now"
+2017-04-11 18:40:19,211 : INFO : topic #12 (0.033): 0.023*"tale" + 0.016*"stori" + 0.010*"read" + 0.009*"even" + 0.008*"illustr" + 0.006*"make" + 0.006*"matter" + 0.006*"world" + 0.005*"peopl" + 0.005*"may"
+2017-04-11 18:40:19,211 : INFO : topic #23 (0.033): 0.000*"even" + 0.000*"will" + 0.000*"feel" + 0.000*"father" + 0.000*"time" + 0.000*"like" + 0.000*"must" + 0.000*"one" + 0.000*"go" + 0.000*"way"
+2017-04-11 18:40:19,212 : INFO : topic diff=0.021766, rho=0.174078
+2017-04-11 18:40:35,563 : INFO : -7.684 per-word bound, 205.6 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:40:35,564 : INFO : PROGRESS: pass 33, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:40:38,660 : INFO : topic #22 (0.033): 0.011*"nun" + 0.008*"ladi" + 0.008*"world" + 0.007*"young" + 0.007*"one" + 0.007*"mother" + 0.007*"bishop" + 0.007*"now" + 0.006*"time" + 0.005*"live"
+2017-04-11 18:40:38,661 : INFO : topic #25 (0.033): 0.007*"even" + 0.006*"poem" + 0.006*"feel" + 0.006*"genji" + 0.006*"god" + 0.006*"day" + 0.006*"see" + 0.005*"thought" + 0.005*"look" + 0.005*"perform"
+2017-04-11 18:40:38,661 : INFO : topic #5 (0.033): 0.007*"day" + 0.007*"one" + 0.007*"even" + 0.006*"time" + 0.006*"look" + 0.005*"year" + 0.005*"son" + 0.005*"now" + 0.005*"princess" + 0.005*"made"
+2017-04-11 18:40:38,661 : INFO : topic #20 (0.033): 0.011*"princ" + 0.011*"one" + 0.009*"sister" + 0.008*"tree" + 0.008*"uji" + 0.007*"villa" + 0.007*"mountain" + 0.005*"cat" + 0.005*"see" + 0.005*"blossom"
+2017-04-11 18:40:38,662 : INFO : topic #15 (0.033): 0.009*"will" + 0.009*"feel" + 0.008*"letter" + 0.007*"now" + 0.007*"even" + 0.006*"thing" + 0.006*"husband" + 0.005*"repli" + 0.005*"think" + 0.005*"one"
+2017-04-11 18:40:38,663 : INFO : topic diff=0.020679, rho=0.171499
+2017-04-11 18:40:55,026 : INFO : -7.683 per-word bound, 205.4 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:40:55,027 : INFO : PROGRESS: pass 34, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:40:58,108 : INFO : topic #16 (0.033): 0.010*"princess" + 0.009*"celebr" + 0.009*"banquet" + 0.008*"made" + 0.007*"even" + 0.007*"present" + 0.006*"birth" + 0.006*"tray" + 0.006*"uji" + 0.005*"night"
+2017-04-11 18:40:58,108 : INFO : topic #8 (0.033): 0.021*"monk" + 0.020*"fox" + 0.010*"human" + 0.009*"creatur" + 0.008*"main" + 0.007*"sell" + 0.007*"caretak" + 0.006*"sprite" + 0.006*"torch" + 0.005*"form"
+2017-04-11 18:40:58,109 : INFO : topic #10 (0.033): 0.024*"emperor" + 0.015*"princ" + 0.014*"court" + 0.011*"majesti" + 0.011*"crown" + 0.011*"consort" + 0.010*"palac" + 0.010*"minist" + 0.009*"ceremoni" + 0.008*"son"
+2017-04-11 18:40:58,109 : INFO : topic #11 (0.033): 0.017*"will" + 0.011*"koshosho" + 0.011*"second" + 0.010*"feel" + 0.009*"think" + 0.008*"come" + 0.008*"look" + 0.007*"genji" + 0.007*"women" + 0.006*"now"
+2017-04-11 18:40:58,109 : INFO : topic #1 (0.033): 0.003*"aggrievedthough" + 0.003*"housenot" + 0.000*"even" + 0.000*"will" + 0.000*"one" + 0.000*"like" + 0.000*"look" + 0.000*"feel" + 0.000*"go" + 0.000*"make"
+2017-04-11 18:40:58,110 : INFO : topic diff=0.019706, rho=0.169031
+2017-04-11 18:41:14,434 : INFO : -7.681 per-word bound, 205.3 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:41:14,434 : INFO : PROGRESS: pass 35, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:41:17,488 : INFO : topic #0 (0.033): 0.009*"even" + 0.007*"feel" + 0.006*"though" + 0.006*"now" + 0.006*"look" + 0.006*"like" + 0.006*"ladi" + 0.006*"time" + 0.006*"day" + 0.005*"one"
+2017-04-11 18:41:17,488 : INFO : topic #3 (0.033): 0.012*"minist" + 0.008*"daughter" + 0.008*"ladi" + 0.008*"now" + 0.007*"letter" + 0.007*"leav" + 0.007*"thing" + 0.007*"noviti" + 0.006*"will" + 0.006*"time"
+2017-04-11 18:41:17,488 : INFO : topic #10 (0.033): 0.024*"emperor" + 0.015*"princ" + 0.014*"court" + 0.011*"majesti" + 0.011*"crown" + 0.011*"consort" + 0.011*"palac" + 0.010*"minist" + 0.009*"ceremoni" + 0.008*"son"
+2017-04-11 18:41:17,489 : INFO : topic #20 (0.033): 0.012*"princ" + 0.011*"one" + 0.009*"sister" + 0.008*"uji" + 0.008*"tree" + 0.008*"villa" + 0.007*"mountain" + 0.005*"cat" + 0.005*"see" + 0.005*"blossom"
+2017-04-11 18:41:17,489 : INFO : topic #11 (0.033): 0.018*"will" + 0.011*"koshosho" + 0.011*"second" + 0.010*"feel" + 0.009*"think" + 0.008*"come" + 0.008*"look" + 0.007*"genji" + 0.007*"women" + 0.006*"now"
+2017-04-11 18:41:17,490 : INFO : topic diff=0.018827, rho=0.166667
+2017-04-11 18:41:33,857 : INFO : -7.680 per-word bound, 205.1 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:41:33,858 : INFO : PROGRESS: pass 36, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:41:36,910 : INFO : topic #0 (0.033): 0.009*"even" + 0.007*"feel" + 0.007*"though" + 0.006*"now" + 0.006*"look" + 0.006*"like" + 0.006*"ladi" + 0.006*"time" + 0.006*"day" + 0.005*"one"
+2017-04-11 18:41:36,911 : INFO : topic #21 (0.033): 0.008*"feel" + 0.008*"even" + 0.007*"princess" + 0.007*"one" + 0.006*"now" + 0.006*"look" + 0.006*"like" + 0.006*"go" + 0.005*"time" + 0.005*"just"
+2017-04-11 18:41:36,911 : INFO : topic #20 (0.033): 0.012*"princ" + 0.011*"one" + 0.009*"sister" + 0.008*"uji" + 0.008*"tree" + 0.008*"villa" + 0.007*"mountain" + 0.005*"cat" + 0.005*"see" + 0.005*"blossom"
+2017-04-11 18:41:36,911 : INFO : topic #15 (0.033): 0.009*"will" + 0.009*"feel" + 0.008*"letter" + 0.007*"now" + 0.007*"even" + 0.006*"thing" + 0.006*"husband" + 0.005*"repli" + 0.005*"one" + 0.005*"think"
+2017-04-11 18:41:36,911 : INFO : topic #9 (0.033): 0.017*"daughter" + 0.013*"play" + 0.009*"son" + 0.009*"koto" + 0.008*"young" + 0.008*"palac" + 0.007*"time" + 0.007*"captain" + 0.006*"one" + 0.006*"instrument"
+2017-04-11 18:41:36,912 : INFO : topic diff=0.018037, rho=0.164399
+2017-04-11 18:41:53,247 : INFO : -7.679 per-word bound, 205.0 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:41:53,248 : INFO : PROGRESS: pass 37, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:41:56,311 : INFO : topic #13 (0.033): 0.003*"unhurri" + 0.003*"incredul" + 0.003*"escortdistinguish" + 0.003*"staffhad" + 0.003*"stridecr" + 0.003*"himhi" + 0.003*"acced" + 0.003*"reconcili" + 0.000*"brothersth" + 0.000*"son"
+2017-04-11 18:41:56,311 : INFO : topic #16 (0.033): 0.010*"princess" + 0.009*"celebr" + 0.009*"banquet" + 0.008*"made" + 0.007*"even" + 0.007*"present" + 0.006*"birth" + 0.006*"tray" + 0.006*"uji" + 0.006*"night"
+2017-04-11 18:41:56,312 : INFO : topic #24 (0.033): 0.010*"man" + 0.007*"capit" + 0.007*"father" + 0.007*"daughter" + 0.007*"young" + 0.006*"one" + 0.006*"even" + 0.006*"provinc" + 0.006*"nurs" + 0.006*"will"
+2017-04-11 18:41:56,312 : INFO : topic #19 (0.033): 0.020*"robe" + 0.012*"look" + 0.009*"women" + 0.007*"ladi" + 0.007*"open" + 0.007*"one" + 0.007*"door" + 0.006*"littl" + 0.006*"like" + 0.006*"blind"
+2017-04-11 18:41:56,312 : INFO : topic #10 (0.033): 0.024*"emperor" + 0.015*"princ" + 0.015*"court" + 0.012*"majesti" + 0.011*"crown" + 0.011*"consort" + 0.011*"palac" + 0.010*"minist" + 0.009*"ceremoni" + 0.008*"son"
+2017-04-11 18:41:56,313 : INFO : topic diff=0.017314, rho=0.162221
+2017-04-11 18:42:12,641 : INFO : -7.678 per-word bound, 204.9 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:42:12,641 : INFO : PROGRESS: pass 38, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:42:15,693 : INFO : topic #5 (0.033): 0.007*"day" + 0.007*"one" + 0.007*"even" + 0.006*"time" + 0.006*"look" + 0.005*"year" + 0.005*"son" + 0.005*"now" + 0.005*"made" + 0.005*"princess"
+2017-04-11 18:42:15,693 : INFO : topic #13 (0.033): 0.003*"unhurri" + 0.003*"incredul" + 0.003*"escortdistinguish" + 0.003*"staffhad" + 0.003*"stridecr" + 0.003*"himhi" + 0.003*"acced" + 0.003*"reconcili" + 0.000*"brothersth" + 0.000*"son"
+2017-04-11 18:42:15,694 : INFO : topic #7 (0.033): 0.008*"flower" + 0.008*"spring" + 0.008*"women" + 0.008*"umetsubo" + 0.007*"poem" + 0.007*"garden" + 0.007*"son" + 0.007*"chapter" + 0.006*"pond" + 0.006*"color"
+2017-04-11 18:42:15,694 : INFO : topic #10 (0.033): 0.024*"emperor" + 0.015*"princ" + 0.015*"court" + 0.012*"majesti" + 0.011*"crown" + 0.011*"palac" + 0.011*"consort" + 0.010*"minist" + 0.009*"ceremoni" + 0.009*"son"
+2017-04-11 18:42:15,694 : INFO : topic #17 (0.033): 0.021*"carriag" + 0.020*"governor" + 0.016*"ladi" + 0.015*"vice" + 0.008*"process" + 0.007*"genji" + 0.007*"parti" + 0.007*"gate" + 0.006*"men" + 0.005*"provinc"
+2017-04-11 18:42:15,695 : INFO : topic diff=0.016635, rho=0.160128
+2017-04-11 18:42:32,088 : INFO : -7.678 per-word bound, 204.7 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:42:32,089 : INFO : PROGRESS: pass 39, dispatched chunk #0 = documents up to #640/640, outstanding queue size 1
+2017-04-11 18:42:35,132 : INFO : topic #10 (0.033): 0.024*"emperor" + 0.015*"princ" + 0.015*"court" + 0.012*"majesti" + 0.011*"crown" + 0.011*"palac" + 0.011*"consort" + 0.010*"minist" + 0.009*"ceremoni" + 0.009*"son"
+2017-04-11 18:42:35,132 : INFO : topic #24 (0.033): 0.010*"man" + 0.008*"capit" + 0.007*"father" + 0.007*"daughter" + 0.007*"young" + 0.006*"one" + 0.006*"provinc" + 0.006*"nurs" + 0.006*"even" + 0.006*"will"
+2017-04-11 18:42:35,132 : INFO : topic #18 (0.033): 0.000*"like" + 0.000*"look" + 0.000*"one" + 0.000*"now" + 0.000*"feel" + 0.000*"even" + 0.000*"daughter" + 0.000*"princess" + 0.000*"woman" + 0.000*"ladi"
+2017-04-11 18:42:35,133 : INFO : topic #17 (0.033): 0.021*"carriag" + 0.020*"governor" + 0.016*"ladi" + 0.015*"vice" + 0.008*"process" + 0.007*"genji" + 0.007*"parti" + 0.007*"gate" + 0.006*"men" + 0.005*"provinc"
+2017-04-11 18:42:35,133 : INFO : topic #0 (0.033): 0.009*"even" + 0.007*"feel" + 0.007*"though" + 0.006*"now" + 0.006*"like" + 0.006*"look" + 0.006*"ladi" + 0.006*"time" + 0.006*"day" + 0.005*"one"
+2017-04-11 18:42:35,134 : INFO : topic diff=0.016023, rho=0.158114
+2017-04-11 18:42:51,442 : INFO : -7.677 per-word bound, 204.6 perplexity estimate based on a held-out corpus of 640 documents with 296106 words
+2017-04-11 18:42:51,527 : INFO : LDA model generated.
+2017-04-11 18:42:52,176 : INFO : topic #0 (0.033): 0.009*"even" + 0.007*"feel" + 0.007*"though" + 0.006*"now" + 0.006*"like" + 0.006*"look" + 0.006*"ladi" + 0.006*"time" + 0.006*"day" + 0.005*"one" + 0.005*"tear" + 0.005*"will" + 0.005*"world" + 0.005*"long" + 0.004*"leav" + 0.004*"seem" + 0.004*"thought" + 0.004*"back" + 0.004*"villa" + 0.004*"just"
+2017-04-11 18:42:52,176 : INFO : topic #1 (0.033): 0.003*"aggrievedthough" + 0.003*"housenot" + 0.000*"even" + 0.000*"will" + 0.000*"one" + 0.000*"like" + 0.000*"look" + 0.000*"feel" + 0.000*"go" + 0.000*"make" + 0.000*"just" + 0.000*"think" + 0.000*"father" + 0.000*"seem" + 0.000*"now" + 0.000*"daughter" + 0.000*"know" + 0.000*"time" + 0.000*"women" + 0.000*"way"
+2017-04-11 18:42:52,177 : INFO : topic #2 (0.033): 0.011*"autumn" + 0.008*"play" + 0.007*"garden" + 0.006*"even" + 0.006*"poem" + 0.006*"like" + 0.006*"emperor" + 0.006*"seem" + 0.005*"chines" + 0.005*"danc" + 0.005*"music" + 0.005*"song" + 0.005*"palac" + 0.005*"spring" + 0.005*"flute" + 0.005*"wind" + 0.005*"son" + 0.004*"perform" + 0.004*"genji" + 0.004*"court"
+2017-04-11 18:42:52,177 : INFO : topic #3 (0.033): 0.012*"minist" + 0.009*"daughter" + 0.008*"ladi" + 0.008*"now" + 0.007*"letter" + 0.007*"thing" + 0.007*"leav" + 0.007*"noviti" + 0.006*"time" + 0.006*"feel" + 0.006*"left" + 0.006*"will" + 0.005*"paper" + 0.005*"robe" + 0.005*"even" + 0.005*"though" + 0.005*"know" + 0.005*"may" + 0.004*"old" + 0.004*"repli"
+2017-04-11 18:42:52,178 : INFO : topic #4 (0.033): 0.014*"ladi" + 0.013*"young" + 0.011*"shosho" + 0.009*"back" + 0.008*"even" + 0.008*"place" + 0.007*"face" + 0.006*"one" + 0.006*"like" + 0.006*"kannon" + 0.006*"live" + 0.006*"noviti" + 0.005*"go" + 0.005*"year" + 0.005*"now" + 0.005*"mother" + 0.005*"made" + 0.005*"felt" + 0.005*"pilgrimag" + 0.005*"think"
+2017-04-11 18:42:52,178 : INFO : topic #5 (0.033): 0.007*"day" + 0.007*"one" + 0.007*"even" + 0.006*"time" + 0.006*"look" + 0.005*"year" + 0.005*"son" + 0.005*"now" + 0.005*"made" + 0.005*"princess" + 0.004*"feel" + 0.004*"letter" + 0.004*"robe" + 0.004*"move" + 0.004*"world" + 0.004*"though" + 0.004*"long" + 0.004*"genji" + 0.004*"mani" + 0.004*"left"
+2017-04-11 18:42:52,179 : INFO : topic #6 (0.033): 0.047*"cake" + 0.040*"rice" + 0.014*"box" + 0.010*"boar" + 0.007*"auspici" + 0.007*"tomorrow" + 0.004*"consumm" + 0.002*"flavor" + 0.002*"peacefuljust" + 0.002*"robesthen" + 0.002*"enemyresolut" + 0.002*"drolli" + 0.002*"p" + 0.002*"humorless" + 0.002*"anotherto" + 0.002*"passionthough" + 0.002*"suzakuth" + 0.002*"pig" + 0.002*"spontan" + 0.002*"poemth"
+2017-04-11 18:42:52,179 : INFO : topic #7 (0.033): 0.008*"flower" + 0.008*"spring" + 0.008*"women" + 0.008*"umetsubo" + 0.007*"poem" + 0.007*"garden" + 0.007*"son" + 0.007*"chapter" + 0.006*"pond" + 0.006*"color" + 0.006*"wait" + 0.005*"day" + 0.005*"ladi" + 0.005*"wisteria" + 0.005*"come" + 0.005*"boat" + 0.005*"genji" + 0.004*"around" + 0.004*"perform" + 0.004*"resid"
+2017-04-11 18:42:52,180 : INFO : topic #8 (0.033): 0.021*"monk" + 0.020*"fox" + 0.010*"human" + 0.009*"creatur" + 0.008*"main" + 0.007*"sell" + 0.007*"caretak" + 0.006*"sprite" + 0.006*"torch" + 0.005*"form" + 0.005*"hall" + 0.005*"approach" + 0.005*"better" + 0.004*"kitchen" + 0.004*"apparit" + 0.004*"mudra" + 0.004*"fearless" + 0.004*"fals" + 0.004*"wood" + 0.004*"mugwort"
+2017-04-11 18:42:52,180 : INFO : topic #9 (0.033): 0.017*"daughter" + 0.013*"play" + 0.009*"son" + 0.009*"koto" + 0.008*"young" + 0.008*"palac" + 0.007*"time" + 0.007*"captain" + 0.006*"one" + 0.006*"instrument" + 0.006*"perform" + 0.006*"princess" + 0.006*"string" + 0.005*"major" + 0.005*"music" + 0.005*"princ" + 0.005*"seem" + 0.005*"minist" + 0.005*"father" + 0.005*"even"
+2017-04-11 18:42:52,180 : INFO : topic #10 (0.033): 0.024*"emperor" + 0.015*"princ" + 0.015*"court" + 0.012*"majesti" + 0.011*"crown" + 0.011*"palac" + 0.011*"consort" + 0.010*"minist" + 0.009*"ceremoni" + 0.009*"son" + 0.007*"imperi" + 0.007*"left" + 0.007*"genji" + 0.006*"rank" + 0.006*"serv" + 0.005*"young" + 0.005*"boy" + 0.005*"time" + 0.005*"daughter" + 0.005*"ladi"
+2017-04-11 18:42:52,181 : INFO : topic #11 (0.033): 0.018*"will" + 0.013*"koshosho" + 0.012*"second" + 0.010*"feel" + 0.009*"think" + 0.008*"come" + 0.008*"genji" + 0.008*"look" + 0.007*"women" + 0.006*"now" + 0.006*"princess" + 0.005*"thought" + 0.005*"thing" + 0.005*"say" + 0.005*"just" + 0.005*"peopl" + 0.005*"relationship" + 0.005*"like" + 0.004*"attend" + 0.004*"year"
+2017-04-11 18:42:52,181 : INFO : topic #12 (0.033): 0.023*"tale" + 0.016*"stori" + 0.010*"read" + 0.009*"even" + 0.008*"illustr" + 0.006*"make" + 0.006*"matter" + 0.006*"world" + 0.005*"peopl" + 0.005*"may" + 0.005*"find" + 0.005*"will" + 0.004*"differ" + 0.004*"quit" + 0.004*"realli" + 0.004*"bad" + 0.004*"princess" + 0.004*"never" + 0.004*"old" + 0.004*"good"
+2017-04-11 18:42:52,182 : INFO : topic #13 (0.033): 0.003*"unhurri" + 0.003*"incredul" + 0.003*"escortdistinguish" + 0.003*"staffhad" + 0.003*"stridecr" + 0.003*"himhi" + 0.003*"acced" + 0.003*"reconcili" + 0.000*"brothersth" + 0.000*"son" + 0.000*"look" + 0.000*"now" + 0.000*"one" + 0.000*"feel" + 0.000*"just" + 0.000*"time" + 0.000*"make" + 0.000*"even" + 0.000*"mother" + 0.000*"like"
+2017-04-11 18:42:52,182 : INFO : topic #14 (0.033): 0.007*"petit" + 0.003*"performancewa" + 0.003*"superbespeci" + 0.003*"fluteth" + 0.003*"venu" + 0.003*"kotoand" + 0.003*"fujibakama" + 0.003*"perfunctori" + 0.003*"curl" + 0.003*"estatei" + 0.003*"pendant" + 0.003*"heradv" + 0.003*"happensgo" + 0.003*"graynot" + 0.003*"granari" + 0.003*"stud" + 0.003*"breakneck" + 0.003*"xxx" + 0.003*"list" + 0.003*"treacher"
+2017-04-11 18:42:52,183 : INFO : topic #15 (0.033): 0.009*"will" + 0.009*"feel" + 0.008*"letter" + 0.007*"now" + 0.006*"even" + 0.006*"husband" + 0.006*"thing" + 0.005*"one" + 0.005*"repli" + 0.005*"think" + 0.005*"see" + 0.005*"make" + 0.005*"heart" + 0.005*"look" + 0.004*"can" + 0.004*"away" + 0.004*"night" + 0.004*"tell" + 0.004*"autumn" + 0.004*"way"
+2017-04-11 18:42:52,183 : INFO : topic #16 (0.033): 0.010*"princess" + 0.009*"celebr" + 0.009*"banquet" + 0.008*"made" + 0.007*"even" + 0.007*"present" + 0.006*"birth" + 0.006*"tray" + 0.006*"uji" + 0.006*"night" + 0.005*"son" + 0.005*"way" + 0.005*"attend" + 0.005*"minist" + 0.005*"now" + 0.005*"well" + 0.004*"ceremoni" + 0.004*"childbirth" + 0.004*"sponsor" + 0.004*"call"
+2017-04-11 18:42:52,183 : INFO : topic #17 (0.033): 0.021*"carriag" + 0.020*"governor" + 0.016*"ladi" + 0.015*"vice" + 0.008*"process" + 0.007*"genji" + 0.007*"parti" + 0.007*"gate" + 0.006*"men" + 0.005*"provinc" + 0.005*"woman" + 0.005*"way" + 0.005*"servant" + 0.005*"space" + 0.004*"set" + 0.004*"one" + 0.004*"meet" + 0.004*"resid" + 0.004*"view" + 0.004*"side"
+2017-04-11 18:42:52,184 : INFO : topic #18 (0.033): 0.000*"like" + 0.000*"look" + 0.000*"one" + 0.000*"now" + 0.000*"feel" + 0.000*"even" + 0.000*"daughter" + 0.000*"princess" + 0.000*"woman" + 0.000*"ladi" + 0.000*"time" + 0.000*"made" + 0.000*"young" + 0.000*"man" + 0.000*"just" + 0.000*"thought" + 0.000*"still" + 0.000*"seem" + 0.000*"will" + 0.000*"come"
+2017-04-11 18:42:52,184 : INFO : topic #19 (0.033): 0.020*"robe" + 0.012*"look" + 0.009*"women" + 0.007*"ladi" + 0.007*"open" + 0.007*"door" + 0.007*"one" + 0.006*"littl" + 0.006*"like" + 0.006*"blind" + 0.006*"insid" + 0.005*"princess" + 0.005*"room" + 0.005*"see" + 0.005*"line" + 0.005*"made" + 0.005*"color" + 0.005*"face" + 0.005*"white" + 0.005*"style"
+2017-04-11 18:42:52,185 : INFO : topic #20 (0.033): 0.012*"princ" + 0.011*"one" + 0.009*"sister" + 0.009*"uji" + 0.008*"tree" + 0.008*"villa" + 0.008*"mountain" + 0.005*"cat" + 0.005*"see" + 0.005*"blossom" + 0.005*"year" + 0.005*"even" + 0.004*"illustr" + 0.004*"capit" + 0.004*"princess" + 0.004*"pass" + 0.004*"felt" + 0.004*"live" + 0.004*"spring" + 0.004*"cherri"
+2017-04-11 18:42:52,185 : INFO : topic #21 (0.033): 0.008*"feel" + 0.008*"even" + 0.007*"princess" + 0.007*"one" + 0.006*"now" + 0.006*"look" + 0.006*"like" + 0.006*"go" + 0.005*"time" + 0.005*"just" + 0.005*"will" + 0.005*"thought" + 0.005*"woman" + 0.005*"think" + 0.005*"might" + 0.005*"make" + 0.005*"way" + 0.005*"man" + 0.005*"must" + 0.004*"ladi"
+2017-04-11 18:42:52,185 : INFO : topic #22 (0.033): 0.011*"nun" + 0.008*"ladi" + 0.008*"world" + 0.007*"young" + 0.007*"one" + 0.007*"mother" + 0.007*"now" + 0.007*"bishop" + 0.007*"time" + 0.006*"live" + 0.005*"take" + 0.005*"life" + 0.005*"priest" + 0.005*"must" + 0.005*"even" + 0.005*"spirit" + 0.005*"die" + 0.005*"will" + 0.005*"like" + 0.005*"woman"
+2017-04-11 18:42:52,186 : INFO : topic #23 (0.033): 0.000*"even" + 0.000*"will" + 0.000*"feel" + 0.000*"father" + 0.000*"time" + 0.000*"like" + 0.000*"must" + 0.000*"one" + 0.000*"go" + 0.000*"way" + 0.000*"day" + 0.000*"now" + 0.000*"genji" + 0.000*"come" + 0.000*"said" + 0.000*"women" + 0.000*"make" + 0.000*"princess" + 0.000*"ladi" + 0.000*"look"
+2017-04-11 18:42:52,186 : INFO : topic #24 (0.033): 0.010*"man" + 0.008*"capit" + 0.007*"father" + 0.007*"daughter" + 0.007*"young" + 0.006*"one" + 0.006*"provinc" + 0.006*"nurs" + 0.006*"even" + 0.006*"will" + 0.006*"like" + 0.006*"son" + 0.005*"noviti" + 0.005*"poem" + 0.004*"learn" + 0.004*"governor" + 0.004*"sea" + 0.004*"scholar" + 0.004*"feel" + 0.004*"anyth"
+2017-04-11 18:42:52,187 : INFO : topic #25 (0.033): 0.007*"even" + 0.006*"poem" + 0.006*"feel" + 0.006*"god" + 0.006*"genji" + 0.006*"day" + 0.006*"see" + 0.005*"thought" + 0.005*"sea" + 0.005*"one" + 0.005*"court" + 0.005*"perform" + 0.005*"look" + 0.004*"now" + 0.004*"shore" + 0.004*"suma" + 0.004*"though" + 0.004*"sleev" + 0.004*"ladi" + 0.004*"follow"
+2017-04-11 18:42:52,187 : INFO : topic #26 (0.033): 0.019*"vice" + 0.017*"governor" + 0.013*"lesser" + 0.007*"favorit" + 0.006*"immort" + 0.005*"intermediari" + 0.004*"clapper" + 0.004*"fame" + 0.004*"track" + 0.004*"rippl" + 0.004*"water" + 0.004*"waft" + 0.003*"defens" + 0.003*"deer" + 0.003*"indescrib" + 0.003*"meanwhil" + 0.002*"winecup" + 0.002*"dancer" + 0.002*"captur" + 0.002*"steer"
+2017-04-11 18:42:52,188 : INFO : topic #27 (0.033): 0.007*"like" + 0.006*"sister" + 0.005*"repli" + 0.005*"way" + 0.005*"year" + 0.005*"feel" + 0.005*"mani" + 0.005*"now" + 0.004*"make" + 0.004*"even" + 0.004*"pine" + 0.004*"princess" + 0.004*"young" + 0.004*"might" + 0.004*"thread" + 0.004*"follow" + 0.004*"want" + 0.003*"turn" + 0.003*"mountain" + 0.003*"seem"
+2017-04-11 18:42:52,188 : INFO : topic #28 (0.033): 0.009*"cloak" + 0.008*"obi" + 0.007*"two" + 0.007*"put" + 0.006*"genji" + 0.006*"flash" + 0.006*"cloth" + 0.006*"firefli" + 0.006*"hard" + 0.005*"sash" + 0.005*"sleev" + 0.004*"wrap" + 0.004*"note" + 0.004*"tamakazura" + 0.004*"piec" + 0.004*"hide" + 0.004*"return" + 0.004*"color" + 0.004*"help" + 0.003*"affair"
+2017-04-11 18:42:52,189 : INFO : topic #29 (0.033): 0.008*"wing" + 0.006*"fli" + 0.005*"possibl" + 0.005*"ukifun" + 0.004*"pomp" + 0.003*"nostalg" + 0.003*"great" + 0.003*"occur" + 0.003*"anxiou" + 0.003*"conclud" + 0.003*"meet" + 0.003*"disappoint" + 0.003*"anticip" + 0.003*"variou" + 0.003*"keep" + 0.003*"troubl" + 0.003*"memori" + 0.003*"hidden" + 0.003*"left" + 0.003*"best"
+[(0, u'0.009*"even" + 0.007*"feel" + 0.007*"though" + 0.006*"now" + 0.006*"like" + 0.006*"look" + 0.006*"ladi" + 0.006*"time" + 0.006*"day" + 0.005*"one" + 0.005*"tear" + 0.005*"will" + 0.005*"world" + 0.005*"long" + 0.004*"leav" + 0.004*"seem" + 0.004*"thought" + 0.004*"back" + 0.004*"villa" + 0.004*"just"'), (1, u'0.003*"aggrievedthough" + 0.003*"housenot" + 0.000*"even" + 0.000*"will" + 0.000*"one" + 0.000*"like" + 0.000*"look" + 0.000*"feel" + 0.000*"go" + 0.000*"make" + 0.000*"just" + 0.000*"think" + 0.000*"father" + 0.000*"seem" + 0.000*"now" + 0.000*"daughter" + 0.000*"know" + 0.000*"time" + 0.000*"women" + 0.000*"way"'), (2, u'0.011*"autumn" + 0.008*"play" + 0.007*"garden" + 0.006*"even" + 0.006*"poem" + 0.006*"like" + 0.006*"emperor" + 0.006*"seem" + 0.005*"chines" + 0.005*"danc" + 0.005*"music" + 0.005*"song" + 0.005*"palac" + 0.005*"spring" + 0.005*"flute" + 0.005*"wind" + 0.005*"son" + 0.004*"perform" + 0.004*"genji" + 0.004*"court"'), (3, u'0.012*"minist" + 0.009*"daughter" + 0.008*"ladi" + 0.008*"now" + 0.007*"letter" + 0.007*"thing" + 0.007*"leav" + 0.007*"noviti" + 0.006*"time" + 0.006*"feel" + 0.006*"left" + 0.006*"will" + 0.005*"paper" + 0.005*"robe" + 0.005*"even" + 0.005*"though" + 0.005*"know" + 0.005*"may" + 0.004*"old" + 0.004*"repli"'), (4, u'0.014*"ladi" + 0.013*"young" + 0.011*"shosho" + 0.009*"back" + 0.008*"even" + 0.008*"place" + 0.007*"face" + 0.006*"one" + 0.006*"like" + 0.006*"kannon" + 0.006*"live" + 0.006*"noviti" + 0.005*"go" + 0.005*"year" + 0.005*"now" + 0.005*"mother" + 0.005*"made" + 0.005*"felt" + 0.005*"pilgrimag" + 0.005*"think"'), (5, u'0.007*"day" + 0.007*"one" + 0.007*"even" + 0.006*"time" + 0.006*"look" + 0.005*"year" + 0.005*"son" + 0.005*"now" + 0.005*"made" + 0.005*"princess" + 0.004*"feel" + 0.004*"letter" + 0.004*"robe" + 0.004*"move" + 0.004*"world" + 0.004*"though" + 0.004*"long" + 0.004*"genji" + 0.004*"mani" + 0.004*"left"'), (6, u'0.047*"cake" + 0.040*"rice" + 0.014*"box" + 0.010*"boar" + 0.007*"auspici" + 0.007*"tomorrow" + 0.004*"consumm" + 0.002*"flavor" + 0.002*"peacefuljust" + 0.002*"robesthen" + 0.002*"enemyresolut" + 0.002*"drolli" + 0.002*"p" + 0.002*"humorless" + 0.002*"anotherto" + 0.002*"passionthough" + 0.002*"suzakuth" + 0.002*"pig" + 0.002*"spontan" + 0.002*"poemth"'), (7, u'0.008*"flower" + 0.008*"spring" + 0.008*"women" + 0.008*"umetsubo" + 0.007*"poem" + 0.007*"garden" + 0.007*"son" + 0.007*"chapter" + 0.006*"pond" + 0.006*"color" + 0.006*"wait" + 0.005*"day" + 0.005*"ladi" + 0.005*"wisteria" + 0.005*"come" + 0.005*"boat" + 0.005*"genji" + 0.004*"around" + 0.004*"perform" + 0.004*"resid"'), (8, u'0.021*"monk" + 0.020*"fox" + 0.010*"human" + 0.009*"creatur" + 0.008*"main" + 0.007*"sell" + 0.007*"caretak" + 0.006*"sprite" + 0.006*"torch" + 0.005*"form" + 0.005*"hall" + 0.005*"approach" + 0.005*"better" + 0.004*"kitchen" + 0.004*"apparit" + 0.004*"mudra" + 0.004*"fearless" + 0.004*"fals" + 0.004*"wood" + 0.004*"mugwort"'), (9, u'0.017*"daughter" + 0.013*"play" + 0.009*"son" + 0.009*"koto" + 0.008*"young" + 0.008*"palac" + 0.007*"time" + 0.007*"captain" + 0.006*"one" + 0.006*"instrument" + 0.006*"perform" + 0.006*"princess" + 0.006*"string" + 0.005*"major" + 0.005*"music" + 0.005*"princ" + 0.005*"seem" + 0.005*"minist" + 0.005*"father" + 0.005*"even"'), (10, u'0.024*"emperor" + 0.015*"princ" + 0.015*"court" + 0.012*"majesti" + 0.011*"crown" + 0.011*"palac" + 0.011*"consort" + 0.010*"minist" + 0.009*"ceremoni" + 0.009*"son" + 0.007*"imperi" + 0.007*"left" + 0.007*"genji" + 0.006*"rank" + 0.006*"serv" + 0.005*"young" + 0.005*"boy" + 0.005*"time" + 0.005*"daughter" + 0.005*"ladi"'), (11, u'0.018*"will" + 0.013*"koshosho" + 0.012*"second" + 0.010*"feel" + 0.009*"think" + 0.008*"come" + 0.008*"genji" + 0.008*"look" + 0.007*"women" + 0.006*"now" + 0.006*"princess" + 0.005*"thought" + 0.005*"thing" + 0.005*"say" + 0.005*"just" + 0.005*"peopl" + 0.005*"relationship" + 0.005*"like" + 0.004*"attend" + 0.004*"year"'), (12, u'0.023*"tale" + 0.016*"stori" + 0.010*"read" + 0.009*"even" + 0.008*"illustr" + 0.006*"make" + 0.006*"matter" + 0.006*"world" + 0.005*"peopl" + 0.005*"may" + 0.005*"find" + 0.005*"will" + 0.004*"differ" + 0.004*"quit" + 0.004*"realli" + 0.004*"bad" + 0.004*"princess" + 0.004*"never" + 0.004*"old" + 0.004*"good"'), (13, u'0.003*"unhurri" + 0.003*"incredul" + 0.003*"escortdistinguish" + 0.003*"staffhad" + 0.003*"stridecr" + 0.003*"himhi" + 0.003*"acced" + 0.003*"reconcili" + 0.000*"brothersth" + 0.000*"son" + 0.000*"look" + 0.000*"now" + 0.000*"one" + 0.000*"feel" + 0.000*"just" + 0.000*"time" + 0.000*"make" + 0.000*"even" + 0.000*"mother" + 0.000*"like"'), (14, u'0.007*"petit" + 0.003*"performancewa" + 0.003*"superbespeci" + 0.003*"fluteth" + 0.003*"venu" + 0.003*"kotoand" + 0.003*"fujibakama" + 0.003*"perfunctori" + 0.003*"curl" + 0.003*"estatei" + 0.003*"pendant" + 0.003*"heradv" + 0.003*"happensgo" + 0.003*"graynot" + 0.003*"granari" + 0.003*"stud" + 0.003*"breakneck" + 0.003*"xxx" + 0.003*"list" + 0.003*"treacher"'), (15, u'0.009*"will" + 0.009*"feel" + 0.008*"letter" + 0.007*"now" + 0.006*"even" + 0.006*"husband" + 0.006*"thing" + 0.005*"one" + 0.005*"repli" + 0.005*"think" + 0.005*"see" + 0.005*"make" + 0.005*"heart" + 0.005*"look" + 0.004*"can" + 0.004*"away" + 0.004*"night" + 0.004*"tell" + 0.004*"autumn" + 0.004*"way"'), (16, u'0.010*"princess" + 0.009*"celebr" + 0.009*"banquet" + 0.008*"made" + 0.007*"even" + 0.007*"present" + 0.006*"birth" + 0.006*"tray" + 0.006*"uji" + 0.006*"night" + 0.005*"son" + 0.005*"way" + 0.005*"attend" + 0.005*"minist" + 0.005*"now" + 0.005*"well" + 0.004*"ceremoni" + 0.004*"childbirth" + 0.004*"sponsor" + 0.004*"call"'), (17, u'0.021*"carriag" + 0.020*"governor" + 0.016*"ladi" + 0.015*"vice" + 0.008*"process" + 0.007*"genji" + 0.007*"parti" + 0.007*"gate" + 0.006*"men" + 0.005*"provinc" + 0.005*"woman" + 0.005*"way" + 0.005*"servant" + 0.005*"space" + 0.004*"set" + 0.004*"one" + 0.004*"meet" + 0.004*"resid" + 0.004*"view" + 0.004*"side"'), (18, u'0.000*"like" + 0.000*"look" + 0.000*"one" + 0.000*"now" + 0.000*"feel" + 0.000*"even" + 0.000*"daughter" + 0.000*"princess" + 0.000*"woman" + 0.000*"ladi" + 0.000*"time" + 0.000*"made" + 0.000*"young" + 0.000*"man" + 0.000*"just" + 0.000*"thought" + 0.000*"still" + 0.000*"seem" + 0.000*"will" + 0.000*"come"'), (19, u'0.020*"robe" + 0.012*"look" + 0.009*"women" + 0.007*"ladi" + 0.007*"open" + 0.007*"door" + 0.007*"one" + 0.006*"littl" + 0.006*"like" + 0.006*"blind" + 0.006*"insid" + 0.005*"princess" + 0.005*"room" + 0.005*"see" + 0.005*"line" + 0.005*"made" + 0.005*"color" + 0.005*"face" + 0.005*"white" + 0.005*"style"'), (20, u'0.012*"princ" + 0.011*"one" + 0.009*"sister" + 0.009*"uji" + 0.008*"tree" + 0.008*"villa" + 0.008*"mountain" + 0.005*"cat" + 0.005*"see" + 0.005*"blossom" + 0.005*"year" + 0.005*"even" + 0.004*"illustr" + 0.004*"capit" + 0.004*"princess" + 0.004*"pass" + 0.004*"felt" + 0.004*"live" + 0.004*"spring" + 0.004*"cherri"'), (21, u'0.008*"feel" + 0.008*"even" + 0.007*"princess" + 0.007*"one" + 0.006*"now" + 0.006*"look" + 0.006*"like" + 0.006*"go" + 0.005*"time" + 0.005*"just" + 0.005*"will" + 0.005*"thought" + 0.005*"woman" + 0.005*"think" + 0.005*"might" + 0.005*"make" + 0.005*"way" + 0.005*"man" + 0.005*"must" + 0.004*"ladi"'), (22, u'0.011*"nun" + 0.008*"ladi" + 0.008*"world" + 0.007*"young" + 0.007*"one" + 0.007*"mother" + 0.007*"now" + 0.007*"bishop" + 0.007*"time" + 0.006*"live" + 0.005*"take" + 0.005*"life" + 0.005*"priest" + 0.005*"must" + 0.005*"even" + 0.005*"spirit" + 0.005*"die" + 0.005*"will" + 0.005*"like" + 0.005*"woman"'), (23, u'0.000*"even" + 0.000*"will" + 0.000*"feel" + 0.000*"father" + 0.000*"time" + 0.000*"like" + 0.000*"must" + 0.000*"one" + 0.000*"go" + 0.000*"way" + 0.000*"day" + 0.000*"now" + 0.000*"genji" + 0.000*"come" + 0.000*"said" + 0.000*"women" + 0.000*"make" + 0.000*"princess" + 0.000*"ladi" + 0.000*"look"'), (24, u'0.010*"man" + 0.008*"capit" + 0.007*"father" + 0.007*"daughter" + 0.007*"young" + 0.006*"one" + 0.006*"provinc" + 0.006*"nurs" + 0.006*"even" + 0.006*"will" + 0.006*"like" + 0.006*"son" + 0.005*"noviti" + 0.005*"poem" + 0.004*"learn" + 0.004*"governor" + 0.004*"sea" + 0.004*"scholar" + 0.004*"feel" + 0.004*"anyth"'), (25, u'0.007*"even" + 0.006*"poem" + 0.006*"feel" + 0.006*"god" + 0.006*"genji" + 0.006*"day" + 0.006*"see" + 0.005*"thought" + 0.005*"sea" + 0.005*"one" + 0.005*"court" + 0.005*"perform" + 0.005*"look" + 0.004*"now" + 0.004*"shore" + 0.004*"suma" + 0.004*"though" + 0.004*"sleev" + 0.004*"ladi" + 0.004*"follow"'), (26, u'0.019*"vice" + 0.017*"governor" + 0.013*"lesser" + 0.007*"favorit" + 0.006*"immort" + 0.005*"intermediari" + 0.004*"clapper" + 0.004*"fame" + 0.004*"track" + 0.004*"rippl" + 0.004*"water" + 0.004*"waft" + 0.003*"defens" + 0.003*"deer" + 0.003*"indescrib" + 0.003*"meanwhil" + 0.002*"winecup" + 0.002*"dancer" + 0.002*"captur" + 0.002*"steer"'), (27, u'0.007*"like" + 0.006*"sister" + 0.005*"repli" + 0.005*"way" + 0.005*"year" + 0.005*"feel" + 0.005*"mani" + 0.005*"now" + 0.004*"make" + 0.004*"even" + 0.004*"pine" + 0.004*"princess" + 0.004*"young" + 0.004*"might" + 0.004*"thread" + 0.004*"follow" + 0.004*"want" + 0.003*"turn" + 0.003*"mountain" + 0.003*"seem"'), (28, u'0.009*"cloak" + 0.008*"obi" + 0.007*"two" + 0.007*"put" + 0.006*"genji" + 0.006*"flash" + 0.006*"cloth" + 0.006*"firefli" + 0.006*"hard" + 0.005*"sash" + 0.005*"sleev" + 0.004*"wrap" + 0.004*"note" + 0.004*"tamakazura" + 0.004*"piec" + 0.004*"hide" + 0.004*"return" + 0.004*"color" + 0.004*"help" + 0.003*"affair"'), (29, u'0.008*"wing" + 0.006*"fli" + 0.005*"possibl" + 0.005*"ukifun" + 0.004*"pomp" + 0.003*"nostalg" + 0.003*"great" + 0.003*"occur" + 0.003*"anxiou" + 0.003*"conclud" + 0.003*"meet" + 0.003*"disappoint" + 0.003*"anticip" + 0.003*"variou" + 0.003*"keep" + 0.003*"troubl" + 0.003*"memori" + 0.003*"hidden" + 0.003*"left" + 0.003*"best"')]
+saving ...
+
+Traceback (most recent call last):
+  File "ldamodel.py", line 168, in <module>
+    with open("out/" + foldername + "_doclabels.txt", "w") as f:
+IOError: [Errno 2] No such file or directory: 'out/books/genji/washburn/_doclabels.txt'
+Harshitas-MacBook-Pro:hum10-paper5 Harshita$ 

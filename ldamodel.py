@@ -57,7 +57,9 @@ exclude = set(["genji", "kiritsubo", "suzako", "kokiden", "fujitsubo",
                "ukifune", "ono", "hachinomiya", "im", "ive", "japonica",
                "sochinomiya", "niou", "suzaku", "kumoinokari", "reizei",
                "asagao", "gosechi", "roku", "kimi", "taifu", "bennokimi",
-               "ujinot",
+               "ujinot", "uji", "niou", "s", "tamakazura", "kemari",
+               "nakanobu", "asaka", "oborozukiyo", "kawachi", "kana", "shosho",
+               "wakana", "yugei", "izumo", "tatsuta", "moku",
                "naishi", "hatsuse"]).union(enstop)
 
 fromPickle = int(sys.argv[8]) == 1
@@ -88,7 +90,7 @@ def getReducedTokens(tags, dr, root):
     tkns = [x[2] for x in tags if
             x[1] != 'PRP' and x[1] != 'PRP$' and
             x[1] != 'NNP' and x[1] != 'NNPS' and
-            x[0] not in exclude and x[2] != "s"]
+            x[0] not in exclude and x[2] not in exclude]
     stems = nltk.Text(tkns)
     return stems
 
