@@ -10,6 +10,7 @@ from nltk.tokenize import RegexpTokenizer
 from optparse import OptionParser
 from nltk.probability import FreqDist
 import sys
+import os
 import logging
 
 logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s',
@@ -44,18 +45,23 @@ tokenizer = RegexpTokenizer(r'\w+')
 stemmer = PorterStemmer()
 enstop = set(get_stop_words('en'))
 exclude = set(["genji", "kiritsubo", "suzako", "kokiden", "fujitsubo",
-               "omyobu",
+               "kannon", "nakanokimi", "ichijo", "yamato", "jo", "chu"
+               "omyobu", "sadaijin", "chiunagon", "koremitz", "tayu",
+               "yugiri", "akikonomu", "ise", "kiri", "jijiu", "saigu",
+               "dainagon", "kokimi", "yokawa", "kosaisho", "ikaga",
                "chujo", "aoi", "kii", "iyo", "utsusemi", "kogimi", "nokiba",
                "koremitsu", "yugao", "ukon", "rokujo", "murasaki",
-               "shonagon", "jiju",
+               "shonagon", "jiju", "chiujio", "shionagon", "kerria",
                "kitayama", "amagimi", "hyobu", "hitachi", "akashi",
                "tamakazura", "kashiwagi", "kaoru", "oigimi", "naka",
-               "ukifune", "ono", "hachinomiya", "im", "ive",
+               "ukifune", "ono", "hachinomiya", "im", "ive", "japonica",
                "sochinomiya", "niou", "suzaku", "kumoinokari", "reizei",
-               "asagao", "gosechi", "roku", "kimi", "taifu"]).union(enstop)
+               "asagao", "gosechi", "roku", "kimi", "taifu", "bennokimi",
+               "ujinot",
+               "naishi", "hatsuse"]).union(enstop)
 
-fromPickle = True
-stemsFromPickle = False
+fromPickle = int(sys.argv[8]) == 1
+stemsFromPickle = int(sys.argv[9]) == 1
 
 translations = []
 
@@ -82,7 +88,7 @@ def getReducedTokens(tags, dr, root):
     tkns = [x[2] for x in tags if
             x[1] != 'PRP' and x[1] != 'PRP$' and
             x[1] != 'NNP' and x[1] != 'NNPS' and
-            x[0] not in exclude]
+            x[0] not in exclude and x[2] != "s"]
     stems = nltk.Text(tkns)
     return stems
 
@@ -107,36 +113,40 @@ def splitListIntoWindows(lst, wlen):
     return windows
 
 
-logging.info("generating text...")
-regularText = getText(dr, root, encoding)
-logging.info("text generated.")
-
-logging.info("tagging text...")
-taggedText = nltk.pos_tag(regularText.tokens)
-logging.info("text tagged.")
-
-logging.info("stemming text...")
-stemmedText = []
-stemmedDict = []
-for token in taggedText:
-    tk, pos = token
-    stm = stemmer.stem(tk)
-    stemmedText.append((tk, pos, stm))
-    stemmedDict.append(stm)
-logging.info("text stemmed.")
-
-logging.info("splitting text into windows...")
-slices = splitListIntoWindows(stemmedText, WINDOWS)
-logging.info("windows generated.")
-
-logging.info("reducing and cleaning slices...")
-reducedpickle = root + "reducedtext.pickle"
+reducedpickle = root + "reducedtext%d.pickle" % overlap
 if stemsFromPickle:
-    reducedslices = pickle.load(open(dr + reducedpickle, "rb"))
+    logging.info("loading reduced and cleaned slices from pickle...")
+    reducedSlices = pickle.load(open(dr + reducedpickle, "rb"))
+    stemmedDict = pickle.load(open(dr + root + "stemmeddict.pickle", "rb"))
+    logging.info("slices loaded.")
 else:
+    logging.info("generating text...")
+    regularText = getText(dr, root, encoding)
+    logging.info("text generated.")
+
+    logging.info("tagging text...")
+    taggedText = nltk.pos_tag(regularText.tokens)
+    logging.info("text tagged.")
+
+    logging.info("stemming text...")
+    stemmedText = []
+    stemmedDict = []
+    for token in taggedText:
+        tk, pos = token
+        stm = stemmer.stem(tk)
+        stemmedText.append((tk, pos, stm))
+        stemmedDict.append(stm)
+    logging.info("text stemmed.")
+    pickle.dump(stemmedDict, open(dr + root + "stemmeddict.pickle", "wb"))
+
+    logging.info("splitting text into windows...")
+    slices = splitListIntoWindows(stemmedText, WINDOWS)
+    logging.info("windows generated.")
+    logging.info("reducing and cleaning slices...")
+
     reducedSlices = [getReducedTokens(sl, dr, root) for sl in slices]
     pickle.dump(reducedSlices, open(dr + reducedpickle, "wb"))
-logging.info("slices reduced and cleaned.")
+    logging.info("slices reduced and cleaned.")
 
 logging.info("creating dictionary...")
 dictionary = corpora.Dictionary([stemmedDict])
@@ -156,24 +166,23 @@ pickle.dump(ldamodel,
                  (overlap, WINDOWS, TOPICS, PASSES), "wb"))
 print(ldamodel.print_topics(num_topics=TOPICS, num_words=20))
 
+topics = ldamodel.show_topics(num_topics=TOPICS)
+
 print("saving ...\n")
 
-if not os.path.exists("out"):
-    os.makedirs("out")
+if not os.path.exists(dr + "out"):
+    os.makedirs(dr + "out")
 
-foldername = dr
+foldername = dr + "out/ldamodel_overlap%d_w%d_t%d_p%d" % (overlap, WINDOWS,
+                                                          TOPICS, PASSES)
 
-with open("out/" + foldername + "_doclabels.txt", "w") as f:
-    for item in doc_labels:
-        f.write(item + "\n")
-
-with open("out/" + dr + "_topics.txt", "w") as f:
+with open(foldername + "_topics.txt", "w") as f:
     for item, i in zip(topics, enumerate(topics)):
         f.write("topic #" + str(i[0]) + ": " + str(item) + "\n")
 
-dictionary.save("out/" + foldername + ".dict")
-MmCorpus.serialize("out/" + foldername + ".mm", corpus)
-model.save("out/" + foldername + ".lda")
+dictionary.save(foldername + ".dict")
+corpora.MmCorpus.serialize(foldername + ".mm", corpus)
+ldamodel.save(foldername + ".lda")
 
 
 # fdist1 = FreqDist(textstems)
