@@ -181,7 +181,7 @@ else:
     logging.info("slices reduced and cleaned.")
 
 logging.info("creating dictionary...")
-dictionary = corpora.Dictionary([stemmedDict])
+dictionary = corpora.Dictionary(reducedSlices)
 logging.info("dictionary created.")
 
 logging.info("creating corpus...")
