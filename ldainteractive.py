@@ -1,3 +1,8 @@
+# The python code used to dynamically visualize
+# the topics for each text.
+# Harshita Gupta. Humanities Colloqium. Open-Ended Project 5. Spring 2017.
+
+
 from gensim.models import LdaModel
 from gensim.corpora import MmCorpus, Dictionary
 import sys

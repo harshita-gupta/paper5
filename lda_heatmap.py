@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 
+# The python code used to generate the heatmaps for each text.
+# Harshita Gupta. Humanities Colloqium. Open-Ended Project 5. Spring 2017.
+
 from gensim.corpora import MmCorpus
 from gensim.models import LdaModel
 import numpy as np
@@ -22,9 +25,11 @@ corpusname = file.split(".")[0]
 # load model
 
 doc_labels = []
+topicnum = 0
 with open(path + "/" + corpusname + "_doclabels.txt", "r") as f:
     for line in f:
-        doc_labels.append(line)
+        doc_labels.append("%d: %s" % (topicnum, line))
+        topicnum += 1
 
 corpus = MmCorpus(path + "/" + corpusname + ".mm")
 model = LdaModel.load(sys.argv[1])

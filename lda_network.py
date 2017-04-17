@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 
+# The python code in development for visualization the connections
+# between topics.
+# Harshita Gupta. Humanities Colloqium. Open-Ended Project 5. Spring 2017.
+
 from gensim.models import LdaModel
 import networkx as nx
 import matplotlib

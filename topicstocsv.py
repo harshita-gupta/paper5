@@ -1,3 +1,8 @@
+# The python code to turn the lda model's computed topics into a CSV file for
+# cloud generation.
+# Harshita Gupta. Humanities Colloqium. Open-Ended Project 5. Spring 2017.
+
+
 from gensim.models import LdaModel
 import sys
 import os
@@ -23,4 +28,4 @@ for i in range(0, model.num_topics):
         for (val, term) in terms:
             # print val, term
             # print type(val), type(term)
-            f.write("%s,%d,%d\n" % (val, int(term * 10000000), i))
+            f.write("%s,%d,%d\n" % (val, int(term * 100000), i))
