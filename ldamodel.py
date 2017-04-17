@@ -1,3 +1,8 @@
+# The python code used to train the LDA topic model and generate
+# the topics for each text.
+# Harshita Gupta. Humanities Colloqium. Open-Ended Project 5. Spring 2017.
+
+
 from nltk.collocations import *
 from nltk.stem.porter import PorterStemmer
 from stop_words import get_stop_words
@@ -7,8 +12,6 @@ import nltk
 import matplotlib
 from gensim import corpora, models
 from nltk.tokenize import RegexpTokenizer
-from optparse import OptionParser
-from nltk.probability import FreqDist
 import sys
 import os
 import logging
@@ -62,12 +65,13 @@ exclude = set(["genji", "kiritsubo", "suzako", "kokiden", "fujitsubo",
                "wakana", "yugei", "izumo", "tatsuta", "moku", "tsukushi",
                "kosaisho", "michisada", "sachuben", "kiyomidz", "mogi",
                "wistaria", "udaijin", "hiyojin", "tsubo", "jio",
-               "azechi", "kojiju", "korabu", "kurabu",
+               "azechi", "kojiju", "korabu", "kurabu", "tamakatsura",
+               "koshosho", "ivi", "tokitaka",
                "naishi", "hatsuse"]).union(enstop)
 
 fromPickle = int(sys.argv[8]) == 1
 stemsFromPickle = int(sys.argv[9]) == 1
-
+modifiedReduce = int(sys.argv[10]) == 1
 translations = []
 
 
@@ -90,10 +94,20 @@ def getText(dr, root, encoding):
 #  Removed stop words, proper nouns, and stems all results.
 #  takes tagged and stemmed words and returns tokens that match requirements.
 def getReducedTokens(tags, dr, root):
-    tkns = [x[2] for x in tags if
-            x[1] != 'PRP' and x[1] != 'PRP$' and
-            x[1] != 'NNP' and x[1] != 'NNPS' and
-            x[0] not in exclude and x[2] not in exclude]
+    if modifiedReduce:
+        tkns = [x[2] for x in tags if (x[1] == "NN" or x[1] == "NNS" or
+                x[1] == "RB" or x[1] == 'RBR' or x[1] == 'RBS' or
+                x[1] == 'VB' or x[1] == 'VBG' or x[1] == 'VBD' or
+                x[1] == 'VBN' or
+                x[1] == 'VBP' or x[1] == 'VBZ' or x[1] == 'JJ' or
+                x[1] == 'JJR' or x[1] == 'JJS') and
+                x[0] not in exclude and x[2] not in exclude]
+    else:
+        tkns = [x[2] for x in tags if
+                x[1] != 'PRP' and x[1] != 'PRP$' and
+                x[1] != 'NNP' and x[1] != 'NNPS' and
+                x[1] != "FW" and
+                x[0] not in exclude and x[2] not in exclude]
     stems = nltk.Text(tkns)
     return stems
 
@@ -178,7 +192,6 @@ logging.info("LDA model generated.")
 pickle.dump(ldamodel,
             open(dr + "ldamodel_overlap%d_w%d_t%d_p%d.pickle" %
                  (overlap, WINDOWS, TOPICS, PASSES), "wb"))
-print(ldamodel.print_topics(num_topics=TOPICS, num_words=20))
 
 topics = ldamodel.show_topics(num_topics=TOPICS)
 
@@ -187,8 +200,10 @@ print("saving ...\n")
 if not os.path.exists(dr + "out"):
     os.makedirs(dr + "out")
 
-foldername = dr + "out/ldamodel_overlap%d_w%d_t%d_p%d" % (overlap, WINDOWS,
-                                                          TOPICS, PASSES)
+foldername = dr + "out/ldamodel_overlap%d_w%d_t%d_p%d_modified%d" % (overlap,
+                                                        WINDOWS,
+                                                          TOPICS, PASSES,
+                                                          modifiedReduce)
 
 with open(foldername + "_doclabels.txt", "w") as f:
     for item in doc_labels:
@@ -201,19 +216,3 @@ with open(foldername + "_topics.txt", "w") as f:
 dictionary.save(foldername + ".dict")
 corpora.MmCorpus.serialize(foldername + ".mm", corpus)
 ldamodel.save(foldername + ".lda")
-
-
-# fdist1 = FreqDist(textstems)
-
-# print sorted([w for w in set(textstems) if fdist1[w] > 25],
-#     key = lambda x: fdist1[x])
-# print mytext.collocations()
-
-# bigram_measures = nltk.collocations.BigramAssocMeasures()
-
-# finder = BigramCollocationFinder.from_words(tokens)
-# scored = finder.score_ngrams(bigram_measures.raw_freq)
-# print sorted(bigram for bigram, score in scored)
-# sorted(finder.above_score(bigram_measures.raw_freq, 1.0 / len(tuple(nltk.bigrams(tokens)))))
-
- # doctest: +NORMALIZE_WHITESPACE
