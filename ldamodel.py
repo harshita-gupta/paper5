@@ -70,7 +70,10 @@ exclude = set(["genji", "kiritsubo", "suzako", "kokiden", "fujitsubo",
                "naishi", "hatsuse", "hachi", "sakon", "hotaru", "oyama",
                "tokikata", "yoshikiyo", "kami", "sama", "hikal", "shioshio",
                "udaiben", "kwannon", "kiyomidz", "koki", "kagura", "saisho",
-               "sumiyoshi", "suruga",
+               "sumiyoshi", "suruga", "yukihira", "ariwara", "kyushu",
+               "umetsubo", "agemaki", "kozeri", "suyetsumu", "kobai",
+               "himegimi", "higekuro", "omoto", "ochiba", "koma", "oshio",
+               "seki", "shikibu", "mikawa", "sanjo", "chunagon", "izumi",
                "myobu"]).union(enstop)
 
 fromPickle = int(sys.argv[8]) == 1
