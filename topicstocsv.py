@@ -24,7 +24,7 @@ if not os.path.exists(outfile):
 for i in range(0, model.num_topics):
     with open(outfile + "topic_words%02d.csv" % i, "wb") as f:
         f.write("text,size,topic\n")
-        terms = [(val, term) for val, term in model.show_topic(i, 100)]
+        terms = [(val, term) for val, term in model.show_topic(i, 25)]
         for (val, term) in terms:
             # print val, term
             # print type(val), type(term)
