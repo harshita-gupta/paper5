@@ -15,12 +15,12 @@ import os
 NUMTERMS = 50
 valthresh = 0.0040
 
-# womenwords = set(['daughter', 'ladi', 'princess', 'wife', 'women', 'woman',
-#                   'mother', 'girl', 'sister'])
+womenwords = set(['daughter', 'ladi', 'princess', 'wife', 'women', 'woman',
+                  'mother', 'girl', 'sister'])
 
 menwords = set(['son'])
 
-testwords = menwords
+testwords = womenwords
 
 
 #############
@@ -50,7 +50,6 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
 
     g = G.subgraph([term for term, _ in pos.items()])
     nx.draw_networkx_labels(g, pos, font_size=25, alpha=0.9)
-
     nx.draw_networkx_edges(G, pos, edgelist=G.edges(), edge_color='g',
                            alpha=0.3)
 
@@ -60,7 +59,7 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
                                    edge_color='r', weight=1.2)
 
     plt.axis('off')
-    plt.savefig(outfile % "-with-women")
+    plt.savefig(outfile % "-with-womenwords")
 
     plt.clf()
 
@@ -69,20 +68,17 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
     nodesToDel = []
     for n in G:
         if n in testwords:
-            # nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n),
-            #                        edge_color='r', alpha=0.0)
             nodesToDel.extend(list(sum(G.edges(n), ())))
 
     nodesToDel = set(nodesToDel)
 
     g = G.subgraph([term for term, _ in pos.items() if term not in nodesToDel])
     nx.draw_networkx_labels(g, pos, font_size=40, alpha=0.9)
-
     nx.draw_networkx_edges(g, pos, edgelist=g.edges(), edge_color='g',
                            alpha=0.3)
 
     plt.axis('off')
-    plt.savefig(outfile % "-no-women")
+    plt.savefig(outfile % "-no-womenwords")
 
     plt.clf()
 
