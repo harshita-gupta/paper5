@@ -15,8 +15,12 @@ import os
 NUMTERMS = 50
 valthresh = 0.0040
 
-womenwords = set(['daughter', 'ladi', 'princess', 'wife', 'women', 'woman',
-                  'mother', 'girl', 'sister'])
+# womenwords = set(['daughter', 'ladi', 'princess', 'wife', 'women', 'woman',
+#                   'mother', 'girl', 'sister'])
+
+menwords = set(['son'])
+
+testwords = menwords
 
 
 #############
@@ -37,7 +41,7 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
         for term in terms:
             for term2 in terms:
                 if term != term2:
-                    if term in womenwords or term2 in womenwords:
+                    if term in testwords or term2 in testwords:
                         G.add_edge(term, term2, color="red")
                     else:
                         G.add_edge(term, term2)
@@ -51,7 +55,7 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
                            alpha=0.3)
 
     for n in G:
-        if n in womenwords:
+        if n in testwords:
             nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n),
                                    edge_color='r', weight=1.2)
 
@@ -64,7 +68,7 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
 
     nodesToDel = []
     for n in G:
-        if n in womenwords:
+        if n in testwords:
             # nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n),
             #                        edge_color='r', alpha=0.0)
             nodesToDel.extend(list(sum(G.edges(n), ())))
@@ -84,7 +88,7 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
 
     # GRAPH 3
 
-    for womanword in womenwords:
+    for womanword in testwords:
         if womanword in G:
             nodesToKeep = set(list(sum(G.edges(womanword), ())))
             g = G.subgraph([term for term, _ in pos.items()
