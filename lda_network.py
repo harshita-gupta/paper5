@@ -13,37 +13,40 @@ import sys
 import os
 
 
+womenwords = ["daughter", 'ladi', 'princess', 'wife', 'women', 'woman',
+              'mother', 'girl']
+
 #############
 # cf. http://nbviewer.ipython.org/github/sgsinclair/alta/blob/master/ipynb/TopicModelling.ipynb#Graphing-Topic-Terms
 
-def graph_terms_to_topics(lda, outfile, num_terms=30):
+def graph_terms_to_topics(lda, outfile, num_terms=25):
 
     # create a new graph and size it
     G = nx.Graph()
-    plt.figure(figsize=(30, 30))
+    plt.figure(figsize=(50, 50))
 
     # generate the edges
     for i in range(0, lda.num_topics):
         topicLabel = "topic " + str(i)
-        terms = [term for val, term in lda.show_topic(i, num_terms)]
+        terms = [term for term, val in lda.show_topic(i, num_terms)]
         for term in terms:
             G.add_edge(topicLabel, term)
 
     # cf.
     # http://networkx.lanl.gov/reference/drawing.html#module-networkx.drawing.layout
     # positions for all nodes - k=0.020, iterations=30
-    pos = nx.spring_layout(G, k=0.060, iterations=30)
+    pos = nx.spring_layout(G, k=0.050, iterations=8000)
     # pos = nx.circular_layout(G)
     # pos = nx.shell_layout(G)
     # pos = nx.spectral_layout(G)
 
 
     # we'll plot topic labels and terms labels separately to have different colours
-    g = G.subgraph([topic for _, topic in pos.items() if "topic " in topic])
+    g = G.subgraph([topic for topic, _ in pos.items() if "topic " in str(topic)])
     nx.draw_networkx_labels(g, pos, font_color='c')
 
-    g = G.subgraph([term for _, term in pos.items() if "topic " not in term])
-    nx.draw_networkx_labels(g, pos, font_size=10, alpha=0.9)
+    g = G.subgraph([term for term, _ in pos.items() if "topic " not in str(term)])
+    nx.draw_networkx_labels(g, pos, font_size=16, alpha=0.9)
 
     # plot edges
     nx.draw_networkx_edges(G, pos, edgelist=G.edges(), edge_color='g',
