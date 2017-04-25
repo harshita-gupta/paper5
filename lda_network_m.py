@@ -12,14 +12,16 @@ import matplotlib.pyplot as plt
 import sys
 import os
 
+NUMTERMS = 50
+valthresh = 0.0035
 
-womenwords = ["daughter", 'ladi', 'princess', 'wife', 'women', 'woman',
-              'mother', 'girl', 'sister']
+womenwords = set(['daughter', 'ladi', 'princess', 'wife', 'women', 'woman',
+                  'mother', 'girl', 'sister'])
 
 #############
 # cf. http://nbviewer.ipython.org/github/sgsinclair/alta/blob/master/ipynb/TopicModelling.ipynb#Graphing-Topic-Terms
 
-def graph_terms_to_topics(lda, outfile, num_terms=25):
+def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
 
     # create a new graph and size it
     G = nx.Graph()
@@ -28,7 +30,8 @@ def graph_terms_to_topics(lda, outfile, num_terms=25):
     # generate the edges
     for i in range(0, lda.num_topics):
         # topicLabel = "topic " + str(i)
-        terms = [term for term, val in lda.show_topic(i, num_terms)]
+        terms = [term for term, val in lda.show_topic(i, num_terms) if val > valthresh]
+        print len(terms)
         if "competitor" in terms:
             continue
         if "rebukescoupl" in terms:
@@ -64,13 +67,28 @@ def graph_terms_to_topics(lda, outfile, num_terms=25):
                            alpha=0.3)
 
     for n in G:
-        #if 1 < G.degree(n) < num_terms: nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n), alpha=0.2)
         if n in womenwords:
             nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n),
-                                   edge_color='r', width=1.5)
+                                   edge_color='r', weight=1.2)
 
     plt.axis('off')
-    plt.savefig(outfile)
+    plt.savefig(outfile % "-with-women")
+
+    nodesToDel = []
+    for n in G:
+        #if 1 < G.degree(n) < num_terms: nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n), alpha=0.2)
+        if n in womenwords:
+            # nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n),
+            #                        edge_color='r', alpha=0.0)
+            nodesToDel.extend(list(sum(G.edges(n), ())))
+
+    nodesToDel = set(nodesToDel)
+    for node in nodesToDel:
+        G.remove_node(node)
+
+    plt.axis('off')
+    plt.savefig(outfile % "-no-women")
+
     # plt.show()
 
 
@@ -83,7 +101,7 @@ if len(sys.argv) < 2:
 path, file = os.path.split(sys.argv[1])
 corpusname = file.split(".")[0]
 outdir = "networks/dense/" + path.replace("/", "-").replace("-out", "").replace("books-genji-", "")
-outfile = outdir + "-network_m-%s.png" % sys.argv[2]
+outfile = outdir + "-network_m-w%s-%s-w%s.png" % (NUMTERMS, "%s", sys.argv[2])
 
 model = LdaModel.load(sys.argv[1])
 
