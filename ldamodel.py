@@ -79,6 +79,7 @@ exclude = set(["genji", "kiritsubo", "suzako", "kokiden", "fujitsubo",
 fromPickle = int(sys.argv[8]) == 1
 stemsFromPickle = int(sys.argv[9]) == 1
 modifiedReduce = int(sys.argv[10]) == 1
+noreduce = int(sys.argv[10]) == 99
 translations = []
 
 
@@ -101,7 +102,10 @@ def getText(dr, root, encoding):
 #  Removed stop words, proper nouns, and stems all results.
 #  takes tagged and stemmed words and returns tokens that match requirements.
 def getReducedTokens(tags, dr, root):
-    if modifiedReduce:
+    if noreduce:
+        tkns = [x[2] for x in tags if x[0] not in enstop and
+                x[2] not in enstop]
+    elif modifiedReduce:
         tkns = [x[2] for x in tags if (x[1] == "NN" or x[1] == "NNS" or
                 x[1] == "RB" or x[1] == 'RBR' or x[1] == 'RBS' or
                 x[1] == 'VB' or x[1] == 'VBG' or x[1] == 'VBD' or
