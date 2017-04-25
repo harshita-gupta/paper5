@@ -31,7 +31,6 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
     for i in range(0, lda.num_topics):
         # topicLabel = "topic " + str(i)
         terms = [term for term, val in lda.show_topic(i, num_terms) if val > valthresh]
-        print len(terms)
         if "competitor" in terms:
             continue
         if "rebukescoupl" in terms:
@@ -48,18 +47,9 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
 
     # cf.
     # http://networkx.lanl.gov/reference/drawing.html#module-networkx.drawing.layout
-    # positions for all nodes - k=0.020, iterations=30
     pos = nx.spring_layout(G, k=0.30, iterations=80000)
-    # pos = nx.circular_layout(G)
-    # pos = nx.shell_layout(G)
-    # pos = nx.spectral_layout(G)
 
-
-    # we'll plot topic labels and terms labels separately to have different colours
-    g = G.subgraph([topic for topic, _ in pos.items() if "topic " in str(topic)])
-    nx.draw_networkx_labels(g, pos, font_color='0.75')
-
-    g = G.subgraph([term for term, _ in pos.items() if "topic " not in str(term)])
+    g = G.subgraph([term for term, _ in pos.items()])
     nx.draw_networkx_labels(g, pos, font_size=25, alpha=0.9)
 
     # plot edges
@@ -71,21 +61,38 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
             nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n),
                                    edge_color='r', weight=1.2)
 
+    print len(G)
+
     plt.axis('off')
     plt.savefig(outfile % "-with-women")
 
+    plt.clf()
+
+
+    ##########
+    # GRAPH 2
+
     nodesToDel = []
     for n in G:
-        #if 1 < G.degree(n) < num_terms: nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n), alpha=0.2)
         if n in womenwords:
             # nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n),
             #                        edge_color='r', alpha=0.0)
             nodesToDel.extend(list(sum(G.edges(n), ())))
 
     nodesToDel = set(nodesToDel)
+
     for node in nodesToDel:
         G.remove_node(node)
 
+    g = G.subgraph([term for term, _ in pos.items() if term not in nodesToDel])
+    nx.draw_networkx_labels(g, pos, font_size=25, alpha=0.9)
+
+    # plot edges
+    nx.draw_networkx_edges(G, pos, edgelist=G.edges(), edge_color='g',
+                           alpha=0.3)
+
+
+    print len(G)
     plt.axis('off')
     plt.savefig(outfile % "-no-women")
 
