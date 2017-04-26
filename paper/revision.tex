@@ -12,14 +12,14 @@
 \usepackage{subcaption}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
-\lhead{} 
-\chead{} 
-\rhead{Gupta \thepage} 
-\lfoot{} 
-\cfoot{} 
-\rfoot{} 
-\renewcommand{\headrulewidth}{0pt} 
-\renewcommand{\footrulewidth}{0pt} 
+\lhead{}
+\chead{}
+\rhead{Gupta \thepage}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
 \newcommand{\bibent}{\noindent \hangindent 40pt}
 \newenvironment{workscited}{\newpage \begin{center} Works Cited \end{center}}{\newpage }
@@ -30,21 +30,21 @@
 
 \begin{document}
 \begin{flushleft}
-	
+
 
 \begin{spacing}{2.0}
 Harshita Gupta
 
-Humanities Colloqium 
+Humanities Colloqium
 
 April 26, 2017
 
 \begin{coverletter}
 \singlespacing
-In developing this revision, I used Franco Moretti's ``Network Theory, Plot Analysis'' from \booktitle{Distant Reading} as a model of a work in a similar genre. The day after our conference, I was finally able to get my network code to work, and figured out how to visualize topics as a graph connecting different words and elements across texts. This gave me a very productive experimental setup for understanding what I'd been interested in all along, the unique thematic 'structure' of each of the texts. As Moretti says in his analysis of Hamlet through a network of its plot, 
+In developing this revision, I used Franco Moretti's ``Network Theory, Plot Analysis'' from \booktitle{Distant Reading} as a model of a work in a similar genre. The day after our conference, I was finally able to get my network code to work, and figured out how to visualize topics as a graph connecting different words and elements across texts. This gave me a very productive experimental setup for understanding what I'd been interested in all along, the unique thematic 'structure' of each of the texts. As Moretti says in his analysis of Hamlet through a network of its plot,
 
 \begin{displayquote}
-Finally - and it is the most important thing of all, but also the most difficult - one can intervene on a model; make experiments. Take the protagonist again. For literary critics, this figure is important because it is a very meaningful part of the text; there is always a lot to be said about it; we would never think of discussing Hamlet—without Hamlet. But this is exactly what network theory tempts us to do: take the Hamlet-network, and remove Hamlet, to see what happens.	
+Finally - and it is the most important thing of all, but also the most difficult - one can intervene on a model; make experiments. Take the protagonist again. For literary critics, this figure is important because it is a very meaningful part of the text; there is always a lot to be said about it; we would never think of discussing Hamlet—without Hamlet. But this is exactly what network theory tempts us to do: take the Hamlet-network, and remove Hamlet, to see what happens.
 \end{displayquote}
 
 I engage in this process of "making experiments" on the networks that I produce, by deleting different variations of words like 'women', 'daughter', 'mother', and 'mistress', and subsequently understanding their effect on the network: to put it differently: I attempt to understand each translation with questions like ``What remains of the of each translation's depiction of women when we remove mentions of all male - associated women, like mothers, wives, and daughters?'' ``Do women remain in the networks, and to what extent, when we remove mentions of courtly duties and performance, versus when we remove mentions of feeling, emotion, and thought?'' How does each translation's network respond differently to these interventions?
@@ -52,13 +52,13 @@ I engage in this process of "making experiments" on the networks that I produce,
 
 
 \end{coverletter}
-	
+
 
 \begin{center}
 Title
 \end{center}
 
-\setlength{\parindent}{0.5in} 
+\setlength{\parindent}{0.5in}
 
 In Metonymy in The Tale of Genji: An Analysis of Translation Strategies, Janel R. Goodman Murakami compares occurrences of metonymy in a passage across translations of the Tale of Genji to assess how domesticated or foreign Suematsu’s, Waley’s, Seidensticker’s, and Tyler’s translations are, concluding that the more modern translators retain foreign elements of the text more faithfully than their earlier counterparts. In ``Going to Bed with Waley: How Murasaki Shikibu does and does not become world literature,'' Valerie Henitiuk uses a similar microanalytic approach, more commonly referred to as close-reading, to critique Waley’s translation of Genji and his portrayal of women. I build on the preexisting body of scholarship on Japanese to English translations of Genji, instead using the macroanalytic approach of topic modeling, to compute the themes across the translations, and analyze what discrepancy between translations reflects about the text’s portrayal of women. TODO EXPAND ON WHAT EXACTLY I ultimately build upon Murakami’s conclusion, determining that more recent translations not only portray Heian Japan more faithfully, but also elevate the position of women as individuals without ``censor[ing],'' as Henitiuk put it, male-female interactions to the same degree as older ones. TODO WHAT TYPE OF CENSORING, STAKES BECOME MORE CLEAR W DETAILS
 
@@ -71,7 +71,7 @@ Topic modeling is traditionally applied to multiple documents that are dissimila
 
 Themes in Washburn’s Translation, divided by mention of female words
 
-Female themes: 
+Female themes:
 1, 2, 3, 4, 5, 8, 10, 11, 13, 14, 16, 18
 
 1 affair (category: love and courtship)
@@ -81,16 +81,16 @@ boy woman man like affair night screen door sing never
 woman now young wife father older seem will sister felt
 
 3 robe-ladi (category: aesthetic)
-robe look ladi one like attend women young even woman 
+robe look ladi one like attend women young even woman
 
 4 blossom-daughter-tree (category: nature)
 blossom daughter cherri scatter sister tree right young one older
 
 5 umetsubo-error (error, model needs cleaning)
-ladi umetsubo move pine year spring one quadrant women left 
+ladi umetsubo move pine year spring one quadrant women left
 
 8 letter-man-daughter (category: non-specific)
-letter man time daughter may now one even like world 
+letter man time daughter may now one even like world
 
 10 princess-woman (category: love and courtship)
 princess woman one even look man women third feel will
@@ -98,23 +98,23 @@ princess woman one even look man women third feel will
 11 palace-daughter-majestic (category: royal court)
 daughter son prince palace emperor young majestic court minster father
 
-13 ladi-like-feel (category: unspecific) 
+13 ladi-like-feel (category: unspecific)
 now even time ladi like look feel come daughter might
-14 perform-princess-koto (category: performance) 
+14 perform-princess-koto (category: performance)
 play dance perform princess string koto third dancer rehearse little
 
-16 feel-world-thought-princess (category: feeling and thinking) 
+16 feel-world-thought-princess (category: feeling and thinking)
 even feel time one princess now look day world thought
 
-18 young-feel-ladi (category: feeling and thinking) 
-like even young feel ladi just go now must one 
+18 young-feel-ladi (category: feeling and thinking)
+like even young feel ladi just go now must one
 
-Themes without mentions of females: 
-0 day perform prince emperor banquet palace present poem music dance 
+Themes without mentions of females:
+0 day perform prince emperor banquet palace present poem music dance
 
 6 omoto like man appear love carriage path said world steward
 
-7 illustration painting art master court study talent able painter live 
+7 illustration painting art master court study talent able painter live
 
 9 play koto instrument string music hear moon perform flute old
 
@@ -124,7 +124,7 @@ Themes without mentions of females:
 
 17 nighttime scrap unidentified hoot extract traitor homecome stationmaster towrop qin [this one is bonkers!!!]
 
-19 blossom son plum robe spring tree cherri play one look 
+19 blossom son plum robe spring tree cherri play one look
 
 The themes discovered in the three translations, reproduced in the figures above, reveal clear differences between the three texts. The themes are reproduced with their theme number and theme descriptor (a few words from the theme that encompass how the theme is interpreted). TODO describe how themes are split up and process to identify female-related themes and non-female-related theems. In Washburn’s translation, 12 of the 20 themes discovered have female references --- words like ``woman'', ``lady'' (stemmed as ladi), ``daughter'' --- as one of their top 10 words. In Tyler’s, 8 of the 20 themes do, and in Waley’s, 6 of the 20 themes do. An analysis of the evolution of these themes over the text, visualized in the heat maps below, reveals that not only are there dramatically fewer female-related themes in the Tyler than the Washburn and in the Waley than the Tyler, but that the frequency of these female-related themes is lower in the same order as well. TODO: if i stick with this, elaborate on the frequency bit.
 
@@ -142,14 +142,14 @@ In the Washburn text, the word ``feel'' is the second-most salient one in the en
 	  	\end{subfigure}
 	\end{subfigure}\par\medskip
 	\begin{subfigure}{\linewidth}
-		\begin{subfigure}{.5\linewidth}	
-			\includegraphics[width=3in]{seidensticker-complete.png}\hfill	
+		\begin{subfigure}{.5\linewidth}
+			\includegraphics[width=3in]{seidensticker-complete.png}\hfill
 			\caption{Seidensticker}
 		\end{subfigure}
-		\begin{subfigure}{.5\linewidth}			
+		\begin{subfigure}{.5\linewidth}
 			\includegraphics[width=3in]{waley-complete.png}
 			\caption{Waley}
-		\end{subfigure}		
+		\end{subfigure}
 	\end{subfigure}
 	\caption{Thematic Structure: Female-Associated Connections in Red}
 	\label{full-networks}
@@ -158,50 +158,28 @@ In the Washburn text, the word ``feel'' is the second-most salient one in the en
 \begin{figure}
 	\begin{subfigure}{\linewidth}
 		\begin{subfigure}{.5\linewidth}
-	  		\includegraphics[width=3in]{washburn-complete.png}\hfill
+	  		\includegraphics[width=3in]{washburn-no-womenwords.png}\hfill
 	  		\caption{Washburn}
 	  	\end{subfigure}
 	  	\begin{subfigure}{.5\linewidth}
-	  		\includegraphics[width=3in]{tyler-complete.png}
+	  		\includegraphics[width=3in]{tyler-no-womenwords.png}
 	  		\caption{Tyler}
 	  	\end{subfigure}
 	\end{subfigure}\par\medskip
 	\begin{subfigure}{\linewidth}
-		\begin{subfigure}{.5\linewidth}	
-			\includegraphics[width=3in]{seidensticker-complete.png}\hfill	
+		\begin{subfigure}{.5\linewidth}
+			\includegraphics[width=3in]{seidensticker-no-womenwords.png}\hfill
 			\caption{Seidensticker}
 		\end{subfigure}
-		\begin{subfigure}{.5\linewidth}			
-			\includegraphics[width=3in]{waley-complete.png}
+		\begin{subfigure}{.5\linewidth}
+			\includegraphics[width=3in]{waley-no-womenwords.png}
 			\caption{Waley}
-		\end{subfigure}		
+		\end{subfigure}
 	\end{subfigure}
 	\caption{Thematic Structures Without Women}
 	\label{full-networks}
 \end{figure}
 
-
-%  \caption{Washburn's Thematic Structure: Female-Associated Connections in Red}
-%  
-%\end{figure}
-%
-%\begin{figure}
-%    \caption{Tyler's Thematic Structure: Female-Associated Connections in Red}
-%  \label{fig:tyler-full}
-%\end{figure}
-%
-%\begin{figure}
-%  
-%  \caption{Seidensticker's Thematic Structure: Female-Associated Connections in Red}
-%  \label{fig:seidensticker-full}
-%\end{figure}
-%
-%\begin{figure}
-%  
-%  \caption{Waley's Thematic Structure: Female-Associated Connections in Red}
-%  \label{fig:waley-full}
-%\end{figure}
-%
 \begin{figure}
   \includegraphics[width= 3in]{washburn-no-womenwords.png}
   \caption{Washburn Without Women-Associated Words}
@@ -228,11 +206,11 @@ In the Washburn text, the word ``feel'' is the second-most salient one in the en
 \end{figure}
 
 
-An analysis of each thematic network without women reveals the centrality of their role in all four translations of the Genji: the structure of Washburn collapses entirely, leaving a virtually nonexistent graph, (See Figure \ref{fig:washburn-no-womenwords}), Seidensticker 
+An analysis of each thematic network without women reveals the centrality of their role in all four translations of the Genji: the structure of Washburn collapses entirely, leaving a virtually nonexistent graph, (See Figure \ref{fig:washburn-no-womenwords}), Seidensticker
 
-The most intriguing changes, however, are when we remove individual female words rather than all female words in their entirety. Removal of the word 'mother' has different effects on each network, reducing Seidensticker's to a notably more romantic, sentimental, and courtship-heavy structure. In Waley's case, removal of the word "mother" results in 
+The most intriguing changes, however, are when we remove individual female words rather than all female words in their entirety. Removal of the word 'mother' has different effects on each network, reducing Seidensticker's to a notably more romantic, sentimental, and courtship-heavy structure. In Waley's case, removal of the word "mother" results in
 
-Removing feeling and thinking words, specifically 'feel', 'felt', 'think', 'thought', 'emot', removes all mention of females from Seidensticker's network. 
+Removing feeling and thinking words, specifically 'feel', 'felt', 'think', 'thought', 'emot', removes all mention of females from Seidensticker's network.
 
 Removing duty and palace-related words reduces the female network of Tyler almost exclusively to independent women-words, and removal of feeling-thinking words reduces the network almost entirely to male-independent women.
 \begin{workscited}
@@ -251,7 +229,7 @@ Removing duty and palace-related words reduces the female network of Tyler almos
 
 \bibent Murasaki Shikibu B. ''University of Oxford Text Archive.'' [OTA] \booktitle{The Tale of Genji} [Electronic Resource]. Trans. Edward G. Seidensticker. N.p., n.d. Web. 16 Apr. 2017. <http://ota.ox.ac.uk/desc/2245>.
 
-\bibent Murakami, Janel R. Goodman. ''Metonymy in The Tale of Genji: An Analysis of Translation Strategies.'' \booktitle{Arizona Working Papers in SLA and Teaching 20} (2013): 55-75.	
+\bibent Murakami, Janel R. Goodman. ''Metonymy in The Tale of Genji: An Analysis of Translation Strategies.'' \booktitle{Arizona Working Papers in SLA and Teaching 20} (2013): 55-75.
 
 \bibent Moretti, Franco. ``Network Theory, Plot Analysis.'' \booktitle{Distant Reading}. London: Verso, 2015. N. pag. Print.
 
