@@ -69,7 +69,10 @@ I apply digital topic modeling to break down and analyze three translations of G
 
 Topic modeling is traditionally applied to multiple documents that are dissimilar, as in the work by Jockers, and has been trained on corpuses containing multiple texts, 4500 poems in Rhody’s case and 4500 texts in Jockers case. These models develop generalized, often easily identifiable themes that can apply to texts across time and author, like Rhody’s ``night light moon stars day dark'' and ``tree green summer flowers grass'' topics. Topic modeling of the form they practice is useful when the purpose of the topics is to be used later in topic distribution comparison across texts, but is less useful when working with a single text. I train the LDA model, instead, on a single translation of Genji at a time, thereby developing topics that are far more specific to each translation’s ``thematic world,'' and useful in identifying the thematic differences underlying each translation. The interpretive advantage to this method is evident in the difference between the two topic word clouds reproduced side-by-side. One is from Jockers’ paper ``Theme'' in Microanalysis, and one is a theme discovered in Tyler’s translation of Genji. TODO add figure here. Word clouds \footnote{The topic word clouds in this project were generated using a modification of Elijah Meeks’ D3 word-cloud generator. Color and size of each word is used to indicate what percentage of the given topic is composed of that word.} for all twenty themes discovered in the three translations discussed can be found in Appendices D, E, and F.
 
-Themes in Washburn’s Translation, divided by mention of female words
+\fbox{\begin{minipage}{0.5\linewidth}
+\singlespacing
+\small
+\textbf{Themes in Washburn’s Translation, divided by mention of female words}
 
 Female themes:
 1, 2, 3, 4, 5, 8, 10, 11, 13, 14, 16, 18
@@ -109,7 +112,9 @@ even feel time one princess now look day world thought
 18 young-feel-ladi (category: feeling and thinking)
 like even young feel ladi just go now must one
 
-Themes without mentions of females:
+
+\textbf{Themes without mentions of females:}
+
 0 day perform prince emperor banquet palace present poem music dance
 
 6 omoto like man appear love carriage path said world steward
@@ -122,9 +127,12 @@ Themes without mentions of females:
 
 15 outing yamabuki overspread venu twig retun woodcuts rot paddle store
 
-17 nighttime scrap unidentified hoot extract traitor homecome stationmaster towrop qin [this one is bonkers!!!]
+17 nighttime scrap unidentified hoot extract traitor homecome stationmaster towrop qin 
 
 19 blossom son plum robe spring tree cherri play one look
+\end{minipage}}
+
+
 
 The themes discovered in the three translations, reproduced in the figures above, reveal clear differences between the three texts. The themes are reproduced with their theme number and theme descriptor (a few words from the theme that encompass how the theme is interpreted). TODO describe how themes are split up and process to identify female-related themes and non-female-related theems. In Washburn’s translation, 12 of the 20 themes discovered have female references --- words like ``woman'', ``lady'' (stemmed as ladi), ``daughter'' --- as one of their top 10 words. In Tyler’s, 8 of the 20 themes do, and in Waley’s, 6 of the 20 themes do. An analysis of the evolution of these themes over the text, visualized in the heat maps below, reveals that not only are there dramatically fewer female-related themes in the Tyler than the Washburn and in the Waley than the Tyler, but that the frequency of these female-related themes is lower in the same order as well. TODO: if i stick with this, elaborate on the frequency bit.
 
