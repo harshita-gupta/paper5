@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 APR 2017 13:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 APR 2017 17:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -121,7 +121,28 @@ Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
 Package csquotes Info: ... configuration file loaded successfully.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.cfg
 File: csquotes.cfg 
-)) (/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+)) (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen113
+\captionmargin@=\dimen114
+\captionwidth=\dimen115
+\caption@tempdima=\dimen116
+\caption@indent=\dimen117
+\caption@parindent=\dimen118
+\caption@hangindent=\dimen119
+)
+\c@ContinuedFloat=\count100
+Package caption Info: rotating package is loaded.
+)
+\c@subfigure=\count101
+\c@subtable=\count102
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip45
 \f@ncyO@elh=\skip46
 \f@ncyO@erh=\skip47
@@ -147,33 +168,33 @@ LaTeX Warning: Label `fig:washburn-no-womenwords' multiply defined.
 )
 \openout1 = `revision.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 30.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 31.
  (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count100
-\scratchdimen=\dimen113
+\scratchcounter=\count103
+\scratchdimen=\dimen120
 \scratchbox=\box27
-\nofMPsegments=\count101
-\nofMParguments=\count102
+\nofMPsegments=\count104
+\nofMParguments=\count105
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count103
-\MPscratchDim=\dimen114
-\MPnumerator=\count104
-\makeMPintoPDFobject=\count105
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen121
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
 \everyMPtoPDFconversion=\toks19
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO)
@@ -228,6 +249,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
@@ -261,6 +284,12 @@ Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
+
+
+LaTeX Warning: Reference `fig:washburn-full' on page 2 undefined on input line 66.
+
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
@@ -271,15 +300,15 @@ Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 67.
+(Font)              <12> on input line 68.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 67.
+(Font)              <8> on input line 68.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 67.
+(Font)              <6> on input line 68.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 67.
+(Font)              <7> on input line 68.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 67.
+(Font)              <5> on input line 68.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
@@ -317,7 +346,7 @@ Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- [2]
+[2]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
@@ -357,49 +386,77 @@ Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no   in font ptmr7t!
- [6] <washburn-complete.png, id=23, 2116.0656pt x 2116.0656pt>
+ [6] <washburn-complete.png, id=24, 1691.8407pt x 1691.8407pt>
 File: washburn-complete.png Graphic file (type png)
  <use washburn-complete.png>
-Package pdftex.def Info: washburn-complete.png used on input line 133.
-(pdftex.def)             Requested size: 216.81pt x 216.78511pt.
- <washburn-no-womenwords.png, id=25, 3613.5pt x 3613.5pt>
+Package pdftex.def Info: washburn-complete.png used on input line 136.
+(pdftex.def)             Requested size: 216.81pt x 216.79753pt.
+ <tyler-complete.png, id=26, 1707.0174pt x 1707.0174pt>
+File: tyler-complete.png Graphic file (type png)
+ <use tyler-complete.png>
+Package pdftex.def Info: tyler-complete.png used on input line 140.
+(pdftex.def)             Requested size: 216.81pt x 216.7888pt.
+
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 135--143
+[]$[]$ $[]$ 
+ []
+
+<seidensticker-complete.png, id=27, 1696.1769pt x 1696.1769pt>
+File: seidensticker-complete.png Graphic file (type png)
+ <use seidensticker-complete.png>
+Package pdftex.def Info: seidensticker-complete.png used on input line 146.
+(pdftex.def)             Requested size: 216.81pt x 216.80968pt.
+ <waley-complete.png, id=28, 1693.2861pt x 1693.2861pt>
+File: waley-complete.png Graphic file (type png)
+ <use waley-complete.png>
+Package pdftex.def Info: waley-complete.png used on input line 150.
+(pdftex.def)             Requested size: 216.81pt x 216.8019pt.
+
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 145--153
+[]$[]$ $[]$ 
+ []
+
+<washburn-no-womenwords.png, id=29, 2346.6069pt x 2346.6069pt>
 File: washburn-no-womenwords.png Graphic file (type png)
  <use washburn-no-womenwords.png>
-Package pdftex.def Info: washburn-no-womenwords.png used on input line 139.
-(pdftex.def)             Requested size: 216.81pt x 216.80064pt.
- <tyler-no-womenwords.png, id=26, 3613.5pt x 3613.5pt>
+Package pdftex.def Info: washburn-no-womenwords.png used on input line 180.
+(pdftex.def)             Requested size: 216.81pt x 216.8071pt.
+ <tyler-no-womenwords.png, id=30, 2530.8954pt x 2530.8954pt>
 File: tyler-no-womenwords.png Graphic file (type png)
  <use tyler-no-womenwords.png>
-Package pdftex.def Info: tyler-no-womenwords.png used on input line 145.
-(pdftex.def)             Requested size: 216.81pt x 216.80064pt.
- <seidensticker-no-womenwords.png, id=27, 3613.5pt x 3613.5pt>
+Package pdftex.def Info: tyler-no-womenwords.png used on input line 186.
+(pdftex.def)             Requested size: 216.81pt x 216.80316pt.
+ <seidensticker-no-womenwords.png, id=31, 2592.3249pt x 2592.3249pt>
 File: seidensticker-no-womenwords.png Graphic file (type png)
  <use seidensticker-no-womenwords.png>
-Package pdftex.def Info: seidensticker-no-womenwords.png used on input line 151.
-(pdftex.def)             Requested size: 216.81pt x 216.80064pt.
- <waley-no-womenwords.png, id=28, 3613.5pt x 3613.5pt>
+Package pdftex.def Info: seidensticker-no-womenwords.png used on input line 192.
+(pdftex.def)             Requested size: 216.81pt x 216.80447pt.
+ <waley-no-womenwords.png, id=32, 2518.6095pt x 2518.6095pt>
 File: waley-no-womenwords.png Graphic file (type png)
  <use waley-no-womenwords.png>
-Package pdftex.def Info: waley-no-womenwords.png used on input line 158.
-(pdftex.def)             Requested size: 216.81pt x 216.80064pt.
- [7 <./washburn-complete.png>] [8 <./washburn-no-womenwords.png> <./tyler-no-womenwords.png>] [9 <./seidensticker-no-womenwords.png> <./waley-no-womenwords.png>] [10] [11] (/Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.aux)
+Package pdftex.def Info: waley-no-womenwords.png used on input line 199.
+(pdftex.def)             Requested size: 216.81pt x 216.78835pt.
+ [7] [8 <./washburn-complete.png> <./tyler-complete.png> <./seidensticker-complete.png> <./waley-complete.png>] [9 <./washburn-no-womenwords.png> <./tyler-no-womenwords.png>] [10 <./seidensticker-no-womenwords.png> <./waley-no-womenwords.png>] [11] (/Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3179 strings out of 493014
- 46662 string characters out of 6133351
- 126174 words of memory out of 5000000
- 6673 multiletter control sequences out of 15000+600000
- 16084 words of font info for 35 fonts, out of 8000000 for 9000
+ 4314 strings out of 493014
+ 67193 string characters out of 6133351
+ 146901 words of memory out of 5000000
+ 7793 multiletter control sequences out of 15000+600000
+ 19295 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,12n,43p,3277b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.pdf (11 pages, 6957531 bytes).
+ 42i,12n,43p,3277b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.pdf (11 pages, 15789218 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
- 34 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

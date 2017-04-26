@@ -9,6 +9,7 @@
 \usepackage{csquotes}
 \setlength\headsep{0.333in}
 \usepackage{graphicx}
+\usepackage{subcaption}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{} 
@@ -130,11 +131,77 @@ The themes discovered in the three translations, reproduced in the figures above
 In the Washburn text, the word ``feel'' is the second-most salient one in the entire novel. The topic-modeling results reveal that the word ``feel'' occurs exclusively in the female-related themes, and is mentioned not once in a female-unrelated theme. Additionally, while five of the female-related themes also mention male-related words in them, only one of these contains the word ``feel.'' [This demonstrates that the inner life of women is given priority in Washburn’s translation, and more importantly, in contexts where women are not surrounded by other men. Females are afforded a level of individuality that they are not in the other translations.] TODO comment was''This is where ``microanalysis'' (using human brain power) can come back in to make a contribution in supporting the contours of the big data [see end comments]''. This is evident in the Tyler translation, where the word majestic appears in four out of eight of the female themes (specifically the ones on courtship and ceremony), and only three times in all the other twelve, thereby indicating the presence of females as a cultural object for the purposes of courtly procedure and order. The Waley translation, by far, exhibits the most striking objectification and minimization of women --- women occur explicitly in themes about ceremony, palaces, and governance, thereby indicating a position in the text that is secondary to their male fathers and husbands. [TODO COMMENT: Similarly insightful. To extend the point for maximum impact: what do these additional associations tell us about the nature of that ``objectification and minimization''? i.e., the switch from an adjective or quality of class (``majestic'') to a set of physical places and cultural practices (``ceremony''). Ceremony appears in both Tyler and Waley, so how might it function differently in each?]
 
 \begin{figure}
-  \includegraphics[width= 3in]{washburn-complete.png}
-  \caption{Washburn's Thematic Structure: Female-Associated Connections in Red}
-  \label{fig:washburn-full}
+	\begin{subfigure}{\linewidth}
+		\begin{subfigure}{.5\linewidth}
+	  		\includegraphics[width=3in]{washburn-complete.png}\hfill
+	  		\caption{Washburn}
+	  	\end{subfigure}
+	  	\begin{subfigure}{.5\linewidth}
+	  		\includegraphics[width=3in]{tyler-complete.png}
+	  		\caption{Tyler}
+	  	\end{subfigure}
+	\end{subfigure}\par\medskip
+	\begin{subfigure}{\linewidth}
+		\begin{subfigure}{.5\linewidth}	
+			\includegraphics[width=3in]{seidensticker-complete.png}\hfill	
+			\caption{Seidensticker}
+		\end{subfigure}
+		\begin{subfigure}{.5\linewidth}			
+			\includegraphics[width=3in]{waley-complete.png}
+			\caption{Waley}
+		\end{subfigure}		
+	\end{subfigure}
+	\caption{Thematic Structure: Female-Associated Connections in Red}
+	\label{full-networks}
 \end{figure}
 
+\begin{figure}
+	\begin{subfigure}{\linewidth}
+		\begin{subfigure}{.5\linewidth}
+	  		\includegraphics[width=3in]{washburn-complete.png}\hfill
+	  		\caption{Washburn}
+	  	\end{subfigure}
+	  	\begin{subfigure}{.5\linewidth}
+	  		\includegraphics[width=3in]{tyler-complete.png}
+	  		\caption{Tyler}
+	  	\end{subfigure}
+	\end{subfigure}\par\medskip
+	\begin{subfigure}{\linewidth}
+		\begin{subfigure}{.5\linewidth}	
+			\includegraphics[width=3in]{seidensticker-complete.png}\hfill	
+			\caption{Seidensticker}
+		\end{subfigure}
+		\begin{subfigure}{.5\linewidth}			
+			\includegraphics[width=3in]{waley-complete.png}
+			\caption{Waley}
+		\end{subfigure}		
+	\end{subfigure}
+	\caption{Thematic Structures Without Women}
+	\label{full-networks}
+\end{figure}
+
+
+%  \caption{Washburn's Thematic Structure: Female-Associated Connections in Red}
+%  
+%\end{figure}
+%
+%\begin{figure}
+%    \caption{Tyler's Thematic Structure: Female-Associated Connections in Red}
+%  \label{fig:tyler-full}
+%\end{figure}
+%
+%\begin{figure}
+%  
+%  \caption{Seidensticker's Thematic Structure: Female-Associated Connections in Red}
+%  \label{fig:seidensticker-full}
+%\end{figure}
+%
+%\begin{figure}
+%  
+%  \caption{Waley's Thematic Structure: Female-Associated Connections in Red}
+%  \label{fig:waley-full}
+%\end{figure}
+%
 \begin{figure}
   \includegraphics[width= 3in]{washburn-no-womenwords.png}
   \caption{Washburn Without Women-Associated Words}
