@@ -13,7 +13,7 @@ import os
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
-fromPickle = False
+fromPickle = True
 
 NUMTERMS = 50
 valthresh = 0.0040
@@ -23,23 +23,29 @@ womenwords = set(['daughter', 'ladi', 'princess', 'wife', 'women', 'woman',
 
 mendependentwomen = set(['daughter', 'wife', 'mother', 'sister', 'mistress'])
 
-menwords = set(['son', 'prince', 'father', 'emperor', 'minister',
-                'lord', 'man'])
+singularwomen = womenwords - mendependentwomen
 
-feelingthinking = set(['feel', 'think', 'felt', 'thought', 'tear', 'long'])
+menwords = set(['son', 'prince', 'father', 'emperor', 'minister',
+                'lord', 'man', 'husband'])
+
+feelingthinking = set(['feel', 'think', 'felt', 'thought', 'tear',
+                       'emot'])
 
 performanceappearance = set(['perform', 'play', 'dress', 'robe', 'music'])
 
 dutypalace = set(['palace', 'ceremoni', 'attend', 'rever'])
 
-cats_to_rm = [mendependentwomen, menwords, feelingthinking,
-              performanceappearance, dutypalace]
 
 #############
 def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
 
+    def save_clear(fmstr):
+        plt.axis('off')
+        plt.savefig(outfile % fmstr)
+        plt.clf()
+
     G = nx.Graph()
-    plt.figure(figsize=(50, 50))
+    plt.figure(figsize=(40, 40))
 
     for i in range(0, lda.num_topics):
         terms = [term for term, val in lda.show_topic(i, num_terms)
@@ -63,86 +69,66 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
         with open((outfile % "positions-") + ".d", 'wb') as f:
             pickle.dump(pos, f)
 
+    def drawGraph(g, font, color1='m', color2='r'):
+        nx.draw_networkx_labels(g, pos, font_size=font, alpha=1.0)
+        nx.draw_networkx_edges(g, pos, edgelist=g.edges(), edge_color='g',
+                               alpha=0.3)
+
+        for n in g:
+            if n in singularwomen:
+                nx.draw_networkx_edges(g, pos, edgelist=nx.edges(g, nbunch=n),
+                                       edge_color=color1, weight=1.2)
+            if n in mendependentwomen:
+                nx.draw_networkx_edges(g, pos, edgelist=nx.edges(g, nbunch=n),
+                                       edge_color=color2, weight=1.2)
+
+    # GRAPH WITH EVERYTHING
     g = G.subgraph([term for term, _ in pos.items()])
-    nx.draw_networkx_labels(g, pos, font_size=25, alpha=1.0)
-    nx.draw_networkx_edges(G, pos, edgelist=G.edges(), edge_color='g',
-                           alpha=0.3)
+    drawGraph(g, 25, 'r', 'r')
+    save_clear("full")
+    drawGraph(g, 25)
+    save_clear("full-split")
 
-    for n in G:
-        if n in womenwords:
-            nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n),
-                                   edge_color='r', weight=1.2)
-
-    plt.axis('off')
-    plt.savefig(outfile % "-with-womenwords")
-    plt.clf()
-
-    def removespecificcategory(catname):
+    def removespecificcategory(catname, twords):
         nodesToDel = []
         for n in G:
-            if n in testwords:
+            if n in twords:
                 nodesToDel.extend(list(sum(G.edges(n), ())))
 
         nodesToDel = set(nodesToDel)
 
         g = G.subgraph([t for t, _ in pos.items() if t not in nodesToDel])
-        nx.draw_networkx_labels(g, pos, font_size=40, alpha=0.9)
-        nx.draw_networkx_edges(g, pos, edgelist=g.edges(), edge_color='g',
-                               alpha=0.3)
+        drawGraph(g, 30)
 
-        for n in g:
-            if n in womenwords:
-                nx.draw_networkx_edges(g, pos, edgelist=nx.edges(g, nbunch=n),
-                                       edge_color='r', weight=1.2)
+        save_clear(("no-" + catname))
 
-        plt.axis('off')
-        plt.savefig(outfile % ("-no-" + catname))
+    def removeindivwordscat(twords):
+        for testword in twords:
+            if testword in G:
+                nodesToKeep = set(list(sum(G.edges(testword), ())))
+                g = G.subgraph([term for term, _ in pos.items()
+                                if term in nodesToKeep])
+                drawGraph(g, 30)
 
-        plt.clf()
+                save_clear(testword)
 
-    testwords = womenwords
-    removespecificcategory("womenwords")
-    testwords = feelingthinking
-    removespecificcategory("feelingthinking")
-    testwords = mendependentwomen
-    removespecificcategory("mendependentwomen")
-    testwords = menwords
-    removespecificcategory("menwords")
-    testwords = performanceappearance
-    removespecificcategory("performanceappearance")
-    testwords = dutypalace
-    removespecificcategory("dutypalace")
+                g = G.subgraph([term for term, _ in pos.items()
+                                if term not in nodesToKeep])
+                drawGraph(g, 30)
 
+                save_clear(("no-" + testword))
 
-    # remove women words one by one
-
-    for womanword in testwords:
-        if womanword in G:
-            nodesToKeep = set(list(sum(G.edges(womanword), ())))
-            g = G.subgraph([term for term, _ in pos.items()
-                            if term in nodesToKeep])
-            nx.draw_networkx_labels(g, pos, font_size=40, alpha=0.9)
-            nx.draw_networkx_edges(g, pos, edgelist=g.edges(), edge_color='r',
-                                   alpha=0.3)
-            plt.axis('off')
-            plt.savefig(outfile % ("-" + womanword))
-
-            plt.clf()
-
-            g = G.subgraph([term for term, _ in pos.items()
-                            if term not in nodesToKeep])
-            nx.draw_networkx_labels(g, pos, font_size=40, alpha=0.9)
-            nx.draw_networkx_edges(g, pos, edgelist=g.edges(), edge_color='g',
-                                   alpha=0.3)
-            for n in g:
-                if n in womenwords:
-                    nx.draw_networkx_edges(g, pos,
-                                           edgelist=nx.edges(g, nbunch=n),
-                                           edge_color='r', weight=1.2)
-            plt.axis('off')
-            plt.savefig(outfile % ("-no-" + womanword))
-
-            plt.clf()
+    removespecificcategory("womenwords", womenwords)
+    removeindivwordscat(womenwords)
+    removespecificcategory("feelingthinking", feelingthinking)
+    removeindivwordscat(feelingthinking)
+    removespecificcategory("mendependentwomen", mendependentwomen)
+    removespecificcategory("menwords", menwords)
+    removeindivwordscat(menwords)
+    removespecificcategory("performanceappearance", performanceappearance)
+    removeindivwordscat(performanceappearance)
+    removespecificcategory("dutypalace", dutypalace)
+    removeindivwordscat(dutypalace)
 
 
 if len(sys.argv) < 2:
