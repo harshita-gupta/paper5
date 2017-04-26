@@ -7,6 +7,7 @@
 from gensim.models import LdaModel
 import networkx as nx
 import matplotlib
+import pickle
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import sys
@@ -47,6 +48,7 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
                         G.add_edge(term, term2)
 
     pos = nx.spring_layout(G, k=0.30, iterations=80000)
+    pickle.dump(pos, outfile % "positions-" + ".dict")
 
     g = G.subgraph([term for term, _ in pos.items()])
     nx.draw_networkx_labels(g, pos, font_size=25, alpha=0.9)
