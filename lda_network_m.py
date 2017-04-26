@@ -94,6 +94,7 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
         for n in G:
             if n in twords:
                 nodesToDel.extend(list(sum(G.edges(n), ())))
+                # nodesToDel.append(n)
 
         nodesToDel = set(nodesToDel)
 
@@ -114,6 +115,8 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
 
                 g = G.subgraph([term for term, _ in pos.items()
                                 if term not in nodesToKeep])
+                # g = G.subgraph([term for term, _ in pos.items()
+                                # if term != testword])
                 drawGraph(g, 30)
 
                 save_clear(("no-" + testword))
