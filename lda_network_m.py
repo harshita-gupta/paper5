@@ -7,26 +7,33 @@
 from gensim.models import LdaModel
 import networkx as nx
 import matplotlib
-import pickle
+import cPickle as pickle
 import sys
 import os
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
-fromPickle = True
+fromPickle = False
 
 NUMTERMS = 50
 valthresh = 0.0040
 
 womenwords = set(['daughter', 'ladi', 'princess', 'wife', 'women', 'woman',
-                  'mother', 'girl', 'sister'])
+                  'mother', 'girl', 'sister', 'mistress'])
 
-mendependentwomen = set(['daughter', 'wife', 'mother', 'sister'])
+mendependentwomen = set(['daughter', 'wife', 'mother', 'sister', 'mistress'])
 
-menwords = set(['son', 'prince'])
+menwords = set(['son', 'prince', 'father', 'emperor', 'minister',
+                'lord', 'man'])
 
-testwords = womenwords
+feelingthinking = set(['feel', 'think', 'felt', 'thought', 'tear', 'long'])
 
+performanceappearance = set(['perform', 'play', 'dress', 'robe', 'music'])
+
+dutypalace = set(['palace', 'ceremoni', 'attend', 'rever'])
+
+cats_to_rm = [mendependentwomen, menwords, feelingthinking,
+              performanceappearance, dutypalace]
 
 #############
 def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
@@ -46,54 +53,68 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
         for term in terms:
             for term2 in terms:
                 if term != term2:
-                    if term in testwords or term2 in testwords:
                         G.add_edge(term, term2, color="red")
-                    else:
-                        G.add_edge(term, term2)
 
     if fromPickle:
-        with open((outfile % "positions-") + ".d", 'wb') as f:
+        with open((outfile % "positions-") + ".d", 'rb') as f:
             pos = pickle.load(f)
     else:
         pos = nx.spring_layout(G, k=0.30, iterations=80000)
         with open((outfile % "positions-") + ".d", 'wb') as f:
-            pickle.dump(pos, f, pickle.HIGHEST_PROTOCOL)
+            pickle.dump(pos, f)
 
     g = G.subgraph([term for term, _ in pos.items()])
-    nx.draw_networkx_labels(g, pos, font_size=25, alpha=0.9)
+    nx.draw_networkx_labels(g, pos, font_size=25, alpha=1.0)
     nx.draw_networkx_edges(G, pos, edgelist=G.edges(), edge_color='g',
                            alpha=0.3)
 
     for n in G:
-        if n in testwords:
+        if n in womenwords:
             nx.draw_networkx_edges(G, pos, edgelist=nx.edges(G, nbunch=n),
                                    edge_color='r', weight=1.2)
 
     plt.axis('off')
     plt.savefig(outfile % "-with-womenwords")
-
     plt.clf()
 
-    # GRAPH 2
+    def removespecificcategory(catname):
+        nodesToDel = []
+        for n in G:
+            if n in testwords:
+                nodesToDel.extend(list(sum(G.edges(n), ())))
 
-    nodesToDel = []
-    for n in G:
-        if n in testwords:
-            nodesToDel.extend(list(sum(G.edges(n), ())))
+        nodesToDel = set(nodesToDel)
 
-    nodesToDel = set(nodesToDel)
+        g = G.subgraph([t for t, _ in pos.items() if t not in nodesToDel])
+        nx.draw_networkx_labels(g, pos, font_size=40, alpha=0.9)
+        nx.draw_networkx_edges(g, pos, edgelist=g.edges(), edge_color='g',
+                               alpha=0.3)
 
-    g = G.subgraph([term for term, _ in pos.items() if term not in nodesToDel])
-    nx.draw_networkx_labels(g, pos, font_size=40, alpha=0.9)
-    nx.draw_networkx_edges(g, pos, edgelist=g.edges(), edge_color='g',
-                           alpha=0.3)
+        for n in g:
+            if n in womenwords:
+                nx.draw_networkx_edges(g, pos, edgelist=nx.edges(g, nbunch=n),
+                                       edge_color='r', weight=1.2)
 
-    plt.axis('off')
-    plt.savefig(outfile % "-no-womenwords")
+        plt.axis('off')
+        plt.savefig(outfile % ("-no-" + catname))
 
-    plt.clf()
+        plt.clf()
 
-    # GRAPH 3
+    testwords = womenwords
+    removespecificcategory("womenwords")
+    testwords = feelingthinking
+    removespecificcategory("feelingthinking")
+    testwords = mendependentwomen
+    removespecificcategory("mendependentwomen")
+    testwords = menwords
+    removespecificcategory("menwords")
+    testwords = performanceappearance
+    removespecificcategory("performanceappearance")
+    testwords = dutypalace
+    removespecificcategory("dutypalace")
+
+
+    # remove women words one by one
 
     for womanword in testwords:
         if womanword in G:
@@ -113,6 +134,11 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
             nx.draw_networkx_labels(g, pos, font_size=40, alpha=0.9)
             nx.draw_networkx_edges(g, pos, edgelist=g.edges(), edge_color='g',
                                    alpha=0.3)
+            for n in g:
+                if n in womenwords:
+                    nx.draw_networkx_edges(g, pos,
+                                           edgelist=nx.edges(g, nbunch=n),
+                                           edge_color='r', weight=1.2)
             plt.axis('off')
             plt.savefig(outfile % ("-no-" + womanword))
 
