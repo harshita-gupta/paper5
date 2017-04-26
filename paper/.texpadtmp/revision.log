@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 APR 2017 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 APR 2017 18:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -352,126 +352,134 @@ Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
- [3]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 133.
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no ™ in font ptmb7t!
-
-Underfull \hbox (badness 1184) in paragraph at lines 133--133
-[]\OT1/ptm/b/n/10.95 Themes in Wash-burns Trans-la-tion, di-vided by
- []
 
 
-Underfull \hbox (badness 1776) in paragraph at lines 133--133
-[]\OT1/ptm/m/n/10.95 15 out-ing yam-abuki over-spread venu twig re-tun
- []
+Package caption Warning: \label without proper reference on input line 71.
+See the caption package documentation for explanation.
 
-[4]
-Overfull \vbox (38.94061pt too high) has occurred while \output is active []
 
- [5]
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-Missing character: There is no Â in font ptmr7t!
-Missing character: There is no   in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
+LaTeX Warning: Reference `waley-topics' on page 3 undefined on input line 203.
+
+
+Package caption Warning: \label without proper reference on input line 104.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `seidensticker-topics' on page 3 undefined on input line 203.
+
+
+Package caption Warning: \label without proper reference on input line 138.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tyler-topics' on page 3 undefined on input line 203.
+
+
+Package caption Warning: \label without proper reference on input line 169.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `washburn-topics' on page 3 undefined on input line 203.
+
+[3] [4] [5]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no   in font ptmr7t!
- [6] <washburn-complete.png, id=24, 1691.8407pt x 1691.8407pt>
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+ [6]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+Missing character: There is no Â in font ptmr7t!
+Missing character: There is no   in font ptmr7t!
+ <washburn-complete.png, id=24, 1691.8407pt x 1691.8407pt>
 File: washburn-complete.png Graphic file (type png)
  <use washburn-complete.png>
-Package pdftex.def Info: washburn-complete.png used on input line 144.
+Package pdftex.def Info: washburn-complete.png used on input line 212.
 (pdftex.def)             Requested size: 216.81pt x 216.79753pt.
  <tyler-complete.png, id=26, 1707.0174pt x 1707.0174pt>
 File: tyler-complete.png Graphic file (type png)
  <use tyler-complete.png>
-Package pdftex.def Info: tyler-complete.png used on input line 148.
+Package pdftex.def Info: tyler-complete.png used on input line 216.
 (pdftex.def)             Requested size: 216.81pt x 216.7888pt.
 
-Overfull \hbox (2.28001pt too wide) in paragraph at lines 143--151
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 211--219
 []$[]$ $[]$ 
  []
 
 <seidensticker-complete.png, id=27, 1696.1769pt x 1696.1769pt>
 File: seidensticker-complete.png Graphic file (type png)
  <use seidensticker-complete.png>
-Package pdftex.def Info: seidensticker-complete.png used on input line 154.
+Package pdftex.def Info: seidensticker-complete.png used on input line 222.
 (pdftex.def)             Requested size: 216.81pt x 216.80968pt.
  <waley-complete.png, id=28, 1693.2861pt x 1693.2861pt>
 File: waley-complete.png Graphic file (type png)
  <use waley-complete.png>
-Package pdftex.def Info: waley-complete.png used on input line 158.
+Package pdftex.def Info: waley-complete.png used on input line 226.
 (pdftex.def)             Requested size: 216.81pt x 216.8019pt.
 
-Overfull \hbox (2.28001pt too wide) in paragraph at lines 153--161
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 221--229
 []$[]$ $[]$ 
  []
 
 <washburn-no-womenwords.png, id=29, 2346.6069pt x 2346.6069pt>
 File: washburn-no-womenwords.png Graphic file (type png)
  <use washburn-no-womenwords.png>
-Package pdftex.def Info: washburn-no-womenwords.png used on input line 169.
+Package pdftex.def Info: washburn-no-womenwords.png used on input line 237.
 (pdftex.def)             Requested size: 216.81pt x 216.8071pt.
  <tyler-no-womenwords.png, id=30, 2530.8954pt x 2530.8954pt>
 File: tyler-no-womenwords.png Graphic file (type png)
  <use tyler-no-womenwords.png>
-Package pdftex.def Info: tyler-no-womenwords.png used on input line 173.
+Package pdftex.def Info: tyler-no-womenwords.png used on input line 241.
 (pdftex.def)             Requested size: 216.81pt x 216.80316pt.
 
-Overfull \hbox (2.28001pt too wide) in paragraph at lines 168--176
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 236--244
 []$[]$ $[]$ 
  []
 
 <seidensticker-no-womenwords.png, id=31, 2592.3249pt x 2592.3249pt>
 File: seidensticker-no-womenwords.png Graphic file (type png)
  <use seidensticker-no-womenwords.png>
-Package pdftex.def Info: seidensticker-no-womenwords.png used on input line 179.
+Package pdftex.def Info: seidensticker-no-womenwords.png used on input line 247.
 (pdftex.def)             Requested size: 216.81pt x 216.80447pt.
  <waley-no-womenwords.png, id=32, 2518.6095pt x 2518.6095pt>
 File: waley-no-womenwords.png Graphic file (type png)
  <use waley-no-womenwords.png>
-Package pdftex.def Info: waley-no-womenwords.png used on input line 183.
+Package pdftex.def Info: waley-no-womenwords.png used on input line 251.
 (pdftex.def)             Requested size: 216.81pt x 216.78835pt.
 
-Overfull \hbox (2.28001pt too wide) in paragraph at lines 178--186
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 246--254
 []$[]$ $[]$ 
  []
 
 
-LaTeX Warning: Reference `fig:washburn-no-womenwords' on page 7 undefined on input line 191.
+LaTeX Warning: Reference `fig:washburn-no-womenwords' on page 7 undefined on input line 259.
 
-[7] [8 <./washburn-complete.png> <./tyler-complete.png> <./seidensticker-complete.png> <./waley-complete.png>] [9 <./washburn-no-womenwords.png> <./tyler-no-womenwords.png> <./seidensticker-no-womenwords.png> <./waley-no-womenwords.png>] [10] (/Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.aux)
+[7] [8 <./washburn-complete.png> <./tyler-complete.png> <./seidensticker-complete.png> <./waley-complete.png>] [9 <./washburn-no-womenwords.png> <./tyler-no-womenwords.png> <./seidensticker-no-womenwords.png> <./waley-no-womenwords.png>] [10] [11] (/Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 4318 strings out of 493014
- 67258 string characters out of 6133351
- 146861 words of memory out of 5000000
- 7796 multiletter control sequences out of 15000+600000
- 20921 words of font info for 41 fonts, out of 8000000 for 9000
+ 4319 strings out of 493014
+ 67284 string characters out of 6133351
+ 155039 words of memory out of 5000000
+ 7798 multiletter control sequences out of 15000+600000
+ 19295 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,12n,43p,3277b,596s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,43p,3277b,592s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.pdf (10 pages, 15792558 bytes).
+Output written on /Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.pdf (11 pages, 15791282 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 35 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

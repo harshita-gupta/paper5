@@ -67,74 +67,142 @@ Figure \ref{fig:washburn-full} shows a boat.
 
 I apply digital topic modeling to break down and analyze three translations of Genji: Arthur Waley’s from 1925, Edward G. Seidensticker's from 1976, Royall Tyler’s from 2001, and Dennis Washburn’s from 2015 \footnote{ My greatest interest was originally in comparing the work of male translators with Helen McCullough’s partial translation. Unfortunately, McCullough’s translation, published only in \booktitle{Genji and Heike: selections from the Tale of Genji and the Tale of the Heike}, is heavily copyrighted and unavailable in any digital format.} \footnote{ To prepare the text for topic modeling, I removed all annotations. Introductions, publishers’ notes, footnotes, and endnotes were removed. In the Tyler translation, this included the deletion of all chapter titles that are not from the original, chapter introductions, and the ``Persons'' and ``Relationship to Previous Chapters'' sections. Additionally, all words are reduced to their stems - therefore treating ``respect'' and ``respectfully'' as identical semantic units and indistinguishable to the LDA algorithm. I also exclude all proper nouns from the corpus used for the topic model, so that topics are identified not upon the basis of scene (which correlates highly with specific characters) but upon common occurrence of motifs. Special care was taken to exclude all Japanese proper nouns, which are not identified by western natural language processing tools. For a list of all Japanese proper nouns removed, see the code in Appendix A. }. Topic modeling is a natural language processing technique that uses the principle of distributional semantics, or the common cooccurrence of two words, to group words into ``topics.'' I use the Latent Dirichlet Allocation (LDA) topic modeling method, which operates on 1000-word sequential chunks of the tale of Genji. LDA treats each ``chunk'' of words as an entity composed of ``topics'' --- each topic is composed of words that commonly occur together. A statistical explanation of LDA modeling’s assumptions and mechanisms is beyond the scope of this paper, and one can turn to Rhody’s ``Unpacking the Assumptions of LDA'' or Jockers’ Macroanalysis for a simplified analysis of the method. Crucial to this paper and its discussion, however, is LDA modeling’s unsupervised nature. Topics are not produced based on the program’s understanding of the words’ meanings or potential similarity, but creates buckets for topics based on the position of words relative to each other, and their common cooccurrence, i.e. distributional similarity, to determine that they belong to a similar topic. Its unsupervised nature makes LDA modeling useful for identifying topics in a more ``objective'' fashion by identifying authors’ subconscious placement of words and themes and therefore reflecting their cultural inclinations. Topic modeling is useful, therefore, in uncovering topics that might be outside our microanalysis-based understanding of discoverable topics.  TODO: matthew's note says ''A powerful justification for the method and for the virtues of using a DH approach more generally, especially for a massive work such as Genji (difficult to keep in anyone’s head all at once)'', emphasize this
 
-Topic modeling is traditionally applied to multiple documents that are dissimilar, as in the work by Jockers, and has been trained on corpuses containing multiple texts, 4500 poems in Rhody’s case and 4500 texts in Jockers case. These models develop generalized, often easily identifiable themes that can apply to texts across time and author, like Rhody’s ``night light moon stars day dark'' and ``tree green summer flowers grass'' topics. Topic modeling of the form they practice is useful when the purpose of the topics is to be used later in topic distribution comparison across texts, but is less useful when working with a single text. I train the LDA model, instead, on a single translation of Genji at a time, thereby developing topics that are far more specific to each translation’s ``thematic world,'' and useful in identifying the thematic differences underlying each translation. The interpretive advantage to this method is evident in the difference between the two topic word clouds reproduced side-by-side. One is from Jockers’ paper ``Theme'' in Microanalysis, and one is a theme discovered in Tyler’s translation of Genji. TODO add figure here. Word clouds \footnote{The topic word clouds in this project were generated using a modification of Elijah Meeks’ D3 word-cloud generator. Color and size of each word is used to indicate what percentage of the given topic is composed of that word.} for all twenty themes discovered in the three translations discussed can be found in Appendices D, E, and F.
-
-\fbox{\begin{minipage}{0.5\linewidth}
+\begin{figure}
+\label{waley-topics}
+\caption{Topics in Waley's Translation}
 \singlespacing
 \small
-\textbf{Themes in Washburn’s Translation, divided by mention of female words}
+Topic 1: said now look even man old come make seem mother tree young hous 
 
-Female themes:
-1, 2, 3, 4, 5, 8, 10, 11, 13, 14, 16, 18
+Topic 2: said time now letter ladi long even much feel littl last go visit way far 
 
-1 affair (category: love and courtship)
-boy woman man like affair night screen door sing never
+Topic 3: cat udoneri princess palac seen still fine creatur 
 
-2 wife-father (category: love and courtship)
-woman now young wife father older seem will sister felt
+Topic 4: said go now thing come know think way see seem look say time thought get make much long feel tell peopl back last well day night inde even girl moment hous old felt quit take 
 
-3 robe-ladi (category: aesthetic)
-robe look ladi one like attend women young even woman
+Topic 5: ladi side 
 
-4 blossom-daughter-tree (category: nature)
-blossom daughter cherri scatter sister tree right young one older
+Topic 6: mistleto rebuilt 
 
-5 umetsubo-error (error, model needs cleaning)
-ladi umetsubo move pine year spring one quadrant women left
+Topic 7: year inde cold dress imagin 
 
-8 letter-man-daughter (category: non-specific)
-letter man time daughter may now one even like world
+Topic 8: now time day ladi said much emperor inde father great even way seem princ year thought palac daughter feel made make long matter girl old mother see littl 
 
-10 princess-woman (category: love and courtship)
-princess woman one even look man women third feel will
+Topic 9: now ladi time said day even seem thought great long littl look come poem inde 
 
-11 palace-daughter-majestic (category: royal court)
-daughter son prince palace emperor young majestic court minster father
+Topic 10: time day now ladi inde much even said seem come felt long thing way feel 
 
-13 ladi-like-feel (category: unspecific)
-now even time ladi like look feel come daughter might
-14 perform-princess-koto (category: performance)
-play dance perform princess string koto third dancer rehearse little
+Topic 11: now boy place emperor princ hous 
 
-16 feel-world-thought-princess (category: feeling and thinking)
-even feel time one princess now look day world thought
+Topic 12: emperor palac great present 
 
-18 young-feel-ladi (category: feeling and thinking)
-like even young feel ladi just go now must one
+Topic 13: emperor ladi princess art 
+\end{figure}
 
 
-\textbf{Themes without mentions of females:}
+\begin{figure}
+\label{seidensticker-topics}
+\caption{Topics in Seidensticker's Translation}
+\singlespacing
+\small
+Topic 1: stag 
 
-0 day perform prince emperor banquet palace present poem music dance
+Topic 2: seem come said t even see littl bishop dream came child look old girl 
 
-6 omoto like man appear love carriage path said world steward
+Topic 3: seem robe paint red princess ladi women line littl white string master nose now 
 
-7 illustration painting art master court study talent able painter live
+Topic 4: girl ladi said seem thought think come now t look littl even know daughter good young time see women mother make came much go well man way princ 
 
-9 play koto instrument string music hear moon perform flute old
+Topic 5: seem thought even think come see now said go ladi princess time thing littl women make know world long want much day way say made feel look came still noth father 
 
-12 illustration scroll chines tale read ceremony work poem paint paper
+Topic 6: emperor princ thought seem ladi court chines crown daughter present palac time son said year royal 
 
-15 outing yamabuki overspread venu twig retun woodcuts rot paddle store
+Topic 7: princ ladi emperor said blossom kobai daughter thought carriag even 
 
-17 nighttime scrap unidentified hoot extract traitor homecome stationmaster towrop qin 
+Topic 8: seem thought women littl governor even young room ladi look light said came back open away door wind way see day veranda 
 
-19 blossom son plum robe spring tree cherri play one look
-\end{minipage}}
+Topic 9: emperor time now matter tear princ minist empress 
+
+Topic 10: seem ladi safflow quarter white look 
+
+Topic 11: ladi seem thought now time day even said year come see old princess came made much littl 
+
+Topic 12: seem ladi thought daughter year come old think said son day thing well great made man 
+
+Topic 13: t man thing good governor say seem girl think make look know go happen said woman daughter wife one want young day come even just don ve sort someon see everyth peopl m let ask 
+
+Topic 14: emperor ladi court cat princ son crown mother third new father go see royal 
+\end{figure}
+
+\begin{figure}
+\label{tyler-topics}
+\caption{Topics in Tyler's Translation}
+\singlespacing
+\small
+Topic 1: high paper great shoot book write cup scroll command son 
+
+Topic 2: now high even look said way well still thought never time see littl go come long know feel seem day just thing ladi 
+
+Topic 3: play captain old tale now flute music never ladi feel said seem life day hear say even 
+
+Topic 4: majesti now flower light even wind long morn said dew day 
+
+Topic 5: blossom look command made flower ladi littl spring beauti year 
+
+Topic 6: now monk day world holi long mountain come adept wind littl captain thought citi know rever sent look way time 
+
+Topic 7: rever nun young woman lordship go die come mother said even someon tell now noth high see look seem ask never sure just back told heard well happen talk sister women mistress 
+
+Topic 8: majesti flower spring autumn ladi nun music year pine east quarter made consort wing long blossom high garden color 
+
+Topic 9: captain young excel high play look lieuten son music blossom said right just seem man dress one even well make daughter come ladi secretari advis 
+
+Topic 10: even now old play novic high noth often see biwa 
+
+Topic 11: ladi gown look dress comb box one never mistress even high far day now cathay plum 
+
+Topic 12: now long majesti littl thought day mani ladi made year see said well citi time still even come go look 
+\end{figure}
 
 
+\begin{figure}
+\label{washburn-topics}
+\caption{Topics in Washburn's Translation}
+\singlespacing
+\small
+Topic 1: go ladi just woman feel come girl know even way said make think now nurs tell ask littl man lord night well look time dont attend see thought place 
 
-The themes discovered in the three translations, reproduced in the figures above, reveal clear differences between the three texts. The themes are reproduced with their theme number and theme descriptor (a few words from the theme that encompass how the theme is interpreted). TODO describe how themes are split up and process to identify female-related themes and non-female-related theems. In Washburn’s translation, 12 of the 20 themes discovered have female references --- words like ``woman'', ``lady'' (stemmed as ladi), ``daughter'' --- as one of their top 10 words. In Tyler’s, 8 of the 20 themes do, and in Waley’s, 6 of the 20 themes do. An analysis of the evolution of these themes over the text, visualized in the heat maps below, reveals that not only are there dramatically fewer female-related themes in the Tyler than the Washburn and in the Waley than the Tyler, but that the frequency of these female-related themes is lower in the same order as well. TODO: if i stick with this, elaborate on the frequency bit.
+Topic 2: carriag go feel wife process men view attend ladi just way blind space 
+
+Topic 3: feel husband now even ladi emot heart deep woman say 
+
+Topic 4: made lotu attend third minist flower make 
+
+Topic 5: even capit boat day governor sea attend provinc ladi wind perform lord dream wave 
+
+Topic 6: robe look ladi poem even day garden now seem blossom color tree made women 
+
+Topic 7: cat third princess princ son crown littl blind robe felt see look close game face never contest think tri remark 
+
+Topic 8: even feel now time world look thought see come ladi live heart felt just princess long villa day go 
+
+Topic 9: father hardli wife 
+
+Topic 10: time daughter son even emperor palac princ princess now father court look day year majesti third minist mani feel ladi world left 
+
+Topic 11: play koto string instrument perform princess even music young son boy littl seem flute hear time daughter look major just robe women feel 
+
+Topic 12: woman make way even man young just time now thing matter go mani 
+
+Topic 13: princess even look feel young daughter woman man just ladi now go think women make time way captain letter thought see thing say come still 
+
+Topic 14: ladi wind princess day ceremoni daughter father come carriag 
+\end{figure}
+
+
+Topic modeling is traditionally applied to multiple documents that are dissimilar, as in the work by Jockers, and has been trained on corpuses containing multiple texts, 4500 poems in Rhody’s case and 4500 texts in Jockers case. These models develop generalized, often easily identifiable themes that can apply to texts across time and author, like Rhody’s ``night light moon stars day dark'' and ``tree green summer flowers grass'' topics. Topic modeling of the form they practice is useful when the purpose of the topics is to be used later in topic distribution comparison across texts, but is less useful when working with a single text. I train the LDA model, instead, on a single translation of Genji at a time, thereby developing topics that are far more specific to each translation’s ``thematic world,'' and useful in identifying the thematic differences underlying each translation. The interpretive advantage to this method is evident in the difference between the two topic word clouds reproduced side-by-side. One is from Jockers’ paper ``Theme'' in Microanalysis, and one is a theme discovered in Tyler’s translation of Genji. TODO add figure here. The topics discovered, with the words that have the highest percentage of appearance within a given topic, are included in figures \ref{waley-topics}, \ref{seidensticker-topics}, \ref{tyler-topics}, and \ref{washburn-topics} \footnote{All words in a given topic with signal strength greater than 0.0040 are included, i.e. words that comprise more than four percent of a given topic. If a topic had no words with signal strengths high enough, i.e. the topic was statistically insignificant, those topics were excluded from the final model and not used in subsequent discussion.}.
+
+The themes discovered in the four translations, reproduced in the figures above, reveal clear differences between the three texts. The themes are reproduced with their theme number and theme descriptor (a few words from the theme that encompass how the theme is interpreted). TODO describe how themes are split up and process to identify female-related themes and non-female-related theems. In Washburn’s translation, 12 of the 20 themes discovered have female references --- words like ``woman'', ``lady'' (stemmed as ladi), ``daughter'' --- as one of their top 10 words. In Tyler’s, 8 of the 20 themes do, and in Waley’s, 6 of the 20 themes do. An analysis of the evolution of these themes over the text, visualized in the heat maps below, reveals that not only are there dramatically fewer female-related themes in the Tyler than the Washburn and in the Waley than the Tyler, but that the frequency of these female-related themes is lower in the same order as well. TODO: if i stick with this, elaborate on the frequency bit.
 
 In the Washburn text, the word ``feel'' is the second-most salient one in the entire novel. The topic-modeling results reveal that the word ``feel'' occurs exclusively in the female-related themes, and is mentioned not once in a female-unrelated theme. Additionally, while five of the female-related themes also mention male-related words in them, only one of these contains the word ``feel.'' [This demonstrates that the inner life of women is given priority in Washburn’s translation, and more importantly, in contexts where women are not surrounded by other men. Females are afforded a level of individuality that they are not in the other translations.] TODO comment was''This is where ``microanalysis'' (using human brain power) can come back in to make a contribution in supporting the contours of the big data [see end comments]''. This is evident in the Tyler translation, where the word majestic appears in four out of eight of the female themes (specifically the ones on courtship and ceremony), and only three times in all the other twelve, thereby indicating the presence of females as a cultural object for the purposes of courtly procedure and order. The Waley translation, by far, exhibits the most striking objectification and minimization of women --- women occur explicitly in themes about ceremony, palaces, and governance, thereby indicating a position in the text that is secondary to their male fathers and husbands. [TODO COMMENT: Similarly insightful. To extend the point for maximum impact: what do these additional associations tell us about the nature of that ``objectification and minimization''? i.e., the switch from an adjective or quality of class (``majestic'') to a set of physical places and cultural practices (``ceremony''). Ceremony appears in both Tyler and Waley, so how might it function differently in each?]
 
