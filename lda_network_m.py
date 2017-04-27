@@ -25,15 +25,17 @@ mendependentwomen = set(['daughter', 'wife', 'mother', 'sister', 'mistress'])
 
 singularwomen = womenwords - mendependentwomen
 
-menwords = set(['son', 'prince', 'father', 'emperor', 'minister',
-                'lord', 'man', 'husband'])
+menwords = set(['son', 'prince', 'father', 'emperor', 'minist',
+                'lord', 'man', 'husband', 'captain', 'men',
+                'lordship'])
 
 feelingthinking = set(['feel', 'think', 'felt', 'thought', 'tear',
                        'emot', 'die'])
 
-performanceappearance = set(['perform', 'play', 'dress', 'robe', 'music'])
+performanceappearance = set(['perform', 'play', 'dress', 'robe', 'music',
+                             'majesti'])
 
-dutypalace = set(['palace', 'ceremoni', 'attend', 'rever'])
+dutypalace = set(['palace', 'ceremoni', 'attend', 'rever', 'high', 'majesti'])
 
 
 #############
@@ -74,19 +76,19 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
         nx.draw_networkx_edges(g, pos, edgelist=g.edges(), edge_color='g',
                                alpha=0.4)
         for n in g:
+            if n in menwords:
+                nx.draw_networkx_edges(g, pos, edgelist=nx.edges(g, nbunch=n),
+                                       edge_color='b', weight=1.0)
             if n in singularwomen:
                 nx.draw_networkx_edges(g, pos, edgelist=nx.edges(g, nbunch=n),
                                        edge_color=color1, weight=1.0)
             if n in mendependentwomen:
                 nx.draw_networkx_edges(g, pos, edgelist=nx.edges(g, nbunch=n),
                                        edge_color=color2, weight=1.0)
-            if n in menwords:
-                nx.draw_networkx_edges(g, pos, edgelist=nx.edges(g, nbunch=n),
-                                       edge_color='b', weight=1.0)
-                medges = nx.edges(g, nbunch=n)
-                medges = [(n1, n2) for (n1, n2) in medges if n2 in womenwords]
-                nx.draw_networkx_edges(g, pos, edgelist=medges,
-                                       edge_color='y', weight=1.0)
+                # medges = nx.edges(g, nbunch=n)
+                # medges = [(n1, n2) for (n1, n2) in medges if n2 in womenwords]
+                # nx.draw_networkx_edges(g, pos, edgelist=medges,
+                #                        edge_color='y', weight=1.0)
 
     # GRAPH WITH EVERYTHING
     g = G.subgraph([term for term, _ in pos.items()])
@@ -132,8 +134,8 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
     # removespecificcategory("feelingthinking", feelingthinking)
     # removeindivwordscat(feelingthinking)
     # removespecificcategory("mendependentwomen", mendependentwomen)
-    # removespecificcategory("menwords", menwords)
-    # removeindivwordscat(menwords)
+    removespecificcategory("menwords", menwords)
+    removeindivwordscat(menwords)
     # removespecificcategory("performanceappearance", performanceappearance)
     # removeindivwordscat(performanceappearance)
     # removespecificcategory("dutypalace", dutypalace)

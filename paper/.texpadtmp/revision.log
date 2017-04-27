@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 APR 2017 23:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  26 APR 2017 23:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -298,57 +298,83 @@ Overfull \hbox (2.28001pt too wide) in paragraph at lines 224--232
 []$[]$ $[]$ 
  []
 
-[8] [9 <./waley-complete.png> <./seidensticker-complete.png> <./tyler-complete.png> <./washburn-complete.png>]
-Missing character: There is no Â in font ptmr7t!
-Missing character: There is no   in font ptmr7t!
- [10] <waley-no-womenwords.png, id=45, 2518.6095pt x 2518.6095pt>
+[8] [9 <./waley-complete.png> <./seidensticker-complete.png> <./tyler-complete.png> <./washburn-complete.png>] <waley-no-womenwords.png, id=42, 2518.6095pt x 2518.6095pt>
 File: waley-no-womenwords.png Graphic file (type png)
  <use waley-no-womenwords.png>
-Package pdftex.def Info: waley-no-womenwords.png used on input line 244.
-(pdftex.def)             Requested size: 86.72377pt x 86.69997pt.
- <seidensticker-no-womenwords.png, id=46, 2592.3249pt x 2592.3249pt>
+Package pdftex.def Info: waley-no-womenwords.png used on input line 252.
+(pdftex.def)             Requested size: 216.81pt x 216.78835pt.
+ <seidensticker-no-womenwords.png, id=43, 2592.3249pt x 2592.3249pt>
 File: seidensticker-no-womenwords.png Graphic file (type png)
  <use seidensticker-no-womenwords.png>
-Package pdftex.def Info: seidensticker-no-womenwords.png used on input line 248.
-(pdftex.def)             Requested size: 86.72377pt x 86.70596pt.
- <tyler-no-womenwords.png, id=47, 2530.8954pt x 2530.8954pt>
-File: tyler-no-womenwords.png Graphic file (type png)
- <use tyler-no-womenwords.png>
-Package pdftex.def Info: tyler-no-womenwords.png used on input line 252.
-(pdftex.def)             Requested size: 86.72377pt x 86.69809pt.
- <washburn-no-womenwords.png, id=48, 2346.6069pt x 2346.6069pt>
-File: washburn-no-womenwords.png Graphic file (type png)
- <use washburn-no-womenwords.png>
-Package pdftex.def Info: washburn-no-womenwords.png used on input line 256.
-(pdftex.def)             Requested size: 86.72377pt x 86.72284pt.
+Package pdftex.def Info: seidensticker-no-womenwords.png used on input line 256.
+(pdftex.def)             Requested size: 216.81pt x 216.80447pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 243--259
-[]$[]$ $[]$ $[]$
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 251--259
+[]$[]$ $[]$ 
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 264.
+<tyler-no-womenwords.png, id=44, 2530.8954pt x 2530.8954pt>
+File: tyler-no-womenwords.png Graphic file (type png)
+ <use tyler-no-womenwords.png>
+Package pdftex.def Info: tyler-no-womenwords.png used on input line 262.
+(pdftex.def)             Requested size: 216.81pt x 216.80316pt.
+ <washburn-no-womenwords.png, id=45, 2346.6069pt x 2346.6069pt>
+File: washburn-no-womenwords.png Graphic file (type png)
+ <use washburn-no-womenwords.png>
+Package pdftex.def Info: washburn-no-womenwords.png used on input line 266.
+(pdftex.def)             Requested size: 216.81pt x 216.8071pt.
 
-LaTeX Warning: Reference `fig:washburn-no-womenwords' on page 11 undefined on input line 264.
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 261--269
+[]$[]$ $[]$ 
+ []
 
-[11 <./waley-no-womenwords.png> <./seidensticker-no-womenwords.png> <./tyler-no-womenwords.png> <./washburn-no-womenwords.png>] [12] (/Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.aux)
+<waley-no-menwords.png, id=46, 1749.6567pt x 1749.6567pt>
+File: waley-no-menwords.png Graphic file (type png)
+ <use waley-no-menwords.png>
+Package pdftex.def Info: waley-no-menwords.png used on input line 277.
+(pdftex.def)             Requested size: 216.81pt x 216.81102pt.
+ <seidensticker-no-menwords.png, id=47, 1903.5918pt x 1903.5918pt>
+File: seidensticker-no-menwords.png Graphic file (type png)
+ <use seidensticker-no-menwords.png>
+Package pdftex.def Info: seidensticker-no-menwords.png used on input line 281.
+(pdftex.def)             Requested size: 216.81pt x 216.80258pt.
 
-LaTeX Warning: There were undefined references.
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 276--284
+[]$[]$ $[]$ 
+ []
 
- ) 
+<tyler-no-menwords.png, id=48, 1715.6898pt x 1715.6898pt>
+File: tyler-no-menwords.png Graphic file (type png)
+ <use tyler-no-menwords.png>
+Package pdftex.def Info: tyler-no-menwords.png used on input line 287.
+(pdftex.def)             Requested size: 216.81pt x 216.79065pt.
+ <washburn-no-menwords.png, id=49, 1859.5071pt x 1897.0875pt>
+File: washburn-no-menwords.png Graphic file (type png)
+ <use washburn-no-menwords.png>
+Package pdftex.def Info: washburn-no-menwords.png used on input line 291.
+(pdftex.def)             Requested size: 216.81pt x 221.18546pt.
+
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 286--294
+[]$[]$ $[]$ 
+ []
+
+[10] [11 <./waley-no-womenwords.png> <./seidensticker-no-womenwords.png> <./tyler-no-womenwords.png> <./washburn-no-womenwords.png>] [12 <./waley-no-menwords.png> <./seidensticker-no-menwords.png> <./tyler-no-menwords.png> <./washburn-no-menwords.png>]
+Missing character: There is no Â in font ptmr7t!
+Missing character: There is no   in font ptmr7t!
+ [13] [14] [15] (/Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.aux) ) 
 Here is how much of TeX's memory you used:
- 4318 strings out of 493014
- 67265 string characters out of 6133351
- 152894 words of memory out of 5000000
- 7797 multiletter control sequences out of 15000+600000
- 19295 words of font info for 39 fonts, out of 8000000 for 9000
+ 4336 strings out of 493014
+ 67794 string characters out of 6133351
+ 152903 words of memory out of 5000000
+ 7812 multiletter control sequences out of 15000+600000
+ 19353 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,11n,43p,2619b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.pdf (12 pages, 17039511 bytes).
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.pdf (15 pages, 18198127 bytes).
 PDF statistics:
- 73 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -230,44 +230,85 @@ Proceeding to analyze this thematic data numerically may be fruitful, but it doe
 	  		\caption{Washburn}
 		\end{subfigure}
 	\end{subfigure}
-	\caption{Thematic Structure: Female-Associated Connections in Red, Male-Associated Connections in Blue}
+	\caption{\textit{Genji's} Thematic Structure: Female-Associated Connections in Red, Male-Associated Connections in Blue}
 	\label{full-networks}
 \end{figure}
 
-The numerical observations made earlier jump out immediately now: the prevalence of women-associated words across the networks and the higher ratio of red to blue. Some more nuanced observations, however, can be drawn by looking at the centrality of female and male nodes in the graph: Seidensticker's and Washburn's representations of women are far more central to the thematic networks of their translations, with the female nodes having very high degrees (number of edges originating from them) and being extending more uniformly across the graph. Tyler's and Waley's, on the other hand, while prevalent, are far more peripheral, suggesting a portrayal of women that is persistent yet a near afterthought, or secondary to the 
+The numerical observations made earlier jump out immediately now: the prevalence of women-associated words across the networks and the higher ratio of red to blue. As Moretti put it, 
 
-In the Washburn text, the word ``feel'' is the second-most salient one in the entire novel. The topic-modeling results reveal that the word ``feel'' occurs exclusively in the female-related themes, and is mentioned not once in a female-unrelated theme. Additionally, while five of the female-related themes also mention male-related words in them, only one of these contains the word ``feel.'' [This demonstrates that the inner life of women is given priority in Washburn's translation, and more importantly, in contexts where women are not surrounded by other men. Females are afforded a level of individuality that they are not in the other translations.] TODO comment was''This is where ``microanalysis'' (using human brain power) can come back in to make a contribution in supporting the contours of the big data [see end comments]''. This is evident in the Tyler translation, where the word majestic appears in four out of eight of the female themes (specifically the ones on courtship and ceremony), and only three times in all the other twelve, thereby indicating the presence of females as a cultural object for the purposes of courtly procedure and order. The Waley translation, by far, exhibits the most striking objectification and minimization of women --- women occur explicitly in themes about ceremony, palaces, and governance, thereby indicating a position in the text that is secondary to their male fathers and husbands. [TODO COMMENT: Similarly insightful. To extend the point for maximum impact: what do these additional associations tell us about the nature of that ``objectification and minimization''? i.e., the switch from an adjective or quality of class (``majestic'') to a set of physical places and cultural practices (``ceremony''). Ceremony appears in both Tyler and Waley, so how might it function differently in each?]
+\begin{displayquote}
+\singlespacing
+\small
+``Once you make a network of a play, you stop working on the play proper, and work on a \textit{model} instead... this process of reduction and abstraction makes the model obviously much less than the original object... but also, in another sense, much \textit{more} than it,  because a model allows you to see the underlying structures of a complex object. It's like an X-ray'' (Moretti 218). 
+\end{displayquote}
+
+Beyond what is apparent via color: looking at the centrality of female and male nodes in the graph reveals that Seidensticker's and Washburn's representations of women are far more central to the thematic networks of their translations, with the female nodes having very high degrees (number of edges originating from them) and extending more uniformly across the graph. Tyler's and Waley's, on the other hand, while prevalent, are far more peripheral, suggesting a portrayal of women that is persistent yet a near afterthought, or secondary to the less frequent yet more central male occurrences. 
+
+To probe into the dependencies and relationships that characterize this network, I follow Moretti's lead in attempting to ``\textit{intervene} on a model; make experiments (Moretti 220).'' The first is a simple one for purposes of demonstration: what happens when all women-associated nodes and the nodes that they connect to, are removed from each network, versus when all male-associated nodes are? The results are in figures \ref{networks-without-women} and \ref{networks-without-men}. The effects is apparent: in each case, the network collapses, unsurprisingly, but perhaps what is more surprising is that the removal of one word group obliterates the other as well -- both blue and red in either experiment -- showing how pervasive the distributional linkage of men and women in \booktitle{Genji} is, across translational guidelines. 
 
 \begin{figure}
 	\begin{subfigure}{\linewidth}
-		\begin{subfigure}{.25\linewidth}
-			\includegraphics[width=1.2in]{waley-no-womenwords.png}
+		\begin{subfigure}{.5\linewidth}
+			\includegraphics[width=3in]{waley-no-womenwords.png}
 			\caption{Waley}		
 	  	\end{subfigure}
-	  	\begin{subfigure}{.25\linewidth}
-			\includegraphics[width=1.2in]{seidensticker-no-womenwords.png}\hfill
+	  	\begin{subfigure}{.5\linewidth}
+			\includegraphics[width=3in]{seidensticker-no-womenwords.png}\hfill
 			\caption{Seidensticker}
 	  	\end{subfigure}
-		\begin{subfigure}{.25\linewidth}
-	  		\includegraphics[width=1.2in]{tyler-no-womenwords.png}\hfill
+	\end{subfigure}\par\medskip
+	\begin{subfigure}{\linewidth}	  	
+		\begin{subfigure}{.5\linewidth}
+	  		\includegraphics[width=3in]{tyler-no-womenwords.png}\hfill
 	  		\caption{Tyler}		
 		\end{subfigure}
-		\begin{subfigure}{.25\linewidth}
-	  		\includegraphics[width=1.2in]{washburn-no-womenwords.png}\hfill
+		\begin{subfigure}{.5\linewidth}
+	  		\includegraphics[width=3in]{washburn-no-womenwords.png}\hfill
 	  		\caption{Washburn}		
 		\end{subfigure}
 	\end{subfigure}
-	\caption{Thematic Structures Without Women}
+	\caption{\textit{Genji} Without Women}
 	\label{networks-without-women}
 \end{figure}
 
-An analysis of each thematic network without women reveals the centrality of their role in all four translations of the Genji: the structure of Washburn collapses entirely, leaving a virtually nonexistent graph, (See Figure \ref{fig:washburn-no-womenwords}), Seidensticker
+\begin{figure}
+	\begin{subfigure}{\linewidth}
+		\begin{subfigure}{.5\linewidth}
+			\includegraphics[width=3in]{waley-no-menwords.png}
+			\caption{Waley}		
+	  	\end{subfigure}
+	  	\begin{subfigure}{.5\linewidth}
+			\includegraphics[width=3in]{seidensticker-no-menwords.png}\hfill
+			\caption{Seidensticker}
+	  	\end{subfigure}
+	\end{subfigure}\par\medskip
+	\begin{subfigure}{\linewidth}	  	
+		\begin{subfigure}{.5\linewidth}
+	  		\includegraphics[width=3in]{tyler-no-menwords.png}\hfill
+	  		\caption{Tyler}		
+		\end{subfigure}
+		\begin{subfigure}{.5\linewidth}
+	  		\includegraphics[width=3in]{washburn-no-menwords.png}\hfill
+	  		\caption{Washburn}		
+		\end{subfigure}
+	\end{subfigure}
+	\caption{\textit{Genji} Without Men}
+	\label{networks-without-men}
+\end{figure}
+
+Examining the non-gendered (as we may currently believe) nodes central to the graphs reveals fruitful direction for future experiments. 'feel' is the most central node in the Washburn graph, with 'thought' being a close second. 'Perform', 'attend', and 'robe' introduce the element of appearance and service. In Tyler, ceremonial words like 'rever', 'music', 'play', 'majesti' and 'high' occur with high degrees, Waley's has similar trends with 'palace' and 'prince', and Seidensticker's features 'look', 'governor', and 'long'. From these observations, we can identify three major categories as bases for interrogating the model. Feeling and thinking: 'feel', 'think', 'felt', 'thought', 'tear', 'emot', 'die', performance and appearance: 'perform', 'play', 'dress', 'robe', 'music', and duty and court: 'palace', 'ceremoni', 'attend', 'rever', 'crown'.
+
+
 
 The most intriguing changes, however, are when we remove individual female words rather than all female words in their entirety. Removal of the word 'mother' has different effects on each network, reducing Seidensticker's to a notably more romantic, sentimental, and courtship-heavy structure. In Waley's case, removal of the word "mother" results in
 
 Removing feeling and thinking words, specifically 'feel', 'felt', 'think', 'thought', 'emot', removes all mention of females from Seidensticker's network.
 
 Removing duty and palace-related words reduces the female network of Tyler almost exclusively to independent women-words, and removal of feeling-thinking words reduces the network almost entirely to male-independent women.
+
+
+In the Washburn text, the word ``feel'' is the second-most salient one in the entire novel. The topic-modeling results reveal that the word ``feel'' occurs exclusively in the female-related themes, and is mentioned not once in a female-unrelated theme. Additionally, while five of the female-related themes also mention male-related words in them, only one of these contains the word ``feel.'' [This demonstrates that the inner life of women is given priority in Washburn's translation, and more importantly, in contexts where women are not surrounded by other men. Females are afforded a level of individuality that they are not in the other translations.] TODO comment was''This is where ``microanalysis'' (using human brain power) can come back in to make a contribution in supporting the contours of the big data [see end comments]''. This is evident in the Tyler translation, where the word majestic appears in four out of eight of the female themes (specifically the ones on courtship and ceremony), and only three times in all the other twelve, thereby indicating the presence of females as a cultural object for the purposes of courtly procedure and order. The Waley translation, by far, exhibits the most striking objectification and minimization of women --- women occur explicitly in themes about ceremony, palaces, and governance, thereby indicating a position in the text that is secondary to their male fathers and husbands. [TODO COMMENT: Similarly insightful. To extend the point for maximum impact: what do these additional associations tell us about the nature of that ``objectification and minimization''? i.e., the switch from an adjective or quality of class (``majestic'') to a set of physical places and cultural practices (``ceremony''). Ceremony appears in both Tyler and Waley, so how might it function differently in each?]
+
 \begin{workscited}
 
 \bibent Jockers, M. L..\booktitle{Macroanalysis: Digital Methods and Literary History}. Champaign: University of Illinois Press, 2013. Project MUSE.

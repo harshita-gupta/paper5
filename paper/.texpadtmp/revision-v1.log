@@ -1,0 +1,387 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 APR 2017 00:13
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**revision-v1.tex
+(./revision-v1.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/rotating/rotating.sty
+Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 96.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@r@tfl@t=\count88
+\rotFPtop=\skip43
+\rotFPbot=\skip44
+\rot@float@box=\box26
+\rot@mess@toks=\toks15
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+) (/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count89
+\Gm@cntv=\count90
+\c@Gm@tempcnt=\count91
+\Gm@bindingoffset=\dimen105
+\Gm@wd@mp=\dimen106
+\Gm@odd@mp=\dimen107
+\Gm@even@mp=\dimen108
+\Gm@layoutwidth=\dimen109
+\Gm@layoutheight=\dimen110
+\Gm@layouthoffset=\dimen111
+\Gm@layoutvoffset=\dimen112
+\Gm@dimlist=\toks16
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/dirtytalk/dirtytalk.sty
+Package: dirtytalk 2010/11/21 A package making "quoting" easier
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+\c@dirtytalk@qdepth=\count92
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2016/01/31 v5.1g context-sensitive quotations (JAW)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count93
+)
+\csq@reset=\count94
+\csq@gtype=\count95
+\csq@glevel=\count96
+\csq@qlevel=\count97
+\csq@maxlvl=\count98
+\csq@tshold=\count99
+\csq@ltx@everypar=\toks17
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2016/01/31 v5.1g csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+)) (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen113
+\captionmargin@=\dimen114
+\captionwidth=\dimen115
+\caption@tempdima=\dimen116
+\caption@indent=\dimen117
+\caption@parindent=\dimen118
+\caption@hangindent=\dimen119
+)
+\c@ContinuedFloat=\count100
+Package caption Info: rotating package is loaded.
+)
+\c@subfigure=\count101
+\c@subtable=\count102
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip45
+\f@ncyO@elh=\skip46
+\f@ncyO@erh=\skip47
+\f@ncyO@olh=\skip48
+\f@ncyO@orh=\skip49
+\f@ncyO@elf=\skip50
+\f@ncyO@erf=\skip51
+\f@ncyO@olf=\skip52
+\f@ncyO@orf=\skip53
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... none found.
+ (/Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision-v1.aux)
+\openout1 = `revision-v1.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
+LaTeX Font Info:    ... okay on input line 31.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 31.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+) (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen120
+\scratchbox=\box27
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen121
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks19
+) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+ (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
+* \headheight=12.0pt
+* \headsep=24.06537pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ” in font ptmr7t!
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+] [2]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 69.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 69.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 69.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 69.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 69.
+Missing character: There is no Â in font ptmr7t!
+Missing character: There is no   in font ptmr7t!
+ [3] [4]
+Missing character: There is no Â in font ptmr7t!
+Missing character: There is no   in font ptmr7t!
+ [5] [6] [7] <waley-complete.png, id=27, 1688.2272pt x 1688.2272pt>
+File: waley-complete.png Graphic file (type png)
+ <use waley-complete.png>
+Package pdftex.def Info: waley-complete.png used on input line 215.
+(pdftex.def)             Requested size: 216.81pt x 216.79817pt.
+ <seidensticker-complete.png, id=29, 1711.3536pt x 1711.3536pt>
+File: seidensticker-complete.png Graphic file (type png)
+ <use seidensticker-complete.png>
+Package pdftex.def Info: seidensticker-complete.png used on input line 219.
+(pdftex.def)             Requested size: 216.81pt x 216.79112pt.
+
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 214--222
+[]$[]$ $[]$ 
+ []
+
+<tyler-complete.png, id=30, 1701.9585pt x 1701.9585pt>
+File: tyler-complete.png Graphic file (type png)
+ <use tyler-complete.png>
+Package pdftex.def Info: tyler-complete.png used on input line 225.
+(pdftex.def)             Requested size: 216.81pt x 216.79558pt.
+ <washburn-complete.png, id=31, 1691.8407pt x 1691.8407pt>
+File: washburn-complete.png Graphic file (type png)
+ <use washburn-complete.png>
+Package pdftex.def Info: washburn-complete.png used on input line 229.
+(pdftex.def)             Requested size: 216.81pt x 216.79753pt.
+
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 224--232
+[]$[]$ $[]$ 
+ []
+
+[8] [9 <./waley-complete.png> <./seidensticker-complete.png> <./tyler-complete.png> <./washburn-complete.png>] <waley-no-womenwords.png, id=42, 2518.6095pt x 2518.6095pt>
+File: waley-no-womenwords.png Graphic file (type png)
+ <use waley-no-womenwords.png>
+Package pdftex.def Info: waley-no-womenwords.png used on input line 252.
+(pdftex.def)             Requested size: 216.81pt x 216.78835pt.
+ <seidensticker-no-womenwords.png, id=43, 2592.3249pt x 2592.3249pt>
+File: seidensticker-no-womenwords.png Graphic file (type png)
+ <use seidensticker-no-womenwords.png>
+Package pdftex.def Info: seidensticker-no-womenwords.png used on input line 256.
+(pdftex.def)             Requested size: 216.81pt x 216.80447pt.
+
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 251--259
+[]$[]$ $[]$ 
+ []
+
+<tyler-no-womenwords.png, id=44, 2530.8954pt x 2530.8954pt>
+File: tyler-no-womenwords.png Graphic file (type png)
+ <use tyler-no-womenwords.png>
+Package pdftex.def Info: tyler-no-womenwords.png used on input line 262.
+(pdftex.def)             Requested size: 216.81pt x 216.80316pt.
+ <washburn-no-womenwords.png, id=45, 2346.6069pt x 2346.6069pt>
+File: washburn-no-womenwords.png Graphic file (type png)
+ <use washburn-no-womenwords.png>
+Package pdftex.def Info: washburn-no-womenwords.png used on input line 266.
+(pdftex.def)             Requested size: 216.81pt x 216.8071pt.
+
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 261--269
+[]$[]$ $[]$ 
+ []
+
+<waley-no-menwords.png, id=46, 1749.6567pt x 1749.6567pt>
+File: waley-no-menwords.png Graphic file (type png)
+ <use waley-no-menwords.png>
+Package pdftex.def Info: waley-no-menwords.png used on input line 277.
+(pdftex.def)             Requested size: 216.81pt x 216.81102pt.
+ <seidensticker-no-menwords.png, id=47, 1903.5918pt x 1903.5918pt>
+File: seidensticker-no-menwords.png Graphic file (type png)
+ <use seidensticker-no-menwords.png>
+Package pdftex.def Info: seidensticker-no-menwords.png used on input line 281.
+(pdftex.def)             Requested size: 216.81pt x 216.80258pt.
+
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 276--284
+[]$[]$ $[]$ 
+ []
+
+<tyler-no-menwords.png, id=48, 1715.6898pt x 1715.6898pt>
+File: tyler-no-menwords.png Graphic file (type png)
+ <use tyler-no-menwords.png>
+Package pdftex.def Info: tyler-no-menwords.png used on input line 287.
+(pdftex.def)             Requested size: 216.81pt x 216.79065pt.
+ <washburn-no-menwords.png, id=49, 1859.5071pt x 1897.0875pt>
+File: washburn-no-menwords.png Graphic file (type png)
+ <use washburn-no-menwords.png>
+Package pdftex.def Info: washburn-no-menwords.png used on input line 291.
+(pdftex.def)             Requested size: 216.81pt x 221.18546pt.
+
+Overfull \hbox (2.28001pt too wide) in paragraph at lines 286--294
+[]$[]$ $[]$ 
+ []
+
+[10] [11 <./waley-no-womenwords.png> <./seidensticker-no-womenwords.png> <./tyler-no-womenwords.png> <./washburn-no-womenwords.png>] [12 <./waley-no-menwords.png> <./seidensticker-no-menwords.png> <./tyler-no-menwords.png> <./washburn-no-menwords.png>] <seidensticker-no-mother.png, id=67, 2890.8pt x 2890.8pt>
+File: seidensticker-no-mother.png Graphic file (type png)
+ <use seidensticker-no-mother.png>
+Package pdftex.def Info: seidensticker-no-mother.png used on input line 304.
+(pdftex.def)             Requested size: 433.62pt x 433.6013pt.
+ <waley-no-mother.png, id=68, 2890.8pt x 2890.8pt>
+File: waley-no-mother.png Graphic file (type png)
+ <use waley-no-mother.png>
+Package pdftex.def Info: waley-no-mother.png used on input line 310.
+(pdftex.def)             Requested size: 433.62pt x 433.6013pt.
+ [13] [14 <./seidensticker-no-mother.png>] [15 <./waley-no-mother.png>] [16] (/Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision-v1.aux) ) 
+Here is how much of TeX's memory you used:
+ 4348 strings out of 493014
+ 68118 string characters out of 6133351
+ 152921 words of memory out of 5000000
+ 7822 multiletter control sequences out of 15000+600000
+ 19353 words of font info for 39 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,11n,43p,2622b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision-v1.pdf (16 pages, 19813879 bytes).
+PDF statistics:
+ 94 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+

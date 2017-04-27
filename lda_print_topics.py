@@ -8,8 +8,9 @@ valthresh = 0.0040
 womenwords = set(['daughter', 'ladi', 'princess', 'wife', 'women', 'woman',
                   'mother', 'girl', 'sister', 'mistress'])
 
-menwords = set(['son', 'prince', 'father', 'emperor', 'minister',
-                'lord', 'man', 'husband'])
+menwords = set(['son', 'prince', 'father', 'emperor', 'minist',
+                'lord', 'man', 'husband', 'captain', 'men'
+                'lordship'])
 
 mendependentwomen = set(['daughter', 'wife', 'mother', 'sister', 'mistress'])
 
