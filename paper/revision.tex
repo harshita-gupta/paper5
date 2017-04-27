@@ -47,9 +47,13 @@ In developing this revision, I used Franco Moretti's ``Network Theory, Plot Anal
 Finally - and it is the most important thing of all, but also the most difficult - one can intervene on a model; make experiments. Take the protagonist again. For literary critics, this figure is important because it is a very meaningful part of the text; there is always a lot to be said about it; we would never think of discussing Hamlet—without Hamlet. But this is exactly what network theory tempts us to do: take the Hamlet-network, and remove Hamlet, to see what happens.
 \end{displayquote}
 
-I engage in this process of "making experiments" on the networks that I produce, by deleting different variations of words like 'women', 'daughter', 'mother', and 'mistress', and subsequently understanding their effect on the network: to put it differently: I attempt to understand each translation with questions like ``What remains of the of each translation's depiction of women when we remove mentions of all male - associated women, like mothers, wives, and daughters?'' ``Do women remain in the networks, and to what extent, when we remove mentions of courtly duties and performance, versus when we remove mentions of feeling, emotion, and thought?'' How does each translation's network respond differently to these interventions?
+I engage in this process of "making experiments" on the networks that I produce, by deleting different variations of words like 'women', 'daughter', 'mother', and 'mistress', and subsequently understanding their effect on the network: to put it differently: I attempt to understand each translation with questions like ``What remains of the of each translation's depiction of women when we remove mentions of all male - associated women, like mothers, wives, and daughters?'' ``Do women remain in the networks, and to what extent, when we remove mentions of courtly duties and performance, versus when we remove mentions of feeling, emotion, and thought?'' How does each translation's network respond differently to these interventions? Engaging with the models in this way was the most challenging part of HUM10 all year, since it was unlike anything I've done before; it was very difficult to think of productive questions that would reveal interesting trends, write code to answer the questions, wait for it to run, and analyze my results thoughtfully without getting lost in the 80 or so files that each run of code would generate. \linebreak
 
+When I cleaned the models according to the interests I expressed in draft, removing some rogue proper nouns and publishers notes, many of the trends that I'd identified in my draft, like the difference in occurrences of women, were no longer present. Generating the models with the parts of speech that I detected earlier, and with the topic number setting set to 15, also yielded cleaner, more meaningful topics that didn't have as many unreadable words or errors. Additionally, instead of simply using the top ten words in a topic, I used a threshold value to determine whether the topics coherence was statistically significant (threshold signal value); I felt like this was a representation that relied on a more rigorous understanding of the model's output.\linebreak
 
+I think much of the difficulty with this paper was that I'm not as well trained in reading and interpreting models as I am in close-reading --- setting out on this project was a challenge in both, the model-creation respect, as well as in learning to productively and accurately interpret topic signals and force-directed network graphs. \linebreak
+
+Given more time and resources, I would certainly give these models and their results a more thorough treatment, with perhaps a more ``mesoanalytic'' lens --- since I wasn't able to read all four translations in depth, and was only interacting with models, the traditionalist in me (however small a part that may be) finds the result only partly satisfying. I would want to endeavor to correlate my network's results with clearer plot and thematic trends across the text, versus ones in specific scenes that the topics can point out; this would only be doable once I've read the entirety of each text.
 
 \end{coverletter}
 
@@ -60,16 +64,16 @@ Title
 
 \setlength{\parindent}{0.5in}
 
-In Metonymy in The Tale of Genji: An Analysis of Translation Strategies, Janel R. Goodman Murakami compares occurrences of metonymy in a passage across translations of the Tale of Genji to assess how domesticated or foreign Suematsu’s, Waley’s, Seidensticker’s, and Tyler’s translations are, concluding that the more modern translators retain foreign elements of the text more faithfully than their earlier counterparts. In ``Going to Bed with Waley: How Murasaki Shikibu does and does not become world literature,'' Valerie Henitiuk uses a similar microanalytic approach, more commonly referred to as close-reading, to critique Waley’s translation of Genji and his portrayal of women. I build on the preexisting body of scholarship on Japanese to English translations of Genji, instead using the macroanalytic approach of topic modeling, to compute the themes across the translations, and analyze what discrepancy between translations reflects about the text’s portrayal of women. TODO EXPAND ON WHAT EXACTLY I ultimately build upon Murakami’s conclusion, determining that more recent translations not only portray Heian Japan more faithfully, but also elevate the position of women as individuals without ``censor[ing],'' as Henitiuk put it, male-female interactions to the same degree as older ones. TODO WHAT TYPE OF CENSORING, STAKES BECOME MORE CLEAR W DETAILS
+In Metonymy in The Tale of Genji: An Analysis of Translation Strategies, Janel R. Goodman Murakami compares occurrences of metonymy in a passage across translations of the Tale of Genji to assess how domesticated or foreign Suematsu's, Waley's, Seidensticker's, and Tyler's translations are, concluding that the more modern translators retain foreign elements of the text more faithfully than their earlier counterparts. In ``Going to Bed with Waley: How Murasaki Shikibu does and does not become world literature,'' Valerie Henitiuk uses a similar microanalytic approach, more commonly referred to as close-reading, to critique Waley's translation of Genji and his portrayal of women. I build on the preexisting body of scholarship on Japanese to English translations of Genji, instead using the macroanalytic approach of topic modeling, to compute the themes across the translations, and analyze what discrepancy between translations reflects about the text's portrayal of women. TODO EXPAND ON WHAT EXACTLY I ultimately build upon Murakami's conclusion, determining that more recent translations not only portray Heian Japan more faithfully, but also elevate the position of women as individuals without ``censor[ing],'' as Henitiuk put it, male-female interactions to the same degree as older ones. TODO WHAT TYPE OF CENSORING, STAKES BECOME MORE CLEAR W DETAILS
 
+I apply digital topic modeling to break down and analyze three translations of Genji: Arthur Waley's from 1925, Edward G. Seidensticker's from 1976, Royall Tyler's from 2001, and Dennis Washburn's from 2015 \footnote{ My greatest interest was originally in comparing the work of male translators with Helen McCullough's partial translation. Unfortunately, McCullough's translation, published only in \booktitle{Genji and Heike: selections from the Tale of Genji and the Tale of the Heike}, is heavily copyrighted and unavailable in any digital format.}. Topic modeling is a natural language processing technique that uses the principle of distributional semantics, or the common cooccurrence of two words, to group words into ``topics.'' I use the Latent Dirichlet Allocation (LDA) topic modeling method, which operates on 1000-word sequential chunks of the tale of Genji. LDA treats each ``chunk'' of words as an entity composed of ``topics'' --- each topic is composed of words that commonly occur together. A statistical explanation of LDA modeling's assumptions and mechanisms is beyond the scope of this paper, and one can turn to Rhody's ``Unpacking the Assumptions of LDA'' or Jockers' Macroanalysis for a simplified analysis of the method. Crucial to this paper and its discussion, however, is LDA modeling's unsupervised nature. Topics are not produced based on the program's understanding of the words' meanings or potential similarity, but creates buckets for topics based on the position of words relative to each other, and their common cooccurrence, i.e. distributional similarity, to determine that they belong to a similar topic. Its unsupervised nature makes LDA modeling useful for identifying topics in a more ``objective'' fashion by identifying authors' subconscious placement of words and themes and therefore reflecting their gendered and cultural inclinations. Topic modeling is useful, therefore, not just due to ability to give us a zoomed-out, abstracted view of a text as large as Genji, but also in uncovering topics that might be outside our microanalysis-based understanding of discoverable topics.
 
-Figure \ref{fig:washburn-full} shows a boat.
+Topic modeling is traditionally applied to multiple documents that are dissimilar, as in the work by Jockers, and has been trained on corpuses containing multiple texts, 4500 poems in Rhody's case and 4500 texts in Jockers' case. These models develop generalized, often easily identifiable themes that can apply to texts across time and author, like Rhody's ``night light moon stars day dark'' and ``tree green summer flowers grass'' topics. Jockers' and Rhody's topics reveal nothing surprising in their content themselves; the combinations of words are predictable. Topic modeling of the form they practice is useful when the purpose of the topics, albeit predictable, is to be used later in topic distribution comparison across texts, but is less useful when working with a single text. I train the LDA model, instead, on a single translation of Genji at a time, thereby developing topics that are far more specific to each translation's ``thematic world,'' and useful in identifying the thematic differences underlying each translation. The interpretive advantage to this method is evident in the difference between the word clouds generated by the two cited authors, and the ones I display and analyze in my paper.
 
-I apply digital topic modeling to break down and analyze three translations of Genji: Arthur Waley’s from 1925, Edward G. Seidensticker's from 1976, Royall Tyler’s from 2001, and Dennis Washburn’s from 2015 \footnote{ My greatest interest was originally in comparing the work of male translators with Helen McCullough’s partial translation. Unfortunately, McCullough’s translation, published only in \booktitle{Genji and Heike: selections from the Tale of Genji and the Tale of the Heike}, is heavily copyrighted and unavailable in any digital format.} \footnote{ To prepare the text for topic modeling, I removed all annotations. Introductions, publishers’ notes, footnotes, and endnotes were removed. In the Tyler translation, this included the deletion of all chapter titles that are not from the original, chapter introductions, and the ``Persons'' and ``Relationship to Previous Chapters'' sections. Additionally, all words are reduced to their stems - therefore treating ``respect'' and ``respectfully'' as identical semantic units and indistinguishable to the LDA algorithm. I also exclude all proper nouns from the corpus used for the topic model, so that topics are identified not upon the basis of scene (which correlates highly with specific characters) but upon common occurrence of motifs. Special care was taken to exclude all Japanese proper nouns, which are not identified by western natural language processing tools. For a list of all Japanese proper nouns removed, see the code in Appendix A. }. Topic modeling is a natural language processing technique that uses the principle of distributional semantics, or the common cooccurrence of two words, to group words into ``topics.'' I use the Latent Dirichlet Allocation (LDA) topic modeling method, which operates on 1000-word sequential chunks of the tale of Genji. LDA treats each ``chunk'' of words as an entity composed of ``topics'' --- each topic is composed of words that commonly occur together. A statistical explanation of LDA modeling’s assumptions and mechanisms is beyond the scope of this paper, and one can turn to Rhody’s ``Unpacking the Assumptions of LDA'' or Jockers’ Macroanalysis for a simplified analysis of the method. Crucial to this paper and its discussion, however, is LDA modeling’s unsupervised nature. Topics are not produced based on the program’s understanding of the words’ meanings or potential similarity, but creates buckets for topics based on the position of words relative to each other, and their common cooccurrence, i.e. distributional similarity, to determine that they belong to a similar topic. Its unsupervised nature makes LDA modeling useful for identifying topics in a more ``objective'' fashion by identifying authors’ subconscious placement of words and themes and therefore reflecting their cultural inclinations. Topic modeling is useful, therefore, in uncovering topics that might be outside our microanalysis-based understanding of discoverable topics.  TODO: matthew's note says ''A powerful justification for the method and for the virtues of using a DH approach more generally, especially for a massive work such as Genji (difficult to keep in anyone’s head all at once)'', emphasize this
 
 \begin{figure}
-\label{waley-topics}
 \caption{Topics in Waley's Translation}
+\label{waley-topics}
 \singlespacing
 \small
 Topic 1: said now look even man old come make seem mother tree young hous 
@@ -101,8 +105,8 @@ Topic 13: emperor ladi princess art
 
 
 \begin{figure}
-\label{seidensticker-topics}
 \caption{Topics in Seidensticker's Translation}
+\label{seidensticker-topics}
 \singlespacing
 \small
 Topic 1: stag 
@@ -135,8 +139,8 @@ Topic 14: emperor ladi court cat princ son crown mother third new father go see 
 \end{figure}
 
 \begin{figure}
-\label{tyler-topics}
 \caption{Topics in Tyler's Translation}
+\label{tyler-topics}
 \singlespacing
 \small
 Topic 1: high paper great shoot book write cup scroll command son 
@@ -166,8 +170,8 @@ Topic 12: now long majesti littl thought day mani ladi made year see said well c
 
 
 \begin{figure}
-\label{washburn-topics}
 \caption{Topics in Washburn's Translation}
+\label{washburn-topics}
 \singlespacing
 \small
 Topic 1: go ladi just woman feel come girl know even way said make think now nurs tell ask littl man lord night well look time dont attend see thought place 
@@ -199,57 +203,58 @@ Topic 13: princess even look feel young daughter woman man just ladi now go thin
 Topic 14: ladi wind princess day ceremoni daughter father come carriag 
 \end{figure}
 
+Developing meaningful topics is not just a matter of corpus scale, but also of corpus content: following Jockers' guidance, I remove all stop words that do not provide interpretive value, like articles and pronouns, from the corpus before I discover themes within it. In ``Theme'', Jockers proposes and demonstrates topic modeling only on a corpus of common nouns. Restricting the corpus to nouns is appropriate in his use case as his corpus is much larger than a single \booktitle{Genji} translation, and therefore filtering for nouns allows for a higher level of abstraction that focuses on broader trends that are more likely to occur across hundreds of texts. In analyzing \booktitle{Genji}, however, restricting my models to only nouns results in a loss of rich nuance which is central to a cross-translation comparison: adjectives, adverbs, and verbs contain a wealth of information about emotion, description, and subjectivity. To this end, I include adverbs, adjectives, and verbs in my topic models.\footnote{ In addition to removing stop words and parts of speech other than the ones specified, I removed all annotations, introductions, publishers' notes, footnotes, and endnotes. In the Tyler translation, this included the deletion of all chapter titles that are not from the original, chapter introductions, and the ``Persons'' and ``Relationship to Previous Chapters'' sections. Additionally, all words are reduced to their stems - therefore treating ``respect'' and ``respectfully'' as identical semantic units and indistinguishable to the LDA algorithm. I also exclude all proper nouns from the corpus used for the topic model, so that topics are identified not upon the basis of scene (which correlates highly with proper nouns like names and places) but upon common motifs. Special care was taken to exclude all Japanese proper nouns, which are not identified by Western natural language processing tools. For a list of all Japanese proper nouns removed, see the code in Appendix A.} The topics discovered, with the words that have the highest percentage of appearance within a given topic, are included in figures \ref{waley-topics}, \ref{seidensticker-topics}, \ref{tyler-topics}, and \ref{washburn-topics} \footnote{All words in a given topic with signal strength greater than 0.0040 are included, i.e. words that comprise more than four percent of a given topic. If a topic had no words with signal strengths high enough, i.e. the topic was statistically insignificant, those topics were excluded from the final model and not used in subsequent discussion.}.
 
-Topic modeling is traditionally applied to multiple documents that are dissimilar, as in the work by Jockers, and has been trained on corpuses containing multiple texts, 4500 poems in Rhody’s case and 4500 texts in Jockers case. These models develop generalized, often easily identifiable themes that can apply to texts across time and author, like Rhody’s ``night light moon stars day dark'' and ``tree green summer flowers grass'' topics. Topic modeling of the form they practice is useful when the purpose of the topics is to be used later in topic distribution comparison across texts, but is less useful when working with a single text. I train the LDA model, instead, on a single translation of Genji at a time, thereby developing topics that are far more specific to each translation’s ``thematic world,'' and useful in identifying the thematic differences underlying each translation. The interpretive advantage to this method is evident in the difference between the two topic word clouds reproduced side-by-side. One is from Jockers’ paper ``Theme'' in Microanalysis, and one is a theme discovered in Tyler’s translation of Genji. TODO add figure here. The topics discovered, with the words that have the highest percentage of appearance within a given topic, are included in figures \ref{waley-topics}, \ref{seidensticker-topics}, \ref{tyler-topics}, and \ref{washburn-topics} \footnote{All words in a given topic with signal strength greater than 0.0040 are included, i.e. words that comprise more than four percent of a given topic. If a topic had no words with signal strengths high enough, i.e. the topic was statistically insignificant, those topics were excluded from the final model and not used in subsequent discussion.}.
+The topics discovered in the four translations, reproduced in the figures above, reveal some clear trends across the four translations. If we look simply for the presence of women across texts: 'daughter', 'lady', 'princess', 'wife', 'women', 'woman', 'mother', 'girl', 'sister', and 'mistress', we find that 9 of the 13 themes in Waley's translation include women, 13 of the 14 in Seidensticker's do, 8 of 12 in Tyler's do, and 13 of 14 in Washburn's do. Mentions of men: 'son', 'prince', 'father', 'emperor', 'minister', 'lord', 'man', and 'husband', on the other hand, are only 5 of 13 in Waley, 8 of 14 in Seidensticker, 2 of 12 in Tyler, and 10 of 14 in Washburn. 
 
-The themes discovered in the four translations, reproduced in the figures above, reveal clear differences between the three texts. The themes are reproduced with their theme number and theme descriptor (a few words from the theme that encompass how the theme is interpreted). TODO describe how themes are split up and process to identify female-related themes and non-female-related theems. In Washburn’s translation, 12 of the 20 themes discovered have female references --- words like ``woman'', ``lady'' (stemmed as ladi), ``daughter'' --- as one of their top 10 words. In Tyler’s, 8 of the 20 themes do, and in Waley’s, 6 of the 20 themes do. An analysis of the evolution of these themes over the text, visualized in the heat maps below, reveals that not only are there dramatically fewer female-related themes in the Tyler than the Washburn and in the Waley than the Tyler, but that the frequency of these female-related themes is lower in the same order as well. TODO: if i stick with this, elaborate on the frequency bit.
-
-In the Washburn text, the word ``feel'' is the second-most salient one in the entire novel. The topic-modeling results reveal that the word ``feel'' occurs exclusively in the female-related themes, and is mentioned not once in a female-unrelated theme. Additionally, while five of the female-related themes also mention male-related words in them, only one of these contains the word ``feel.'' [This demonstrates that the inner life of women is given priority in Washburn’s translation, and more importantly, in contexts where women are not surrounded by other men. Females are afforded a level of individuality that they are not in the other translations.] TODO comment was''This is where ``microanalysis'' (using human brain power) can come back in to make a contribution in supporting the contours of the big data [see end comments]''. This is evident in the Tyler translation, where the word majestic appears in four out of eight of the female themes (specifically the ones on courtship and ceremony), and only three times in all the other twelve, thereby indicating the presence of females as a cultural object for the purposes of courtly procedure and order. The Waley translation, by far, exhibits the most striking objectification and minimization of women --- women occur explicitly in themes about ceremony, palaces, and governance, thereby indicating a position in the text that is secondary to their male fathers and husbands. [TODO COMMENT: Similarly insightful. To extend the point for maximum impact: what do these additional associations tell us about the nature of that ``objectification and minimization''? i.e., the switch from an adjective or quality of class (``majestic'') to a set of physical places and cultural practices (``ceremony''). Ceremony appears in both Tyler and Waley, so how might it function differently in each?]
+Proceeding to analyze this thematic data numerically may be fruitful, but it doesn't provide as much a visual 'picture' of the interactions between topics across texts. In selecting the appropriate visualization mechanism for this experiment, I turn to my original intent: to understand the underlying thematic structure to each translation, and analyze this structure to come to macroanalytic conclusions about the translations in comparison to each other. Networks representing the words each each topic, with edges connecting words that co-occur in a topic, accomplish just that. I take inspiration from Franco Moretti's essay ``Network Theory, Plot Analysis'', in which he set the precedent for combining network theory and literary analysis; Moretti draws network diagrams to depict interactions between characters in \booktitle{Hamlet}. While his graphs are hand-drawn, I generate mine programmatically and use force directed graph drawing to display them, a technique which minimizes edge overlap and places appropriately more ``central'' nodes, i.e. words which have more edges connected to them, and ``peripheral'' ones, i.e. words which have fewer edges connected to them. Force-directed drawing of the topics in \booktitle{Genji} reveals immediately the words central to each translation, the clusters of words, and the clustering of topics of words relative to each other. Network diagrams of the four translations considered in this paper are in figure \ref{full-networks}, with edges connected to female-associated words drawn in red, edges connected to male-associated words drawn in blue, and all other edges drawn in green.
 
 \begin{figure}
 	\begin{subfigure}{\linewidth}
-		\begin{subfigure}{.5\linewidth}
-	  		\includegraphics[width=3in]{washburn-complete.png}\hfill
-	  		\caption{Washburn}
-	  	\end{subfigure}
-	  	\begin{subfigure}{.5\linewidth}
-	  		\includegraphics[width=3in]{tyler-complete.png}
-	  		\caption{Tyler}
-	  	\end{subfigure}
-	\end{subfigure}\par\medskip
-	\begin{subfigure}{\linewidth}
-		\begin{subfigure}{.5\linewidth}
-			\includegraphics[width=3in]{seidensticker-complete.png}\hfill
-			\caption{Seidensticker}
-		\end{subfigure}
 		\begin{subfigure}{.5\linewidth}
 			\includegraphics[width=3in]{waley-complete.png}
 			\caption{Waley}
-		\end{subfigure}
-	\end{subfigure}
-	\caption{Thematic Structure: Female-Associated Connections in Red}
-	\label{full-networks}
-\end{figure}
-
-\begin{figure}
-	\begin{subfigure}{\linewidth}
-		\begin{subfigure}{.5\linewidth}
-	  		\includegraphics[width=3in]{washburn-no-womenwords.png}\hfill
-	  		\caption{Washburn}
 	  	\end{subfigure}
 	  	\begin{subfigure}{.5\linewidth}
-	  		\includegraphics[width=3in]{tyler-no-womenwords.png}
-	  		\caption{Tyler}
+			\includegraphics[width=3in]{seidensticker-complete.png}\hfill
+			\caption{Seidensticker}
 	  	\end{subfigure}
 	\end{subfigure}\par\medskip
 	\begin{subfigure}{\linewidth}
 		\begin{subfigure}{.5\linewidth}
-			\includegraphics[width=3in]{seidensticker-no-womenwords.png}\hfill
-			\caption{Seidensticker}
+	  		\includegraphics[width=3in]{tyler-complete.png}
+	  		\caption{Tyler}
 		\end{subfigure}
 		\begin{subfigure}{.5\linewidth}
-			\includegraphics[width=3in]{waley-no-womenwords.png}
-			\caption{Waley}
+	  		\includegraphics[width=3in]{washburn-complete.png}\hfill
+	  		\caption{Washburn}
+		\end{subfigure}
+	\end{subfigure}
+	\caption{Thematic Structure: Female-Associated Connections in Red, Male-Associated Connections in Blue}
+	\label{full-networks}
+\end{figure}
+
+The numerical observations made earlier jump out immediately now: the prevalence of women-associated words across the networks and the higher ratio of red to blue. Some more nuanced observations, however, can be drawn by looking at the centrality of female and male nodes in the graph: Seidensticker's and Washburn's representations of women are far more central to the thematic networks of their translations, with the female nodes having very high degrees (number of edges originating from them) and being extending more uniformly across the graph. Tyler's and Waley's, on the other hand, while prevalent, are far more peripheral, suggesting a portrayal of women that is persistent yet a near afterthought, or secondary to the 
+
+In the Washburn text, the word ``feel'' is the second-most salient one in the entire novel. The topic-modeling results reveal that the word ``feel'' occurs exclusively in the female-related themes, and is mentioned not once in a female-unrelated theme. Additionally, while five of the female-related themes also mention male-related words in them, only one of these contains the word ``feel.'' [This demonstrates that the inner life of women is given priority in Washburn's translation, and more importantly, in contexts where women are not surrounded by other men. Females are afforded a level of individuality that they are not in the other translations.] TODO comment was''This is where ``microanalysis'' (using human brain power) can come back in to make a contribution in supporting the contours of the big data [see end comments]''. This is evident in the Tyler translation, where the word majestic appears in four out of eight of the female themes (specifically the ones on courtship and ceremony), and only three times in all the other twelve, thereby indicating the presence of females as a cultural object for the purposes of courtly procedure and order. The Waley translation, by far, exhibits the most striking objectification and minimization of women --- women occur explicitly in themes about ceremony, palaces, and governance, thereby indicating a position in the text that is secondary to their male fathers and husbands. [TODO COMMENT: Similarly insightful. To extend the point for maximum impact: what do these additional associations tell us about the nature of that ``objectification and minimization''? i.e., the switch from an adjective or quality of class (``majestic'') to a set of physical places and cultural practices (``ceremony''). Ceremony appears in both Tyler and Waley, so how might it function differently in each?]
+
+\begin{figure}
+	\begin{subfigure}{\linewidth}
+		\begin{subfigure}{.25\linewidth}
+			\includegraphics[width=1.2in]{waley-no-womenwords.png}
+			\caption{Waley}		
+	  	\end{subfigure}
+	  	\begin{subfigure}{.25\linewidth}
+			\includegraphics[width=1.2in]{seidensticker-no-womenwords.png}\hfill
+			\caption{Seidensticker}
+	  	\end{subfigure}
+		\begin{subfigure}{.25\linewidth}
+	  		\includegraphics[width=1.2in]{tyler-no-womenwords.png}\hfill
+	  		\caption{Tyler}		
+		\end{subfigure}
+		\begin{subfigure}{.25\linewidth}
+	  		\includegraphics[width=1.2in]{washburn-no-womenwords.png}\hfill
+	  		\caption{Washburn}		
 		\end{subfigure}
 	\end{subfigure}
 	\caption{Thematic Structures Without Women}
