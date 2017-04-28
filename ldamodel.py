@@ -101,7 +101,7 @@ def getText(dr, root, encoding):
 
 #  Removed stop words, proper nouns, and stems all results.
 #  takes tagged and stemmed words and returns tokens that match requirements.
-def getReducedTokens(tags, dr, root):
+def getReducedTokens(tags):
     if noreduce:
         tkns = [x[2] for x in tags if x[0] not in enstop and
                 x[2] not in enstop]
