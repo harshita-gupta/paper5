@@ -129,17 +129,17 @@ def graph_terms_to_topics(lda, outfile, num_terms=NUMTERMS):
 
                 save_clear(("no-" + testword))
 
-    # removespecificcategory("womenwords", womenwords)
-    # removeindivwordscat(womenwords)
-    # removespecificcategory("feelingthinking", feelingthinking)
-    # removeindivwordscat(feelingthinking)
-    # removespecificcategory("mendependentwomen", mendependentwomen)
+    removespecificcategory("womenwords", womenwords)
+    removeindivwordscat(womenwords)
+    removespecificcategory("feelingthinking", feelingthinking)
+    removeindivwordscat(feelingthinking)
+    removespecificcategory("mendependentwomen", mendependentwomen)
     removespecificcategory("menwords", menwords)
     removeindivwordscat(menwords)
-    # removespecificcategory("performanceappearance", performanceappearance)
-    # removeindivwordscat(performanceappearance)
-    # removespecificcategory("dutypalace", dutypalace)
-    # removeindivwordscat(dutypalace)
+    removespecificcategory("performanceappearance", performanceappearance)
+    removeindivwordscat(performanceappearance)
+    removespecificcategory("dutypalace", dutypalace)
+    removeindivwordscat(dutypalace)
 
 
 if len(sys.argv) < 2:
