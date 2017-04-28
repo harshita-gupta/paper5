@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+
+# The python code used to generate the sentiment histograms,
+# and the lists of most negative sentiment values.
+# Harshita Gupta. Humanities Colloqium. Open-Ended Project 5. Spring 2017.
+
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import sent_tokenize
 import sys

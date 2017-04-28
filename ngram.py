@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+
+# Harshita Gupta. Humanities Colloqium. Open-Ended Project 5. Spring 2017.
+
+
 from nltk import ngrams
 marquez = 'books/One Hundred Years of Solitude.txt'
 with open(marquez, 'r') as myfile:

@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # The python code to turn the lda model's computed topics into a CSV file for
 # cloud generation.
 # Harshita Gupta. Humanities Colloqium. Open-Ended Project 5. Spring 2017.

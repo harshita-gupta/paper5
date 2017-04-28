@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 # The python code used to train the LDA topic model and generate
 # the topics for each text.
 # Harshita Gupta. Humanities Colloqium. Open-Ended Project 5. Spring 2017.

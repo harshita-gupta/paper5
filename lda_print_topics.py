@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+
+# The python code used to print the topic data included in the paper.
+# Harshita Gupta. Humanities Colloqium. Open-Ended Project 5. Spring 2017.
+
 from gensim.models import LdaModel
 from gensim import corpora
 import pickle
