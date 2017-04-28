@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 APR 2017 07:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 APR 2017 13:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -241,9 +241,6 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ” in font ptmr7t!
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -254,68 +251,65 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 ] [2] [3]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 76.
+(Font)              <12> on input line 70.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 76.
+(Font)              <8> on input line 70.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 76.
+(Font)              <6> on input line 70.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 76.
+(Font)              <7> on input line 70.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 76.
- <seidensticker-sentiment.png, id=14, 578.16pt x 433.62pt>
+(Font)              <5> on input line 70.
+ [4] <seidensticker-sentiment.png, id=17, 578.16pt x 433.62pt>
 File: seidensticker-sentiment.png Graphic file (type png)
  <use seidensticker-sentiment.png>
-Package pdftex.def Info: seidensticker-sentiment.png used on input line 80.
+Package pdftex.def Info: seidensticker-sentiment.png used on input line 74.
 (pdftex.def)             Requested size: 144.54pt x 108.40472pt.
 
-Overfull \hbox (3.61206pt too wide) in paragraph at lines 80--81
+Overfull \hbox (3.61206pt too wide) in paragraph at lines 74--75
 [][] 
  []
 
-<tyler-sentiment.png, id=16, 578.16pt x 433.62pt>
+<tyler-sentiment.png, id=19, 578.16pt x 433.62pt>
 File: tyler-sentiment.png Graphic file (type png)
  <use tyler-sentiment.png>
-Package pdftex.def Info: tyler-sentiment.png used on input line 84.
+Package pdftex.def Info: tyler-sentiment.png used on input line 78.
 (pdftex.def)             Requested size: 144.54pt x 108.40472pt.
 
-Overfull \hbox (3.61206pt too wide) in paragraph at lines 84--85
+Overfull \hbox (3.61206pt too wide) in paragraph at lines 78--79
 [][] 
  []
 
-<washburn-sentiment.png, id=17, 578.16pt x 433.62pt>
+<washburn-sentiment.png, id=20, 578.16pt x 433.62pt>
 File: washburn-sentiment.png Graphic file (type png)
  <use washburn-sentiment.png>
-Package pdftex.def Info: washburn-sentiment.png used on input line 88.
+Package pdftex.def Info: washburn-sentiment.png used on input line 82.
 (pdftex.def)             Requested size: 144.54pt x 108.40472pt.
 
-Overfull \hbox (3.61206pt too wide) in paragraph at lines 88--89
+Overfull \hbox (3.61206pt too wide) in paragraph at lines 82--83
 [][] 
  []
 
-[4]
+[5 <./seidensticker-sentiment.png> <./tyler-sentiment.png> <./washburn-sentiment.png>]
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no   in font ptmr7t!
- [5 <./seidensticker-sentiment.png> <./tyler-sentiment.png> <./washburn-sentiment.png>] [6]
+ [6] [7]
 Missing character: There is no Â in font ptmr7t!
 Missing character: There is no   in font ptmr7t!
- [7] [8] [9] [10] [11]
-Missing character: There is no Â in font ptmr7t!
-Missing character: There is no   in font ptmr7t!
- [12] [13] [14] [15] (/Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.aux) ) 
+ [8] [9] [10] [11] [12] [13] [14] (/Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.aux) ) 
 Here is how much of TeX's memory you used:
  4289 strings out of 493014
  66558 string characters out of 6133351
- 151904 words of memory out of 5000000
+ 150904 words of memory out of 5000000
  7775 multiletter control sequences out of 15000+600000
  17669 words of font info for 37 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,43p,2599b,563s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,43p,2522b,563s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.pdf (15 pages, 114369 bytes).
+Output written on /Users/Harshita/Developer/hum10-paper5/paper/.texpadtmp/revision.pdf (14 pages, 112568 bytes).
 PDF statistics:
- 69 PDF objects out of 1000 (max. 8388607)
- 43 compressed objects within 1 object stream
+ 66 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

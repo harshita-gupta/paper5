@@ -80,32 +80,32 @@ def getReducedTokens(tags):
     return stems
 
 
-# f = open(translator + "-consummation.txt", 'rU')
-# raw = f.read()
-# raw = unicode(raw, encoding='utf-8')
-# raw = unicodedata.normalize('NFD', raw)
-# raw = raw.encode('ascii', 'ignore')
-# tokens = tokenizer.tokenize(raw.lower())
-# mytext = nltk.Text(tokens)
-# taggedText = nltk.pos_tag(mytext.tokens)
-# stemmedText = []
-# for token in taggedText:
-#         tk, pos = token
-#         stm = stemmer.stem(tk)
-#         stemmedText.append((tk, pos, stm))
+f = open(translator + "-consummation.txt", 'rU')
+raw = f.read()
+raw = unicode(raw, encoding='utf-8')
+raw = unicodedata.normalize('NFD', raw)
+raw = raw.encode('ascii', 'ignore')
+tokens = tokenizer.tokenize(raw.lower())
+mytext = nltk.Text(tokens)
+taggedText = nltk.pos_tag(mytext.tokens)
+stemmedText = []
+for token in taggedText:
+        tk, pos = token
+        stm = stemmer.stem(tk)
+        stemmedText.append((tk, pos, stm))
 
-# reduced = getReducedTokens(stemmedText)
-# dictionary = corpora.Dictionary([reduced])
+reduced = getReducedTokens(stemmedText)
+dictionary = corpora.Dictionary([reduced])
 
 # tops = lda.top_topics(corpus, 15)
 
 # for topic in tops:
 #     print topic
 
-# print lda.get_document_topics(dictionary.doc2bow(reduced), 0.001)
+print [(t + 1, p) for (t, p) in lda.get_document_topics(dictionary.doc2bow(reduced), 0.001)]
 
-topicpredictions = lda.get_term_topics(sys.argv[2], 0.0001)
-p = sorted([(t, v * 100) for t, v in topicpredictions], key=lambda x: x[1],
-            reverse=True)
-for t, v in p:
-    print "%d, %02f" % (t, v)
+# topicpredictions = lda.get_term_topics(sys.argv[2], 0.0001)
+# p = sorted([(t, v * 100) for t, v in topicpredictions], key=lambda x: x[1],
+#             reverse=True)
+# for t, v in p:
+#     print "%d, %02f" % (t, v)
