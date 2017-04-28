@@ -26,6 +26,4 @@ for i in range(0, model.num_topics):
         f.write("text,size,topic\n")
         terms = [(val, term) for val, term in model.show_topic(i, 25)]
         for (val, term) in terms:
-            # print val, term
-            # print type(val), type(term)
             f.write("%s,%d,%d\n" % (val, int(term * 100000), i))

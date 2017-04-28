@@ -212,9 +212,10 @@ if not os.path.exists(dr + "out"):
     os.makedirs(dr + "out")
 
 foldername = dr + "out/ldamodel_overlap%d_w%d_t%d_p%d_modified%d" % (overlap,
-                                                        WINDOWS,
-                                                          TOPICS, PASSES,
-                                                          modifiedReduce)
+                                                                     WINDOWS,
+                                                                     TOPICS,
+                                                                     PASSES,
+                                                                 modifiedReduce)
 
 with open(foldername + "_doclabels.txt", "w") as f:
     for item in doc_labels:

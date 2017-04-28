@@ -41,22 +41,19 @@ print mean(compounds)
 print median(compounds)
 print variance(compounds)
 
-# for k in sorted(ss):
-#         print '{0}: {1}, '.format(k, ss[k])
+words = tokenizer.tokenize(text)
+wordsents = []
+for word in words:
+    ss = sid.polarity_scores(word)
+    if abs(ss['compound']) > 0.00001:
+        wordsents.append((stemmer.stem(word), ss['compound']))
 
-# words = tokenizer.tokenize(text)
-# wordsents = []
-# for word in words:
-#     ss = sid.polarity_scores(word)
-#     if abs(ss['compound']) > 0.00001:
-#         wordsents.append((stemmer.stem(word), ss['compound']))
+std = sorted(set(wordsents), key=lambda x: x[1])
+for w in std[:20]:
+    print w
 
-# std = sorted(set(wordsents), key=lambda x: x[1])
-# for w in std[:20]:
-#     print w
-
-# plt.hist(compounds, bins=len(sentiments) / 100)
-# axes = plt.gca()
-# axes.set_ylim([0,1000])
-# plt.title("Sentiment Distribution Across %s's Genji" % sys.argv[1].title())
-# plt.show()
+plt.hist(compounds, bins=len(sentiments) / 100)
+axes = plt.gca()
+axes.set_ylim([0,1000])
+plt.title("Sentiment Distribution Across %s's Genji" % sys.argv[1].title())
+plt.show()

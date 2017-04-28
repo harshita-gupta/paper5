@@ -97,15 +97,10 @@ for token in taggedText:
 reduced = getReducedTokens(stemmedText)
 dictionary = corpora.Dictionary([reduced])
 
-# tops = lda.top_topics(corpus, 15)
-
-# for topic in tops:
-#     print topic
-
 print [(t + 1, p) for (t, p) in lda.get_document_topics(dictionary.doc2bow(reduced), 0.001)]
 
-# topicpredictions = lda.get_term_topics(sys.argv[2], 0.0001)
-# p = sorted([(t, v * 100) for t, v in topicpredictions], key=lambda x: x[1],
-#             reverse=True)
-# for t, v in p:
-#     print "%d, %02f" % (t, v)
+topicpredictions = lda.get_term_topics(sys.argv[2], 0.0001)
+p = sorted([(t, v * 100) for t, v in topicpredictions], key=lambda x: x[1],
+            reverse=True)
+for t, v in p:
+    print "%d, %02f" % (t, v)
